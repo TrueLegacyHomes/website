@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estate Sale in Encinitas, CA - Feb 14-15, 2026 | True Legacy Homes</title>
-  <meta name="description" content="Two-day estate sale in Encinitas featuring vintage furniture, collectibles, kitchenware, and more. 4110 Manchester Avenue.">
+  <title>Art & Curiosities Estate Sale - San Diego | True Legacy Homes</title>
+  <meta name="description" content="Online estate sale featuring art, collectibles, and curiosities in San Diego, CA 92102.">
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -20,13 +20,17 @@
       }
     }
   </script>
+  <style>
+    .lightbox { display: none; }
+    .lightbox.active { display: flex; }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
   <!-- Navigation -->
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="bg-white shadow-sm sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="/">
+      <a href="index.html">
         <img src="images/logo-1.png" alt="True Legacy Homes" class="h-10">
       </a>
       <div class="hidden md:flex space-x-6">
@@ -44,13 +48,13 @@
   <!-- Breadcrumb -->
   <div class="bg-white border-b">
     <div class="max-w-6xl mx-auto px-4 py-3 text-sm text-gray-500">
-      <a href="/" class="hover:text-tlh-teal">Home</a>
+      <a href="index.html" class="hover:text-tlh-teal">Home</a>
       <span class="mx-2">›</span>
       <a href="/sales" class="hover:text-tlh-teal">Estate Sales</a>
       <span class="mx-2">›</span>
       <a href="/locations/san-diego" class="hover:text-tlh-teal">San Diego</a>
       <span class="mx-2">›</span>
-      <span class="text-gray-800">Encinitas</span>
+      <span class="text-gray-800">Art & Curiosities</span>
     </div>
   </div>
 
@@ -88,17 +92,17 @@
         <div class="bg-white rounded-xl p-4 text-center shadow-sm">
           <div class="text-3xl mb-1">📅</div>
           <div class="text-sm text-gray-500">Dates</div>
-          <div class="font-bold">Feb 14-15, 2026</div>
+          <div class="font-bold">Feb 13-18, 2026</div>
         </div>
         <div class="bg-white rounded-xl p-4 text-center shadow-sm">
           <div class="text-3xl mb-1">🕘</div>
-          <div class="text-sm text-gray-500">Hours</div>
-          <div class="font-bold">9AM - 3PM</div>
+          <div class="text-sm text-gray-500">Type</div>
+          <div class="font-bold">Online Auction</div>
         </div>
         <div class="bg-white rounded-xl p-4 text-center shadow-sm">
           <div class="text-3xl mb-1">📸</div>
           <div class="text-sm text-gray-500">Photos</div>
-          <div class="font-bold">399 Items</div>
+          <div class="font-bold">16 Items</div>
         </div>
         <div class="bg-white rounded-xl p-4 text-center shadow-sm">
           <div class="text-3xl mb-1">💳</div>
@@ -112,40 +116,86 @@
   <!-- Photo Gallery -->
   <section class="py-12 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6">Sale Photos <span class="text-gray-400 font-normal">(399 items)</span></h2>
+      <h2 class="text-2xl font-bold mb-6">Sale Photos <span class="text-gray-400 font-normal">(16 items)</span></h2>
       
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Hotlinked from EstateSales.net CDN - WORKING! -->
-        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-          <img src="https://picturescdn.estatesales.net/4806741/1-1/4ab82217-02ab-445e-9bab-6e7062a35d46.jpg" alt="Estate sale item" class="w-full h-full object-cover hover:scale-105 transition cursor-pointer">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery">
+        <!-- All 16 images from EstateSales.net -->
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(0)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-1/4ab82217-02ab-445e-9bab-6e7062a35d46.jpg" alt="Estate sale item 1" class="w-full h-full object-cover hover:scale-105 transition">
         </div>
-        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-          <img src="https://picturescdn.estatesales.net/4806741/1-1/145f3a91-4a64-4c2c-801a-47dbbdab3cc3.jpg" alt="Estate sale item" class="w-full h-full object-cover hover:scale-105 transition cursor-pointer">
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(1)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-1/145f3a91-4a64-4c2c-801a-47dbbdab3cc3.jpg" alt="Estate sale item 2" class="w-full h-full object-cover hover:scale-105 transition">
         </div>
-        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-          <img src="https://picturescdn.estatesales.net/4806741/1-1/e93c7f01-f78c-4382-8841-7725aa93e29b.jpg" alt="Estate sale item" class="w-full h-full object-cover hover:scale-105 transition cursor-pointer">
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(2)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-1/e93c7f01-f78c-4382-8841-7725aa93e29b.jpg" alt="Estate sale item 3" class="w-full h-full object-cover hover:scale-105 transition">
         </div>
-        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-          <img src="https://picturescdn.estatesales.net/4806741/1-1/26fcc684-65ca-4ccc-aed0-ed28fad9a05a.jpg" alt="Estate sale item" class="w-full h-full object-cover hover:scale-105 transition cursor-pointer">
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(3)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-1/26fcc684-65ca-4ccc-aed0-ed28fad9a05a.jpg" alt="Estate sale item 4" class="w-full h-full object-cover hover:scale-105 transition">
         </div>
-        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-          <img src="https://picturescdn.estatesales.net/4806741/1-2/0b3bd923-932f-4ef8-bbee-8d73123fb8db.jpg" alt="Estate sale item" class="w-full h-full object-cover hover:scale-105 transition cursor-pointer">
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(4)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/0b3bd923-932f-4ef8-bbee-8d73123fb8db.jpg" alt="Estate sale item 5" class="w-full h-full object-cover hover:scale-105 transition">
         </div>
-        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-          <img src="https://picturescdn.estatesales.net/4806741/1-2/b1f74c46-2c85-4e9f-99bf-01094234f453.jpg" alt="Estate sale item" class="w-full h-full object-cover hover:scale-105 transition cursor-pointer">
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(5)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/b1f74c46-2c85-4e9f-99bf-01094234f453.jpg" alt="Estate sale item 6" class="w-full h-full object-cover hover:scale-105 transition">
         </div>
-        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-          <img src="https://picturescdn.estatesales.net/4806741/1-2/f5f48c1f-6c22-47f2-81db-36ec9694a6fd.jpg" alt="Estate sale item" class="w-full h-full object-cover hover:scale-105 transition cursor-pointer">
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(6)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/f5f48c1f-6c22-47f2-81db-36ec9694a6fd.jpg" alt="Estate sale item 7" class="w-full h-full object-cover hover:scale-105 transition">
         </div>
-        <a href="https://www.estatesales.net/CA/San-Diego/92102/4806741" target="_blank" class="aspect-square bg-gray-200 rounded-lg overflow-hidden relative cursor-pointer block">
-          <img src="https://picturescdn.estatesales.net/4806741/1-2/41a6d11b-d829-4354-9f3f-72562df0b920.jpg" alt="Estate sale item" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-black/60 flex items-center justify-center hover:bg-black/70 transition">
-            <span class="text-white text-xl font-bold">+50 more →</span>
-          </div>
-        </a>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(7)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/41a6d11b-d829-4354-9f3f-72562df0b920.jpg" alt="Estate sale item 8" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(8)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/11f6c10f-3806-47e3-820b-a6e73a4a02a2.jpg" alt="Estate sale item 9" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(9)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/68b34592-b22b-4acb-876f-5b3a3038c0c0.jpg" alt="Estate sale item 10" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(10)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/6af199b8-04a6-4932-9a3c-0df11c25d0c8.jpg" alt="Estate sale item 11" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(11)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/a2271678-c0b8-4788-8525-58fa161b51b0.jpg" alt="Estate sale item 12" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(12)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/b3487982-ff9e-4ddd-a726-54c9a518e953.jpg" alt="Estate sale item 13" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(13)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/cacac32d-c51b-43fc-9e4d-0b9f784db3dc.jpg" alt="Estate sale item 14" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(14)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/f1fc15db-f6f2-40d0-9875-3a789e56a121.jpg" alt="Estate sale item 15" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
+        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(15)">
+          <img src="https://picturescdn.estatesales.net/4806741/1-2/f5000ac1-c833-4d8a-85a7-ee6587b5f4c8.jpg" alt="Estate sale item 16" class="w-full h-full object-cover hover:scale-105 transition">
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox fixed inset-0 bg-black/90 z-50 items-center justify-center">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-50">&times;</button>
+    
+    <!-- Previous Button -->
+    <button onclick="prevImage()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-gray-300 p-4">
+      ‹
+    </button>
+    
+    <!-- Image Container -->
+    <div class="max-w-4xl max-h-[80vh] mx-auto px-16">
+      <img id="lightbox-img" src="" alt="Estate sale item" class="max-w-full max-h-[80vh] object-contain mx-auto">
+    </div>
+    
+    <!-- Next Button -->
+    <button onclick="nextImage()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-gray-300 p-4">
+      ›
+    </button>
+    
+    <!-- Counter -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-lg">
+      <span id="lightbox-counter">1 / 16</span>
+    </div>
+  </div>
 
   <!-- About This Sale -->
   <section class="py-12 bg-gray-50">
@@ -154,33 +204,33 @@
         <div class="md:col-span-2">
           <h2 class="text-2xl font-bold mb-4">About This Sale</h2>
           <p class="text-gray-600 mb-4">
-            This beautiful Encinitas estate features a lifetime collection of vintage furniture, fine china, artwork, kitchenware, tools, and garden items. Everything must go!
+            This unique San Diego estate sale features an eclectic collection of art, antiques, and curiosities. Perfect for collectors and treasure hunters looking for one-of-a-kind pieces.
           </p>
           <h3 class="font-bold text-lg mb-3">Highlights include:</h3>
           <ul class="grid grid-cols-2 gap-2 text-gray-600">
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              Mid-century modern furniture
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              Vintage Pyrex & collectibles
-            </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              Fine china and glassware
-            </li>
             <li class="flex items-center gap-2">
               <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
               Original artwork & prints
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              Hand tools & garden equipment
+              Vintage collectibles
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              Books, records & linens
+              Antique furniture
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Unique curiosities
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Sports memorabilia
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Decorative items
             </li>
           </ul>
         </div>
@@ -188,12 +238,11 @@
           <div class="bg-white rounded-xl p-6 shadow-sm" id="directions">
             <h3 class="font-bold text-lg mb-4">📍 Location</h3>
             <p class="text-gray-600 mb-4">
-              4110 Manchester Avenue<br>
-              Encinitas, CA 92024
+              San Diego, CA 92102
             </p>
             <div class="aspect-video bg-gray-200 rounded-lg mb-4 overflow-hidden">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.5!2d-117.27!3d33.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDAzJzAwLjAiTiAxMTfCsDE2JzEyLjAiVw!5e0!3m2!1sen!2sus!4v1234567890" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26875.7!2d-117.13!3d32.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d954d39ba8a44d%3A0x8f1e9a9b7a9b7a9b!2sSan%20Diego%2C%20CA%2092102!5e0!3m2!1sen!2sus!4v1234567890" 
                 width="100%" 
                 height="100%" 
                 style="border:0;" 
@@ -201,7 +250,7 @@
                 loading="lazy">
               </iframe>
             </div>
-            <a href="https://maps.google.com/?q=4110+Manchester+Avenue+Encinitas+CA" target="_blank" class="block w-full bg-tlh-dark text-white py-3 rounded-lg text-center font-semibold hover:bg-gray-800">
+            <a href="https://maps.google.com/?q=San+Diego+CA+92102" target="_blank" class="block w-full bg-tlh-dark text-white py-3 rounded-lg text-center font-semibold hover:bg-gray-800">
               Open in Google Maps
             </a>
           </div>
@@ -265,6 +314,70 @@
       </div>
     </div>
   </footer>
+
+  <!-- Lightbox JavaScript -->
+  <script>
+    const images = [
+      'https://picturescdn.estatesales.net/4806741/1-1/4ab82217-02ab-445e-9bab-6e7062a35d46.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-1/145f3a91-4a64-4c2c-801a-47dbbdab3cc3.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-1/e93c7f01-f78c-4382-8841-7725aa93e29b.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-1/26fcc684-65ca-4ccc-aed0-ed28fad9a05a.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/0b3bd923-932f-4ef8-bbee-8d73123fb8db.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/b1f74c46-2c85-4e9f-99bf-01094234f453.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/f5f48c1f-6c22-47f2-81db-36ec9694a6fd.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/41a6d11b-d829-4354-9f3f-72562df0b920.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/11f6c10f-3806-47e3-820b-a6e73a4a02a2.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/68b34592-b22b-4acb-876f-5b3a3038c0c0.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/6af199b8-04a6-4932-9a3c-0df11c25d0c8.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/a2271678-c0b8-4788-8525-58fa161b51b0.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/b3487982-ff9e-4ddd-a726-54c9a518e953.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/cacac32d-c51b-43fc-9e4d-0b9f784db3dc.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/f1fc15db-f6f2-40d0-9875-3a789e56a121.jpg',
+      'https://picturescdn.estatesales.net/4806741/1-2/f5000ac1-c833-4d8a-85a7-ee6587b5f4c8.jpg'
+    ];
+    
+    let currentIndex = 0;
+    
+    function openLightbox(index) {
+      currentIndex = index;
+      document.getElementById('lightbox').classList.add('active');
+      updateLightbox();
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function updateLightbox() {
+      document.getElementById('lightbox-img').src = images[currentIndex];
+      document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+    
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightbox();
+    }
+    
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
+    
+    // Close on background click
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
