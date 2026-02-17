@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Page not found | Better Business Bureau&#174;</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <style>
+      .skip-link {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+
+      .skip-link:focus {
+        background: var(--bds-color-blue-dark);
+        border: 3px solid var(--bds-color-blue-light);
+        clip: auto;
+        color: var(--bds-color-white);
+        height: auto;
+        left: 18px;
+        margin: 0;
+        overflow: visible;
+        padding: 18px;
+        position: absolute;
+        top: 18px;
+        white-space: normal;
+        width: auto;
+        z-index: 5;
+      }
+
+      main {
+        padding-block: 1.75rem 3.625rem;
+        position: relative;
+      }
+
+      .container {
+        --gutter: 1.25rem;
+        --measure: none;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .art-main {
+        height: auto;
+        max-width: 28rem;
+        width: 100%;
+      }
+
+      .art-assistant {
+        display: none;
+      }
+
+      .error {
+        max-width: 65ch;
+        position: relative;
+      }
+
+      .error * {
+        margin-block: 0;
+      }
+
+      .error h1 {
+        color: var(--bds-color-blue-medium);
+        font-size: 1.875rem;
+        font-weight: normal;
+      }
+
+      .error p {
+        font-size: 1.25rem;
+      }
+
+      .error ul {
+        list-style-type: none;
+        padding-inline-start: 0;
+      }
+
+      @media (min-width: 48em) {
+        .container {
+          --measure: 45rem;
+          flex-direction: row;
+        }
+
+        .art-main {
+          order: -1;
+        }
+      }
+
+      @media (min-width: 62em) {
+        .container {
+          --measure: 58.75rem;
+        }
+      }
+
+      @media (min-width: 75em) {
+        .container {
+          --measure: 71.25rem;
+        }
+
+        .art-main {
+          max-width: 38.75rem;
+        }
+
+        .art-assistant {
+          --stack-space: 0;
+          bottom: 0;
+          display: block;
+          position: absolute;
+          right: 25%;
+          transform: translateY(150px);
+          width: 6.8rem;
+        }
+      }
+    </style>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      :root {
+        --bds-color-blue-dark: #002f6c;
+        --bds-color-blue-light: #00afd7;
+        --bds-color-white: #ffffff;
+        --bds-color-blue-medium: #007398;
+      }
+
+      .center {
+        box-sizing: content-box;
+        margin-inline: auto;
+        max-inline-size: var(--measure, 60ch);
+        padding-inline: var(--gutter, 1rem);
+      }
+
+      .cluster {
+        align-items: var(--cluster-vertical-alignment, center);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gutter, 1rem);
+        justify-content: var(--cluster-horizontal-alignment, flex-start);
+      }
+
+      .stack > * {
+        margin-block-end: 0;
+        margin-block-start: 0;
+      }
+
+      .stack > * + * {
+        margin-block-start: var(--stack-space, 1rem);
+      }
+
+      .bg-blue-light-5 {
+        background: #f2fbfd;
+      }
+
+      .text-blue-brand {
+        color: #005f86;
+      }
+
+      .font-bold {
+        font-weight: bold;
+      }
+
+      .text-size-10 {
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <div id="iabbb-header-placeholder"></div>
+    <main class="bg-blue-light-5" id="content">
+      <div class="container | center">
+        <div class="error | stack">
+          <h1>Whoops! Page not found!</h1>
+          <p style="--stack-space: 0.5rem">
+            It may have moved or no longer exists, but the good news is we're working on it!
+          </p>
+          <p>In the meantime, let's get you where you want to go:</p>
+          <ul class="cluster | font-bold" style="--stack-space: 0.5rem">
+            <li>
+              <a href="https://www.bbb.org/search">Search for a Business</a>
+            </li>
+            <li>
+              <a href="https://www.bbb.org/file-a-complaint">File a Complaint</a>
+            </li>
+            <li>
+              <a href="https://bbb.org/all/business-resources">Resources for Businesses</a>
+            </li>
+          </ul>
+          <p style="--stack-space: 0.5rem">
+            Based on your geographic location, BBB.org may not be available to you.
+          </p>
+          <img
+            alt=""
+            class="art-assistant"
+            height="133"
+            loading="lazy"
+            src="https://m.bbb.org/terminuscontent/dist/img/404-icon__254w.png?tx=w_109"
+            width="109"
+          />
+        </div>
+        <img
+          alt=""
+          class="art-main"
+          height="482"
+          src="https://m.bbb.org/terminuscontent/dist/img/404-logo__600w.png?tx=w_600"
+          width="600"
+        />
+      </div>
+    </main>
+    <div id="iabbb-footer-placeholder"></div>
+    <script async src="/TerminusContent/dist/hf.min.js"></script>
+  </body>
+</html>
