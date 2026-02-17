@@ -16,6 +16,7 @@
   
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -31,11 +32,11 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 text-base leading-relaxed">
+<body class="bg-white text-gray-800 text-lg leading-loose">
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-sm text-gray-500 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -49,17 +50,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -68,13 +69,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -129,7 +130,7 @@
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">Designed for Professionals Like You</h2>
-      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
         We understand the unique requirements and timeline pressures of estate administration.
       </p>
       
@@ -139,28 +140,28 @@
             <span class="text-3xl">⚖️</span>
           </div>
           <h3 class="font-bold mb-2">Professional Trustees</h3>
-          <p class="text-gray-600 text-sm">Trust administration & asset liquidation</p>
+          <p class="text-gray-700">Trust administration & asset liquidation</p>
         </div>
         <div class="text-center p-6">
           <div class="w-16 h-16 bg-tlh-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-3xl">📜</span>
           </div>
           <h3 class="font-bold mb-2">Estate Attorneys</h3>
-          <p class="text-gray-600 text-sm">Probate & estate settlement support</p>
+          <p class="text-gray-700">Probate & estate settlement support</p>
         </div>
         <div class="text-center p-6">
           <div class="w-16 h-16 bg-tlh-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-3xl">🏛️</span>
           </div>
           <h3 class="font-bold mb-2">Conservators</h3>
-          <p class="text-gray-600 text-sm">Property management & downsizing</p>
+          <p class="text-gray-700">Property management & downsizing</p>
         </div>
         <div class="text-center p-6">
           <div class="w-16 h-16 bg-tlh-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-3xl">💼</span>
           </div>
           <h3 class="font-bold mb-2">Estate Executors</h3>
-          <p class="text-gray-600 text-sm">Complete estate liquidation</p>
+          <p class="text-gray-700">Complete estate liquidation</p>
         </div>
       </div>
     </div>
@@ -172,7 +173,7 @@
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 class="text-3xl font-bold mb-6">Professional Estate Sale Services</h2>
-          <p class="text-gray-600 mb-6">
+          <p class="text-gray-700 mb-6">
             From everyday products to priceless heirlooms, families throughout Southern California rely on True Legacy to responsibly sell the contents of their homes. With estate services that respect their legacy, we'll help your clients navigate the uncertainty of life transition with confidence.
           </p>
           
@@ -181,35 +182,35 @@
               <span class="text-tlh-teal text-xl">✓</span>
               <div>
                 <h4 class="font-semibold">Thorough Valuation</h4>
-                <p class="text-gray-600 text-sm">Detailed inventory and fair market pricing for all items</p>
+                <p class="text-gray-700">Detailed inventory and fair market pricing for all items</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
               <span class="text-tlh-teal text-xl">✓</span>
               <div>
                 <h4 class="font-semibold">Professional Staging</h4>
-                <p class="text-gray-600 text-sm">Items displayed to maximize sale potential</p>
+                <p class="text-gray-700">Items displayed to maximize sale potential</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
               <span class="text-tlh-teal text-xl">✓</span>
               <div>
                 <h4 class="font-semibold">Appraisal of Family Treasures</h4>
-                <p class="text-gray-600 text-sm">Expert identification of valuable antiques and collectibles</p>
+                <p class="text-gray-700">Expert identification of valuable antiques and collectibles</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
               <span class="text-tlh-teal text-xl">✓</span>
               <div>
                 <h4 class="font-semibold">Comprehensive Advertising</h4>
-                <p class="text-gray-600 text-sm">Multi-platform marketing to attract qualified buyers</p>
+                <p class="text-gray-700">Multi-platform marketing to attract qualified buyers</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
               <span class="text-tlh-teal text-xl">✓</span>
               <div>
                 <h4 class="font-semibold">Total Management</h4>
-                <p class="text-gray-600 text-sm">End-to-end handling from setup to cleanout</p>
+                <p class="text-gray-700">End-to-end handling from setup to cleanout</p>
               </div>
             </div>
           </div>
@@ -286,13 +287,13 @@
         
         <div class="order-1 md:order-2">
           <h2 class="text-3xl font-bold mb-6">Cash Home Offers for Estates</h2>
-          <p class="text-gray-600 mb-6">
+          <p class="text-gray-700 mb-6">
             Selling your client's home for cash takes away the burdens of a traditional sale. We offer a guaranteed closing date, no commissions or closing costs, and will buy any home in any condition so that your client can get back to what matters most—family.
           </p>
-          <p class="text-gray-600 mb-6">
+          <p class="text-gray-700 mb-6">
             <strong>Perfect for estate settlements when:</strong>
           </p>
-          <ul class="space-y-2 text-gray-600 mb-6">
+          <ul class="space-y-2 text-gray-700 mb-6">
             <li>• Timeline is critical for distribution</li>
             <li>• Property needs significant repairs</li>
             <li>• Heirs are out of state</li>
@@ -302,7 +303,7 @@
           <a href="cash-offers.html" class="text-tlh-teal font-semibold hover:underline">
             Learn more about our cash offer program →
           </a>
-          <span class="mx-2 text-gray-400">|</span>
+          <span class="mx-2 text-gray-300">|</span>
           <a href="estate-sales.html" class="text-tlh-teal font-semibold hover:underline">
             Estate sale services →
           </a>
@@ -320,21 +321,21 @@
         <div class="bg-white rounded-xl p-8 shadow-sm">
           <span class="text-4xl mb-4 block">📋</span>
           <h3 class="text-xl font-bold mb-3">Detailed Documentation</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             Complete inventory lists, sales reports, and donation receipts for your records and court filings.
           </p>
         </div>
         <div class="bg-white rounded-xl p-8 shadow-sm">
           <span class="text-4xl mb-4 block">⏱️</span>
           <h3 class="text-xl font-bold mb-3">Efficient Timelines</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             We understand probate deadlines. Properties cleared and ready within 2-3 weeks of engagement.
           </p>
         </div>
         <div class="bg-white rounded-xl p-8 shadow-sm">
           <span class="text-4xl mb-4 block">💬</span>
           <h3 class="text-xl font-bold mb-3">Clear Communication</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             Regular updates and a dedicated point of contact for every project. No surprises.
           </p>
         </div>
@@ -354,7 +355,7 @@
         </p>
         <div class="text-center">
           <p class="font-bold">— Professional Fiduciary</p>
-          <p class="text-gray-400">San Diego County</p>
+          <p class="text-gray-300">San Diego County</p>
         </div>
       </div>
     </div>
@@ -365,7 +366,7 @@
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-8">
         <h2 class="text-3xl font-bold mb-4">Let's Discuss Your Client's Needs</h2>
-        <p class="text-gray-600">
+        <p class="text-gray-700">
           Schedule a consultation to learn how we can support your fiduciary services.
         </p>
       </div>
@@ -374,19 +375,19 @@
         <form action="mailto:info@truelegacyhomes.com?subject=Fiduciary%20Services%20Inquiry" method="post" enctype="text/plain" class="space-y-6">
           <div class="grid md:grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-semibold mb-2">Your Name *</label>
+              <label class="block text-base font-semibold mb-2">Your Name *</label>
               <input 
                 type="text" 
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
+                class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
                 placeholder="Full name"
               >
             </div>
             <div>
-              <label class="block text-sm font-semibold mb-2">Company/Firm Name</label>
+              <label class="block text-base font-semibold mb-2">Company/Firm Name</label>
               <input 
                 type="text"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
+                class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
                 placeholder="Your firm"
               >
             </div>
@@ -394,30 +395,30 @@
           
           <div class="grid md:grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-semibold mb-2">Email *</label>
+              <label class="block text-base font-semibold mb-2">Email *</label>
               <input 
                 type="email" 
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
+                class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
                 placeholder="email@firm.com"
               >
             </div>
             <div>
-              <label class="block text-sm font-semibold mb-2">Phone *</label>
+              <label class="block text-base font-semibold mb-2">Phone *</label>
               <input 
                 type="tel" 
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
+                class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
                 placeholder="(555) 123-4567"
               >
             </div>
           </div>
           
           <div>
-            <label class="block text-sm font-semibold mb-2">Your Role *</label>
+            <label class="block text-base font-semibold mb-2">Your Role *</label>
             <select 
               required
-              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent bg-white"
+              class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent bg-white"
             >
               <option value="">Select your role</option>
               <option value="trustee">Professional Trustee</option>
@@ -429,37 +430,37 @@
           </div>
           
           <div>
-            <label class="block text-sm font-semibold mb-2">Services Needed</label>
+            <label class="block text-base font-semibold mb-2">Services Needed</label>
             <div class="grid md:grid-cols-2 gap-2">
               <label class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
-                <input type="checkbox" class="rounded text-tlh-teal">
+                <input type="checkbox" class="w-5 h-5 rounded text-tlh-teal">
                 <span>Estate Sale</span>
               </label>
               <label class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
-                <input type="checkbox" class="rounded text-tlh-teal">
+                <input type="checkbox" class="w-5 h-5 rounded text-tlh-teal">
                 <span>Cash Home Offer</span>
               </label>
               <label class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
-                <input type="checkbox" class="rounded text-tlh-teal">
+                <input type="checkbox" class="w-5 h-5 rounded text-tlh-teal">
                 <span>Property Cleanout</span>
               </label>
               <label class="flex items-center gap-2 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
-                <input type="checkbox" class="rounded text-tlh-teal">
+                <input type="checkbox" class="w-5 h-5 rounded text-tlh-teal">
                 <span>Appraisal Services</span>
               </label>
             </div>
           </div>
           
           <div>
-            <label class="block text-sm font-semibold mb-2">Additional Details</label>
+            <label class="block text-base font-semibold mb-2">Additional Details</label>
             <textarea 
               rows="4"
-              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
+              class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
               placeholder="Tell us about the property, timeline, or any specific requirements..."
             ></textarea>
           </div>
           
-          <button type="submit" class="w-full bg-tlh-teal text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal-dark">
+          <button type="submit" style="min-height: 52px;" class="w-full bg-tlh-teal text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal-dark">
             Get Guidance
           </button>
         </form>
@@ -468,12 +469,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <img src="images/tlhLOGO.png" alt="True Legacy Homes" class="h-16 mb-4 brightness-200">
-          <p class="text-sm">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <p class="text-base">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
           <div class="flex gap-4 mt-4">
             <a href="https://facebook.com/truelegacyhomes" aria-label="Facebook"><img src="images/facebook-logo-black.png" alt="Facebook" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
             <a href="https://instagram.com/truelegacyhomes" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
@@ -481,7 +482,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="estate-sales.html" class="hover:text-white">Estate Sales</a></li>
             <li><a href="care-placement.html" class="hover:text-white">Care Placement</a></li>
             <li><a href="cash-offers.html" class="hover:text-white">Cash Home Offers</a></li>
@@ -489,7 +490,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Partners</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="fiduciaries.html" class="text-white">Fiduciaries</a></li>
             <li><a href="refer-a-friend.html" class="hover:text-white">Referral Program</a></li>
             <li><a href="locations.html" class="hover:text-white">Locations</a></li>
@@ -497,14 +498,14 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="tel:6194501702" class="hover:text-white">(619) 450-1702</a></li>
             <li><a href="mailto:info@truelegacyhomes.com" class="hover:text-white">info@truelegacyhomes.com</a></li>
             <li class="pt-2">3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
         <p>© 2026 True Legacy Homes. All rights reserved. · <a href="privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="terms.html" class="hover:text-white">Terms of Service</a></p>
       </div>
     </div>

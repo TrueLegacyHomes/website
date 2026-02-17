@@ -68,6 +68,7 @@
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -82,11 +83,11 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 text-base leading-relaxed">
+<body class="bg-white text-gray-800 text-lg leading-loose">
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-base text-gray-600 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -100,17 +101,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -119,13 +120,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -146,20 +147,20 @@
       <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
           <!-- Location badge - mobile first -->
-          <div class="text-base text-gray-600 mb-3 md:mb-4">
+          <div class="text-base text-gray-700 mb-3 md:mb-4">
             📍 Serving San Diego • Orange County • Los Angeles
           </div>
           <h1 class="text-3xl md:text-6xl font-bold text-tlh-dark mb-4 md:mb-6 leading-tight">
             Your trusted partner for what comes next.
           </h1>
-          <p class="text-lg md:text-2xl text-gray-600 mb-6 md:mb-8">
+          <p class="text-lg md:text-2xl text-gray-700 mb-6 md:mb-8">
             From estate sales to senior care placement to selling the home—we help families navigate life's biggest transitions with care and clarity.
           </p>
           <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
-            <a href="schedule-consult.html" class="bg-tlh-teal text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal-dark text-center">
+            <a href="schedule-consult.html" class="bg-tlh-teal text-white px-8 py-4 md:py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal-dark text-center">
               Get Guidance Today
             </a>
-            <a href="tel:6194501702" class="border-2 border-tlh-teal text-tlh-teal px-6 md:px-8 py-3 md:py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal hover:text-white text-center">
+            <a href="tel:6194501702" class="border-2 border-tlh-teal text-tlh-teal px-8 py-4 md:py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal hover:text-white text-center">
               Call (619) 450-1702
             </a>
           </div>
@@ -167,11 +168,11 @@
           <div class="mt-6 md:mt-8 flex flex-wrap items-center gap-3 md:gap-4">
             <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-full shadow-sm">
               <span class="text-yellow-400">★★★★★</span>
-              <span class="text-gray-600">329 Reviews</span>
+              <span class="text-gray-700">329 Reviews</span>
             </div>
             <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-full shadow-sm">
               <span class="font-bold text-blue-800">BBB</span>
-              <span class="text-gray-600">A+ Rated</span>
+              <span class="text-gray-700">A+ Rated</span>
             </div>
           </div>
         </div>
@@ -218,7 +219,7 @@
           </div>
           <div class="text-tlh-teal font-bold text-lg mb-2">Step 1</div>
           <h3 class="font-bold text-xl mb-2">We Talk</h3>
-          <p class="text-gray-600">Share what's happening. No pressure—just a conversation to understand your situation.</p>
+          <p class="text-gray-700">Share what's happening. No pressure—just a conversation to understand your situation.</p>
         </div>
         <div>
           <div class="w-16 h-16 bg-tlh-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -226,7 +227,7 @@
           </div>
           <div class="text-tlh-teal font-bold text-lg mb-2">Step 2</div>
           <h3 class="font-bold text-xl mb-2">We Plan Together</h3>
-          <p class="text-gray-600">We'll recommend the right path forward and create a clear plan that fits your timeline.</p>
+          <p class="text-gray-700">We'll recommend the right path forward and create a clear plan that fits your timeline.</p>
         </div>
         <div>
           <div class="w-16 h-16 bg-tlh-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -234,7 +235,7 @@
           </div>
           <div class="text-tlh-teal font-bold text-lg mb-2">Step 3</div>
           <h3 class="font-bold text-xl mb-2">We Handle Everything</h3>
-          <p class="text-gray-600">Relax while our team takes care of the details—with updates every step of the way.</p>
+          <p class="text-gray-700">Relax while our team takes care of the details—with updates every step of the way.</p>
         </div>
       </div>
     </div>
@@ -244,22 +245,22 @@
   <section class="py-10 md:py-14 bg-gray-50">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold text-center mb-3">We've Helped Families Like Yours</h2>
-      <p class="text-center text-gray-600 text-lg mb-8">No matter what brought you here, we understand.</p>
+      <p class="text-center text-gray-700 text-lg mb-8">No matter what brought you here, we understand.</p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white rounded-xl p-6 text-center shadow-sm">
           <div class="text-4xl mb-3">💔</div>
           <h3 class="font-bold text-lg mb-2">"We just lost a loved one..."</h3>
-          <p class="text-gray-600">We'll handle the estate with care and dignity, so you can focus on your family.</p>
+          <p class="text-gray-700">We'll handle the estate with care and dignity, so you can focus on your family.</p>
         </div>
         <div class="bg-white rounded-xl p-6 text-center shadow-sm">
           <div class="text-4xl mb-3">🏥</div>
           <h3 class="font-bold text-lg mb-2">"Mom needs more care..."</h3>
-          <p class="text-gray-600">We'll help find the right care community and manage the transition smoothly.</p>
+          <p class="text-gray-700">We'll help find the right care community and manage the transition smoothly.</p>
         </div>
         <div class="bg-white rounded-xl p-6 text-center shadow-sm">
           <div class="text-4xl mb-3">🏠</div>
           <h3 class="font-bold text-lg mb-2">"We inherited a house..."</h3>
-          <p class="text-gray-600">We can buy it as-is or help you sell after the estate sale. Your choice.</p>
+          <p class="text-gray-700">We can buy it as-is or help you sell after the estate sale. Your choice.</p>
         </div>
       </div>
     </div>
@@ -269,7 +270,7 @@
   <section class="py-12 md:py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">Three Services. One Mission.</h2>
-      <p class="text-center text-gray-600 mb-12">Helping Families Move Forward</p>
+      <p class="text-center text-gray-700 mb-12">Helping Families Move Forward</p>
       
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Estate Sales - Teal -->
@@ -285,7 +286,7 @@
               </div>
               <h3 class="text-xl font-bold text-tlh-dark group-hover:text-tlh-teal transition">Estate Sale Management</h3>
             </div>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-700 mb-4">
               Our professional teams will take your home from cluttered to clear in two weeks or less — and honor your family's legacy along the way.
             </p>
             <span class="text-tlh-teal font-semibold group-hover:underline">Learn more →</span>
@@ -305,7 +306,7 @@
               </div>
               <h3 class="text-xl font-bold text-tlh-dark group-hover:text-[#A47EAF] transition">Care Placement</h3>
             </div>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-700 mb-4">
               We guide you to trusted senior care communities that match your loved one's needs—so you can focus on what matters most.
             </p>
             <span class="font-semibold group-hover:underline" style="color: #A47EAF;">Learn more →</span>
@@ -323,9 +324,9 @@
               <div class="w-10 h-10 rounded-full bg-tlh-dark/10 flex items-center justify-center">
                 <span class="text-xl">🏠</span>
               </div>
-              <h3 class="text-xl font-bold text-tlh-dark group-hover:text-gray-600 transition">Cash Home Offers</h3>
+              <h3 class="text-xl font-bold text-tlh-dark group-hover:text-gray-700 transition">Cash Home Offers</h3>
             </div>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-700 mb-4">
               Guaranteed closing date, no commissions or closing costs. We buy any home in any condition so you can focus on your family.
             </p>
             <span class="text-tlh-dark font-semibold group-hover:underline">Learn more →</span>
@@ -339,7 +340,7 @@
   <section class="bg-tlh-warm py-10 md:py-12">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Not sure which is right for you?</h2>
-      <p class="text-gray-600 mb-6">
+      <p class="text-gray-700 mb-6">
         That's completely normal. Many families need a combination of our services. Let's talk through your situation—no pressure, just guidance.
       </p>
       <a href="tel:6194501702" class="bg-tlh-dark text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 inline-block">
@@ -357,15 +358,15 @@
         </div>
         <div class="text-center">
           <div class="text-2xl font-bold text-tlh-dark">329+</div>
-          <div class="text-base text-gray-600">5-Star Reviews</div>
+          <div class="text-base text-gray-700">5-Star Reviews</div>
         </div>
         <div class="text-center">
           <div class="text-2xl font-bold text-tlh-dark">15+</div>
-          <div class="text-base text-gray-600">Years in Business</div>
+          <div class="text-base text-gray-700">Years in Business</div>
         </div>
         <div class="text-center">
           <div class="text-2xl font-bold text-tlh-dark">2,000+</div>
-          <div class="text-base text-gray-600">Families Helped</div>
+          <div class="text-base text-gray-700">Families Helped</div>
         </div>
       </div>
     </div>
@@ -375,21 +376,21 @@
   <section class="py-16 md:py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">Trusted by Southern California Families</h2>
-      <p class="text-center text-gray-600 mb-10">Real stories from families we've helped</p>
+      <p class="text-center text-gray-700 mb-10">Real stories from families we've helped</p>
       
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-gray-50 rounded-xl p-8 shadow-sm">
           <div class="flex gap-1 mb-4">
             <span class="text-yellow-400 text-xl">★★★★★</span>
           </div>
-          <p class="text-gray-700 mb-6 italic text-lg leading-relaxed">
+          <p class="text-gray-700 mb-6 italic text-lg leading-loose">
             "Helping our mom transition to assisted living felt overwhelming, but True Legacy Homes made the process smooth and stress-free. Their team was attentive, thoughtful, and truly listened to our family's needs."
           </p>
           <div class="flex items-center">
             <img src="images/margaret-avatar.jpg" alt="Margaret T." class="w-14 h-14 rounded-full object-cover">
             <div class="ml-4">
               <p class="font-bold text-tlh-dark text-lg">Margaret T.</p>
-              <p class="text-base text-gray-600">Care Placement Client · San Diego</p>
+              <p class="text-base text-gray-700">Care Placement Client · San Diego</p>
             </div>
           </div>
         </div>
@@ -398,14 +399,14 @@
           <div class="flex gap-1 mb-4">
             <span class="text-yellow-400 text-xl">★★★★★</span>
           </div>
-          <p class="text-gray-700 mb-6 italic text-lg leading-relaxed">
+          <p class="text-gray-700 mb-6 italic text-lg leading-loose">
             "We inherited our grandparent's estate and had no idea where to start. True Legacy Homes understood what we were going through and provided unwavering support every step of the way."
           </p>
           <div class="flex items-center">
             <img src="images/susan-avatar-new.jpg" alt="Susan K." class="w-14 h-14 rounded-full object-cover">
             <div class="ml-4">
               <p class="font-bold text-tlh-dark text-lg">Susan K.</p>
-              <p class="text-base text-gray-600">Estate Sale Client · Orange County</p>
+              <p class="text-base text-gray-700">Estate Sale Client · Orange County</p>
             </div>
           </div>
         </div>
@@ -425,7 +426,7 @@
         We exist to help families like yours find clarity, peace, and trustworthy solutions during life's most difficult transitions. You don't have to do this alone—we're here to walk with you, every step of the way.
       </p>
       <p class="font-bold text-tlh-teal">— Paul Williamson</p>
-      <p class="text-gray-400">Founder, True Legacy Homes</p>
+      <p class="text-gray-300">Founder, True Legacy Homes</p>
     </div>
   </section>
 
@@ -433,40 +434,40 @@
   <section class="py-20 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-      <p class="text-center text-gray-600 mb-8">Have more questions? <a href="faq.html" class="text-tlh-teal font-semibold hover:underline">See our complete FAQ</a> or <a href="contact.html" class="text-tlh-teal font-semibold hover:underline">contact us</a>.</p>
+      <p class="text-center text-gray-700 mb-8">Have more questions? <a href="faq.html" class="text-tlh-teal font-semibold hover:underline">See our complete FAQ</a> or <a href="contact.html" class="text-tlh-teal font-semibold hover:underline">contact us</a>.</p>
       
       <div class="space-y-4">
         <details class="bg-white rounded-lg p-6 shadow-sm" open>
-          <summary class="font-bold cursor-pointer">How is an estate sale different than a garage sale?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">How is an estate sale different than a garage sale?</summary>
+          <p class="mt-4 text-gray-700">
             An estate sale is basically a garage sale on steroids. Estate sales are used when you want to sell all (or almost all) of the contents of a home—typically when a loved one passes or you need to downsize quickly.
           </p>
         </details>
 
         <details class="bg-white rounded-lg p-6 shadow-sm">
-          <summary class="font-bold cursor-pointer">How many items do I need to have a sale?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">How many items do I need to have a sale?</summary>
+          <p class="mt-4 text-gray-700">
             There are NO item minimums or limits. Even if you only have five items, give us a call.
           </p>
         </details>
 
         <details class="bg-white rounded-lg p-6 shadow-sm">
-          <summary class="font-bold cursor-pointer">Is there a cost for care placement services?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">Is there a cost for care placement services?</summary>
+          <p class="mt-4 text-gray-700">
             No. Our services are free to families. We're paid by the care communities, allowing us to offer unbiased guidance at no charge to you.
           </p>
         </details>
 
         <details class="bg-white rounded-lg p-6 shadow-sm">
-          <summary class="font-bold cursor-pointer">Do I need to make repairs before selling my home?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">Do I need to make repairs before selling my home?</summary>
+          <p class="mt-4 text-gray-700">
             No. We buy homes in any condition—as-is. Whether the house needs updates or a full cleanout, we handle it after closing.
           </p>
         </details>
 
         <details class="bg-white rounded-lg p-6 shadow-sm">
-          <summary class="font-bold cursor-pointer">After the estate sale, is my home completely empty?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">After the estate sale, is my home completely empty?</summary>
+          <p class="mt-4 text-gray-700">
             Yes. We use trash removal services and partnerships with the Salvation Army to donate remaining items. Your home will be completely empty and left broom clean.
           </p>
         </details>
@@ -493,7 +494,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>

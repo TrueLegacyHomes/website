@@ -16,6 +16,7 @@
   
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -31,11 +32,11 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 text-base leading-relaxed">
+<body class="bg-white text-gray-800 text-lg leading-loose">
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-sm text-gray-500 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -49,17 +50,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -68,13 +69,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -95,7 +96,7 @@
       <h1 class="text-4xl md:text-5xl font-bold text-tlh-dark mb-6 leading-tight">
         Premier Estate Sale Services in Southern California
       </h1>
-      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+      <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
         True Legacy Homes is the trusted name in senior transition services and estate sales throughout San Diego, Orange County, and the greater Los Angeles area.
       </p>
     </div>
@@ -116,10 +117,10 @@
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 group-hover:text-tlh-teal transition">San Diego</h3>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-700 mb-4">
               La Jolla, Carlsbad, Encinitas, Del Mar, Carmel Valley, Rancho Bernardo, Poway, Escondido, and more.
             </p>
-            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+            <div class="flex items-center gap-2 text-base text-gray-700 mb-4">
               <span>📍</span>
               <span>3635 Ruffin Rd, Suite 100, San Diego, CA 92123</span>
             </div>
@@ -137,10 +138,10 @@
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 group-hover:text-tlh-teal transition">Orange County</h3>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-700 mb-4">
               Irvine, Anaheim, Laguna Beach, Newport Beach, Huntington Beach, Fullerton, Orange, and more.
             </p>
-            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+            <div class="flex items-center gap-2 text-base text-gray-700 mb-4">
               <span>📍</span>
               <span>15375 Barranca Pkwy, Suite A-107, Irvine, CA 92618</span>
             </div>
@@ -158,10 +159,10 @@
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold mb-3 group-hover:text-tlh-teal transition">Los Angeles</h3>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-700 mb-4">
               Long Beach, Downey, Whittier, Cerritos, Lakewood, Norwalk, La Mirada, Torrance, and more.
             </p>
-            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+            <div class="flex items-center gap-2 text-base text-gray-700 mb-4">
               <span>📍</span>
               <span>5230 Pacific Concourse Dr, Suite 110, LA, CA 90045</span>
             </div>
@@ -200,7 +201,7 @@
         <!-- San Diego -->
         <div>
           <h3 class="text-xl font-bold text-tlh-teal mb-4">San Diego County</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+          <p class="text-gray-700 text-sm leading-relaxed">
             Alpine, Bay Park, Bonita, Bonsall, Carlsbad, Carmel Mountain Ranch, Carmel Valley, Chula Vista, City Heights, Clairemont, College Area, Coronado, Del Mar, Del Mar Heights, East Village, El Cajon, Encinitas, Escondido, Fallbrook, Hillcrest, Imperial Beach, Kearny Mesa, Kensington, La Jolla, La Mesa, Lakeside, Lemon Grove, Linda Vista, Little Italy, Logan Heights, Mira Mesa, Miramar, Mission Beach, Mission Hills, Mission Valley, National City, Normal Heights, North Park, Ocean Beach, Oceanside, Old Town, Otay Mesa, Pacific Beach, Pacific Highlands Ranch, Point Loma, Poway, Rancho Bernardo, Rancho Penasquitos, Rancho Santa Fe, San Diego, San Marcos, Santee, Scripps Ranch, Serra Mesa, Solana Beach, Sorrento Mesa, Sorrento Valley, South Park, Spring Valley, Torrey Highlands, University City, University Heights, Uptown, Vista
           </p>
         </div>
@@ -208,7 +209,7 @@
         <!-- Orange County -->
         <div>
           <h3 class="text-xl font-bold text-orange-500 mb-4">Orange County</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+          <p class="text-gray-700 text-sm leading-relaxed">
             Aliso Viejo, Anaheim, Brea, Buena Park, Costa Mesa, Cypress, Dana Point, Downey, Fountain Valley, Fullerton, Garden Grove, Huntington Beach, Irvine, La Habra, La Palma, Laguna Beach, Laguna Hills, Laguna Niguel, Laguna Woods, Lake Forest, Lakewood, Los Alamitos, Mission Viejo, Newport Beach, Orange, Placentia, Rancho Santa Margarita, San Clemente, San Juan Capistrano, Santa Ana, Seal Beach, Stanton, Tustin, Villa Park, Westminster, Yorba Linda
           </p>
         </div>
@@ -216,7 +217,7 @@
         <!-- Los Angeles -->
         <div>
           <h3 class="text-xl font-bold text-purple-500 mb-4">Southern Los Angeles</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+          <p class="text-gray-700 text-sm leading-relaxed">
             Bellflower, Cerritos, Downey, East Los Angeles, La Mirada, Lakewood, Long Beach, Montebello, Norwalk, Paramount, Rowland Heights, Santa Fe Springs, Signal Hill, Torrance, Whittier
           </p>
         </div>
@@ -228,7 +229,7 @@
   <section class="py-16 bg-tlh-warm">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-4">Not in These Areas?</h2>
-      <p class="text-xl text-gray-600 mb-8">
+      <p class="text-xl text-gray-700 mb-8">
         We're always expanding! Give us a call and we'll let you know if we can help—or connect you with a trusted partner in your area.
       </p>
       <a href="tel:6194501702" class="inline-flex items-center gap-3 bg-tlh-teal text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-tlh-teal-dark">
@@ -247,14 +248,14 @@
           <div class="flex gap-1 mb-4">
             <span class="text-yellow-400">★★★★★</span>
           </div>
-          <p class="text-gray-600 mb-6 italic">
+          <p class="text-gray-700 mb-6 italic">
             "Helping our mom transition to assisted living felt overwhelming, but True Legacy Homes made the process smooth and stress-free. Their team was attentive, thoughtful, and truly listened to our family's needs, connecting us with the right community. Best service in San Diego!"
           </p>
           <div class="flex items-center">
             <div class="w-12 h-12 bg-tlh-teal rounded-full flex items-center justify-center text-white font-bold">M</div>
             <div class="ml-4">
               <p class="font-bold">Margaret</p>
-              <p class="text-sm text-gray-500">Care Placement Client • San Diego</p>
+              <p class="text-base text-gray-700">Care Placement Client • San Diego</p>
             </div>
           </div>
         </div>
@@ -263,14 +264,14 @@
           <div class="flex gap-1 mb-4">
             <span class="text-yellow-400">★★★★★</span>
           </div>
-          <p class="text-gray-600 mb-6 italic">
+          <p class="text-gray-700 mb-6 italic">
             "We just inherited our grandparent's Orange County estate after they passed, and True Legacy Homes truly understood what we were going through. They provided unwavering support, compassion, and personalized guidance throughout the entire process."
           </p>
           <div class="flex items-center">
             <div class="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center text-white font-bold">S</div>
             <div class="ml-4">
               <p class="font-bold">Susan</p>
-              <p class="text-sm text-gray-500">Cash Offer Client • Orange County</p>
+              <p class="text-base text-gray-700">Cash Offer Client • Orange County</p>
             </div>
           </div>
         </div>
@@ -300,12 +301,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <img src="images/tlhLOGO.png" alt="True Legacy Homes" class="h-16 mb-4 brightness-200">
-          <p class="text-sm">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <p class="text-base">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
           <div class="flex gap-4 mt-4">
             <a href="https://facebook.com/truelegacyhomes" aria-label="Facebook"><img src="images/facebook-logo-black.png" alt="Facebook" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
             <a href="https://instagram.com/truelegacyhomes" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
@@ -313,7 +314,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="estate-sales.html" class="hover:text-white">Estate Sales</a></li>
             <li><a href="care-placement.html" class="hover:text-white">Care Placement</a></li>
             <li><a href="cash-offers.html" class="hover:text-white">Cash Home Offers</a></li>
@@ -321,7 +322,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Locations</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="locations/san-diego.html" class="hover:text-white">San Diego</a></li>
             <li><a href="locations/orange-county.html" class="hover:text-white">Orange County</a></li>
             <li><a href="locations/los-angeles.html" class="hover:text-white">Los Angeles</a></li>
@@ -329,14 +330,14 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="tel:6194501702" class="hover:text-white">(619) 450-1702</a></li>
             <li><a href="mailto:info@truelegacyhomes.com" class="hover:text-white">info@truelegacyhomes.com</a></li>
             <li class="pt-2">3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
         <p>© 2026 True Legacy Homes. All rights reserved. · <a href="privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="terms.html" class="hover:text-white">Terms of Service</a></p>
       </div>
     </div>

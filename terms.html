@@ -17,6 +17,7 @@
   
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -32,11 +33,11 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 text-base leading-relaxed">
+<body class="bg-white text-gray-800 text-lg leading-loose">
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-sm text-gray-500 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -50,17 +51,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -69,13 +70,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -94,7 +95,7 @@
   <section class="bg-gradient-to-br from-tlh-warm to-white py-12">
     <div class="max-w-4xl mx-auto px-4">
       <h1 class="text-4xl font-bold text-tlh-dark mb-4">Terms of Service</h1>
-      <p class="text-gray-600">Last updated: February 16, 2026</p>
+      <p class="text-gray-700">Last updated: February 16, 2026</p>
     </div>
   </section>
 
@@ -103,28 +104,28 @@
     <div class="max-w-4xl mx-auto px-4">
       <div class="prose prose-lg max-w-none">
         
-        <p class="text-gray-600 mb-8">
+        <p class="text-gray-700 mb-8">
           Welcome to True Legacy Homes. These Terms of Service ("Terms") govern your use of our website and services. By accessing our website or using our services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our website or services.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">1. Our Services</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           True Legacy Homes provides the following services in Southern California:
         </p>
-        <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+        <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
           <li><strong>Estate Sale Management:</strong> Professional estate sale services including decluttering, organizing, pricing, staging, and selling household contents</li>
           <li><strong>Senior Care Placement:</strong> Assistance finding appropriate assisted living, memory care, or board-and-care facilities for loved ones</li>
           <li><strong>Cash Home Offers:</strong> Cash purchase offers for homes in any condition</li>
         </ul>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           Specific terms for each service will be provided in separate service agreements at the time of engagement.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">2. Use of Website</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           By using our website, you agree to:
         </p>
-        <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+        <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
           <li>Provide accurate information when filling out forms or contacting us</li>
           <li>Use the website only for lawful purposes</li>
           <li>Not attempt to interfere with or disrupt the website's operation</li>
@@ -133,25 +134,25 @@
         </ul>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">3. Service Agreements</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           These website Terms of Service are separate from any service-specific agreements. When you engage our services, you will enter into a separate written agreement that details:
         </p>
-        <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+        <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
           <li>Scope of services to be provided</li>
           <li>Fees and payment terms</li>
           <li>Timelines and scheduling</li>
           <li>Responsibilities of each party</li>
           <li>Cancellation policies</li>
         </ul>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           The service agreement will govern that specific engagement.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">4. Consultations</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           We offer free, no-obligation consultations to discuss your needs. During consultations:
         </p>
-        <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+        <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
           <li>We will assess your situation and explain our services</li>
           <li>We may provide preliminary estimates or recommendations</li>
           <li>No commitment is required from either party</li>
@@ -159,23 +160,23 @@
         </ul>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">5. Intellectual Property</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of True Legacy Homes or its licensors and is protected by copyright and other intellectual property laws.
         </p>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           You may not reproduce, distribute, modify, or create derivative works from any content on this website without our prior written permission.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">6. Third-Party Links</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           Our website may contain links to third-party websites or services. These links are provided for your convenience only. We do not control, endorse, or assume responsibility for any third-party content or websites.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">7. Disclaimer of Warranties</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           Our website and informational content are provided "as is" without warranties of any kind, either express or implied. We do not warrant that:
         </p>
-        <ul class="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+        <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
           <li>The website will be uninterrupted or error-free</li>
           <li>Defects will be corrected</li>
           <li>The website is free of viruses or harmful components</li>
@@ -183,59 +184,59 @@
         </ul>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">8. Limitation of Liability</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           To the fullest extent permitted by law, True Legacy Homes shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our website.
         </p>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           Our total liability for any claims related to your use of the website shall not exceed $100.
         </p>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           Liability for services provided is governed by the applicable service agreement.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">9. Indemnification</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           You agree to indemnify and hold harmless True Legacy Homes, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorney's fees) arising from your use of the website or violation of these Terms.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">10. Dispute Resolution</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           Any dispute arising from these Terms or your use of our website shall be governed by the laws of the State of California, without regard to conflict of law principles.
         </p>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           We encourage you to contact us first to resolve any issues informally. If a dispute cannot be resolved informally, you agree that any legal action shall be brought exclusively in the state or federal courts located in San Diego County, California.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">11. Modifications</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to our website. Your continued use of the website after any changes constitutes acceptance of the new Terms.
         </p>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           We encourage you to review these Terms periodically for any updates.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">12. Severability</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that the remaining provisions remain in full force and effect.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">13. Entire Agreement</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           These Terms, together with our Privacy Policy, constitute the entire agreement between you and True Legacy Homes regarding your use of our website. These Terms supersede any prior agreements or understandings regarding the subject matter herein.
         </p>
 
         <h2 class="text-2xl font-bold text-tlh-dark mt-12 mb-4">14. Contact Information</h2>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-700 mb-4">
           If you have any questions about these Terms, please contact us:
         </p>
         <div class="bg-gray-50 rounded-lg p-6 mt-4">
           <p class="font-bold text-tlh-dark mb-2">True Legacy Homes</p>
-          <p class="text-gray-600">3635 Ruffin Rd, Suite 100</p>
-          <p class="text-gray-600">San Diego, CA 92123</p>
-          <p class="text-gray-600 mt-4">
+          <p class="text-gray-700">3635 Ruffin Rd, Suite 100</p>
+          <p class="text-gray-700">San Diego, CA 92123</p>
+          <p class="text-gray-700 mt-4">
             <strong>Phone:</strong> <a href="tel:6194501702" class="text-tlh-teal hover:underline">(619) 450-1702</a>
           </p>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             <strong>Email:</strong> <a href="mailto:info@truelegacyhomes.com" class="text-tlh-teal hover:underline">info@truelegacyhomes.com</a>
           </p>
         </div>
@@ -245,12 +246,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <img src="images/tlhLOGO.png" alt="True Legacy Homes" class="h-16 mb-4 brightness-200">
-          <p class="text-sm">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <p class="text-base">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
           <div class="flex gap-4 mt-4">
             <a href="https://facebook.com/truelegacyhomes"><img src="images/facebook-logo-black.png" alt="Facebook" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
             <a href="https://instagram.com/truelegacyhomes"><img src="images/instagram.png" alt="Instagram" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
@@ -258,7 +259,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="estate-sales.html" class="hover:text-white">Estate Sales</a></li>
             <li><a href="care-placement.html" class="hover:text-white">Care Placement</a></li>
             <li><a href="cash-offers.html" class="hover:text-white">Cash Home Offers</a></li>
@@ -266,7 +267,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Resources</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="blog.html" class="hover:text-white">Blog</a></li>
             <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
             <li><a href="testimonials.html" class="hover:text-white">Testimonials</a></li>
@@ -274,14 +275,14 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="tel:6194501702" class="hover:text-white">(619) 450-1702</a></li>
             <li><a href="mailto:info@truelegacyhomes.com" class="hover:text-white">info@truelegacyhomes.com</a></li>
             <li>3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
         <p>© 2026 True Legacy Homes. All rights reserved. · <a href="privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="terms.html" class="hover:text-white">Terms of Service</a></p>
       </div>
     </div>

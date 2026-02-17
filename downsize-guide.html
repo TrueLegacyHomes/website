@@ -16,6 +16,7 @@
   
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -31,11 +32,11 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 text-base leading-relaxed">
+<body class="bg-white text-gray-800 text-lg leading-loose">
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-sm text-gray-500 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -49,17 +50,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -68,13 +69,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -100,13 +101,13 @@
           <h1 class="text-4xl md:text-5xl font-bold text-tlh-dark mb-6 leading-tight">
             The Ultimate Guide to Downsizing Without the Overwhelm
           </h1>
-          <p class="text-xl text-gray-600 mb-8">
+          <p class="text-xl text-gray-700 mb-8">
             Practical, compassionate advice for transitioning to your next chapter—whether you're moving to a smaller home, helping a parent, or managing an inherited estate.
           </p>
           
           <div class="flex items-center gap-4 mb-8">
             <img src="images/stars.png" alt="5 stars" class="h-6">
-            <span class="text-gray-600">Trusted by 2,000+ families</span>
+            <span class="text-gray-700">Trusted by 2,000+ families</span>
           </div>
         </div>
         
@@ -117,7 +118,7 @@
               <span class="text-white text-4xl">📖</span>
             </div>
             <h2 class="text-2xl font-bold">Get Your Free Guide</h2>
-            <p class="text-gray-600">Instant download • No spam • Unsubscribe anytime</p>
+            <p class="text-gray-700">Instant download • No spam • Unsubscribe anytime</p>
           </div>
           
           <form action="https://truelegacyhomes.us12.list-manage.com/subscribe/post?u=8fb80e36c3f769c67994988e71&amp;id=eb811b621b" method="post" class="space-y-4">
@@ -129,7 +130,7 @@
                 name="FNAME"
                 placeholder="First Name *" 
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
+                class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
               >
             </div>
             <div>
@@ -138,11 +139,11 @@
                 name="EMAIL"
                 placeholder="Email Address *" 
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
+                class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
               >
             </div>
             <div>
-              <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent bg-white">
+              <select class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent bg-white">
                 <option value="">What's your situation?</option>
                 <option value="self">I'm downsizing myself</option>
                 <option value="parent">Helping a parent downsize</option>
@@ -150,10 +151,10 @@
                 <option value="planning">Just planning ahead</option>
               </select>
             </div>
-            <button type="submit" class="w-full bg-tlh-teal text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal-dark">
+            <button type="submit" style="min-height: 52px;" class="w-full bg-tlh-teal text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal-dark">
               Download Free Guide →
             </button>
-            <p class="text-xs text-gray-500 text-center">
+            <p class="text-sm text-gray-700 text-center">
               🔒 We respect your privacy. Your email is safe with us.
             </p>
           </form>
@@ -166,7 +167,7 @@
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">What's Inside the Guide</h2>
-      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
         25+ pages of practical advice, checklists, and compassionate guidance
       </p>
       
@@ -174,7 +175,7 @@
         <div class="bg-gray-50 rounded-xl p-6">
           <span class="text-3xl mb-3 block">📋</span>
           <h3 class="font-bold text-lg mb-2">Room-by-Room Checklist</h3>
-          <p class="text-gray-600 text-sm">
+          <p class="text-gray-700">
             A systematic approach to decluttering every room without feeling overwhelmed.
           </p>
         </div>
@@ -182,7 +183,7 @@
         <div class="bg-gray-50 rounded-xl p-6">
           <span class="text-3xl mb-3 block">🗓️</span>
           <h3 class="font-bold text-lg mb-2">90-Day Timeline</h3>
-          <p class="text-gray-600 text-sm">
+          <p class="text-gray-700">
             Week-by-week breakdown of what to do and when, so nothing falls through the cracks.
           </p>
         </div>
@@ -190,7 +191,7 @@
         <div class="bg-gray-50 rounded-xl p-6">
           <span class="text-3xl mb-3 block">💡</span>
           <h3 class="font-bold text-lg mb-2">Decision Framework</h3>
-          <p class="text-gray-600 text-sm">
+          <p class="text-gray-700">
             How to decide what to keep, sell, donate, or discard—without the guilt.
           </p>
         </div>
@@ -198,7 +199,7 @@
         <div class="bg-gray-50 rounded-xl p-6">
           <span class="text-3xl mb-3 block">💰</span>
           <h3 class="font-bold text-lg mb-2">Hidden Value Guide</h3>
-          <p class="text-gray-600 text-sm">
+          <p class="text-gray-700">
             Items that are worth more than you think (and how to get top dollar).
           </p>
         </div>
@@ -206,7 +207,7 @@
         <div class="bg-gray-50 rounded-xl p-6">
           <span class="text-3xl mb-3 block">👨‍👩‍👧</span>
           <h3 class="font-bold text-lg mb-2">Family Conversation Scripts</h3>
-          <p class="text-gray-600 text-sm">
+          <p class="text-gray-700">
             How to discuss downsizing with loved ones without conflict.
           </p>
         </div>
@@ -214,7 +215,7 @@
         <div class="bg-gray-50 rounded-xl p-6">
           <span class="text-3xl mb-3 block">❤️</span>
           <h3 class="font-bold text-lg mb-2">Emotional Support Tips</h3>
-          <p class="text-gray-600 text-sm">
+          <p class="text-gray-700">
             Processing the emotions of letting go and embracing your next chapter.
           </p>
         </div>
@@ -232,17 +233,17 @@
           <div class="space-y-4">
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <h4 class="font-semibold mb-2">Chapter 1: Getting Started</h4>
-              <p class="text-gray-600 text-sm">"The hardest part is often just beginning. This chapter shows you how to take that first step..."</p>
+              <p class="text-gray-700">"The hardest part is often just beginning. This chapter shows you how to take that first step..."</p>
             </div>
             
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <h4 class="font-semibold mb-2">Chapter 3: The Four-Box Method</h4>
-              <p class="text-gray-600 text-sm">"Our proven system for making decisions quickly: Keep, Sell, Donate, Discard..."</p>
+              <p class="text-gray-700">"Our proven system for making decisions quickly: Keep, Sell, Donate, Discard..."</p>
             </div>
             
             <div class="bg-white rounded-lg p-4 shadow-sm">
               <h4 class="font-semibold mb-2">Chapter 5: Handling Sentimental Items</h4>
-              <p class="text-gray-600 text-sm">"Memories live in our hearts, not our things. Here's how to honor the past while creating space for your future..."</p>
+              <p class="text-gray-700">"Memories live in our hearts, not our things. Here's how to honor the past while creating space for your future..."</p>
             </div>
           </div>
         </div>
@@ -257,7 +258,7 @@
                 <p class="text-sm opacity-75 mt-2">True Legacy Homes</p>
               </div>
             </div>
-            <p class="mt-4 text-gray-600">25+ Pages • PDF Format</p>
+            <p class="mt-4 text-gray-700">25+ Pages • PDF Format</p>
           </div>
         </div>
       </div>
@@ -277,7 +278,7 @@
         <div class="text-center">
           <div class="w-16 h-16 bg-tlh-teal rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-2">B</div>
           <p class="font-bold">Barbara T.</p>
-          <p class="text-gray-500">La Jolla, CA</p>
+          <p class="text-gray-700">La Jolla, CA</p>
         </div>
       </div>
     </div>
@@ -292,22 +293,22 @@
         <div class="bg-white rounded-xl p-6 text-center shadow-sm">
           <span class="text-4xl mb-3 block">👵</span>
           <h3 class="font-bold mb-2">Seniors Downsizing</h3>
-          <p class="text-gray-600 text-sm">Moving to a smaller home, condo, or senior community</p>
+          <p class="text-gray-700">Moving to a smaller home, condo, or senior community</p>
         </div>
         <div class="bg-white rounded-xl p-6 text-center shadow-sm">
           <span class="text-4xl mb-3 block">👨‍👩‍👧</span>
           <h3 class="font-bold mb-2">Adult Children</h3>
-          <p class="text-gray-600 text-sm">Helping parents transition or managing their estate</p>
+          <p class="text-gray-700">Helping parents transition or managing their estate</p>
         </div>
         <div class="bg-white rounded-xl p-6 text-center shadow-sm">
           <span class="text-4xl mb-3 block">🏠</span>
           <h3 class="font-bold mb-2">Empty Nesters</h3>
-          <p class="text-gray-600 text-sm">Kids moved out and it's time to right-size</p>
+          <p class="text-gray-700">Kids moved out and it's time to right-size</p>
         </div>
         <div class="bg-white rounded-xl p-6 text-center shadow-sm">
           <span class="text-4xl mb-3 block">🗝️</span>
           <h3 class="font-bold mb-2">Inheritors</h3>
-          <p class="text-gray-600 text-sm">Settling an estate with decades of belongings</p>
+          <p class="text-gray-700">Settling an estate with decades of belongings</p>
         </div>
       </div>
     </div>
@@ -317,12 +318,12 @@
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-8">Created by Experts</h2>
-      <p class="text-xl text-gray-600 mb-8">
+      <p class="text-xl text-gray-700 mb-8">
         This guide is based on our experience helping over 2,000 families through life transitions. We've seen what works, what doesn't, and most importantly—what brings peace of mind.
       </p>
       <img src="images/hero.jpg" alt="Paul Williamson, Founder of True Legacy Homes and author of the downsizing guide" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
       <p class="font-bold">Paul Williamson</p>
-      <p class="text-gray-500">Founder, True Legacy Homes</p>
+      <p class="text-gray-700">Founder, True Legacy Homes</p>
     </div>
   </section>
 
@@ -340,15 +341,15 @@
             type="text" 
             placeholder="First Name" 
             required
-            class="w-full px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
+            class="w-full px-4 py-4 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
           >
           <input 
             type="email" 
             placeholder="Email Address" 
             required
-            class="w-full px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
+            class="w-full px-4 py-4 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
           >
-          <button type="submit" class="w-full bg-white text-tlh-teal px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100">
+          <button type="submit" style="min-height: 52px;" class="w-full bg-white text-tlh-teal px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100">
             Download Free Guide →
           </button>
         </form>
@@ -360,23 +361,23 @@
   <section class="py-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-2xl font-bold mb-4">Need Hands-On Help?</h2>
-      <p class="text-gray-600 mb-6">
+      <p class="text-gray-700 mb-6">
         We offer complete estate sale and downsizing services throughout Southern California. Let us do the heavy lifting for you.
       </p>
       <a href="schedule-consult.html" class="inline-block bg-tlh-dark text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800">
         Get Guidance Today →
       </a>
-      <p class="mt-4 text-gray-500 text-sm">Or learn more about our <a href="estate-sales.html" class="text-tlh-teal hover:underline">estate sale services</a> and <a href="care-placement.html" class="text-tlh-teal hover:underline">care placement</a>.</p>
+      <p class="mt-4 text-gray-700 text-sm">Or learn more about our <a href="estate-sales.html" class="text-tlh-teal hover:underline">estate sale services</a> and <a href="care-placement.html" class="text-tlh-teal hover:underline">care placement</a>.</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <img src="images/tlhLOGO.png" alt="True Legacy Homes" class="h-16 mb-4 brightness-200">
-          <p class="text-sm">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <p class="text-base">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
           <div class="flex gap-4 mt-4">
             <a href="https://facebook.com/truelegacyhomes" aria-label="Facebook"><img src="images/facebook-logo-black.png" alt="Facebook" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
             <a href="https://instagram.com/truelegacyhomes" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
@@ -384,7 +385,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="estate-sales.html" class="hover:text-white">Estate Sales</a></li>
             <li><a href="care-placement.html" class="hover:text-white">Care Placement</a></li>
             <li><a href="cash-offers.html" class="hover:text-white">Cash Home Offers</a></li>
@@ -392,7 +393,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Resources</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="blog.html" class="hover:text-white">Blog</a></li>
             <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
             <li><a href="downsize-guide.html" class="text-white">Downsizing Guide</a></li>
@@ -401,14 +402,14 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="tel:6194501702" class="hover:text-white">(619) 450-1702</a></li>
             <li><a href="mailto:info@truelegacyhomes.com" class="hover:text-white">info@truelegacyhomes.com</a></li>
             <li class="pt-2">3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
         <p>© 2026 True Legacy Homes. All rights reserved. · <a href="privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="terms.html" class="hover:text-white">Terms of Service</a></p>
       </div>
     </div>

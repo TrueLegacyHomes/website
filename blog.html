@@ -17,6 +17,7 @@
   
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -32,11 +33,11 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 text-base leading-relaxed">
+<body class="bg-white text-gray-800 text-lg leading-loose">
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-sm text-gray-500 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -50,17 +51,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -69,13 +70,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -96,7 +97,7 @@
       <h1 class="text-4xl md:text-5xl font-bold text-tlh-dark mb-4">
         True Legacy Blog
       </h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-700 max-w-2xl mx-auto">
         155+ helpful articles with tips, local insights, and stories to guide you through life's biggest transitions.
       </p>
     </div>
@@ -109,9 +110,9 @@
       <a href="blog/estate-sales-in-los-angeles-where-to-find-hidden-treasures.html" class="block bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition md:flex">
         <img src="images/TOP-495x400.png" alt="Estate Sales in Los Angeles" class="w-full md:w-1/2 h-64 md:h-auto object-cover">
         <div class="p-8 md:w-1/2 flex flex-col justify-center">
-          <span class="text-sm bg-tlh-teal text-white px-3 py-1 rounded-full w-fit mb-4">Estate Sales</span>
+          <span class="text-base bg-tlh-teal text-white px-4 py-1 rounded-full w-fit mb-4">Estate Sales</span>
           <h3 class="text-2xl font-bold mb-3 text-tlh-dark">Estate Sales in Los Angeles: Where to Find Hidden Treasures</h3>
-          <p class="text-gray-600 mb-4">Discover the best estate sales in LA and learn expert tips for finding valuable items, from vintage furniture to collectible jewelry...</p>
+          <p class="text-gray-700 mb-4">Discover the best estate sales in LA and learn expert tips for finding valuable items, from vintage furniture to collectible jewelry...</p>
           <span class="text-tlh-teal font-semibold">Read more →</span>
         </div>
       </a>
@@ -130,10 +131,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">Estate Sales</span>
-              <span class="text-xs text-gray-500">January 16, 2026</span>
+              <span class="text-base text-gray-700">January 16, 2026</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">The Definitive Guide To Los Angeles Estate Sales</h3>
-            <p class="text-gray-600 mb-4">Everything you need to know about buying and selling at estate sales throughout the LA area...</p>
+            <p class="text-gray-700 mb-4">Everything you need to know about buying and selling at estate sales throughout the LA area...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -144,10 +145,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">Estate Sales</span>
-              <span class="text-xs text-gray-500">December 19, 2025</span>
+              <span class="text-base text-gray-700">December 19, 2025</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">6 Questions to Ask Before Starting an Estate Sale for a Parent</h3>
-            <p class="text-gray-600 mb-4">Navigate this emotional process with the right questions to ensure a smooth estate sale...</p>
+            <p class="text-gray-700 mb-4">Navigate this emotional process with the right questions to ensure a smooth estate sale...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -158,10 +159,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">Estate Sales</span>
-              <span class="text-xs text-gray-500">November 19, 2025</span>
+              <span class="text-base text-gray-700">November 19, 2025</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">7 Proven Strategies for Estate Sales in Southern California</h3>
-            <p class="text-gray-600 mb-4">Expert strategies to maximize your estate sale success in the SoCal market...</p>
+            <p class="text-gray-700 mb-4">Expert strategies to maximize your estate sale success in the SoCal market...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -172,10 +173,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">Estate Sales</span>
-              <span class="text-xs text-gray-500">October 9, 2025</span>
+              <span class="text-base text-gray-700">October 9, 2025</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">7 Essential Steps To Hire An Estate Sale Company</h3>
-            <p class="text-gray-600 mb-4">Find the right estate sale partner with these essential hiring tips...</p>
+            <p class="text-gray-700 mb-4">Find the right estate sale partner with these essential hiring tips...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -186,10 +187,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">Estate Sales</span>
-              <span class="text-xs text-gray-500">September 5, 2025</span>
+              <span class="text-base text-gray-700">September 5, 2025</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">Estate Sale Guide for Heirs and Executors</h3>
-            <p class="text-gray-600 mb-4">A comprehensive guide for those managing an estate sale as part of their responsibilities...</p>
+            <p class="text-gray-700 mb-4">A comprehensive guide for those managing an estate sale as part of their responsibilities...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -200,10 +201,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">Orange County</span>
-              <span class="text-xs text-gray-500">September 3, 2025</span>
+              <span class="text-base text-gray-700">September 3, 2025</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">Affordable Estate Sale Companies in Orange County</h3>
-            <p class="text-gray-600 mb-4">Find trusted, budget-friendly estate sale services throughout Orange County...</p>
+            <p class="text-gray-700 mb-4">Find trusted, budget-friendly estate sale services throughout Orange County...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -214,10 +215,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">San Diego</span>
-              <span class="text-xs text-gray-500">August 29, 2025</span>
+              <span class="text-base text-gray-700">August 29, 2025</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">10 Best Estate Sale Companies in San Diego</h3>
-            <p class="text-gray-600 mb-4">Our curated list of the top estate sale companies serving San Diego County...</p>
+            <p class="text-gray-700 mb-4">Our curated list of the top estate sale companies serving San Diego County...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -228,10 +229,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">Estate Sales</span>
-              <span class="text-xs text-gray-500">August 21, 2025</span>
+              <span class="text-base text-gray-700">August 21, 2025</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">Estate Sales For Seniors</h3>
-            <p class="text-gray-600 mb-4">Specialized guidance for seniors looking to downsize through an estate sale...</p>
+            <p class="text-gray-700 mb-4">Specialized guidance for seniors looking to downsize through an estate sale...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -242,10 +243,10 @@
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs bg-tlh-teal/10 text-tlh-teal px-2 py-1 rounded-full">Collectibles</span>
-              <span class="text-xs text-gray-500">April 23, 2025</span>
+              <span class="text-base text-gray-700">April 23, 2025</span>
             </div>
             <h3 class="text-xl font-bold mb-2 text-tlh-dark">Vintage Jewelry Spotlight</h3>
-            <p class="text-gray-600 mb-4">Learn how to identify and value vintage jewelry finds at estate sales...</p>
+            <p class="text-gray-700 mb-4">Learn how to identify and value vintage jewelry finds at estate sales...</p>
             <span class="text-tlh-teal font-semibold">Read more →</span>
           </div>
         </a>
@@ -266,7 +267,7 @@
           </div>
           <div>
             <h3 class="font-bold text-tlh-dark">Preparing for an Estate Sale: The Ultimate Guide</h3>
-            <p class="text-sm text-gray-500">Complete checklist for estate sale preparation</p>
+            <p class="text-base text-gray-700">Complete checklist for estate sale preparation</p>
           </div>
         </a>
 
@@ -276,7 +277,7 @@
           </div>
           <div>
             <h3 class="font-bold text-tlh-dark">Have a Successful Estate Sale by Doing These 10 Steps</h3>
-            <p class="text-sm text-gray-500">Step-by-step guide to estate sale success</p>
+            <p class="text-base text-gray-700">Step-by-step guide to estate sale success</p>
           </div>
         </a>
 
@@ -286,7 +287,7 @@
           </div>
           <div>
             <h3 class="font-bold text-tlh-dark">Estate Sales Pricing Guide</h3>
-            <p class="text-sm text-gray-500">Guidelines to price items and increase profits</p>
+            <p class="text-base text-gray-700">Guidelines to price items and increase profits</p>
           </div>
         </a>
 
@@ -296,7 +297,7 @@
           </div>
           <div>
             <h3 class="font-bold text-tlh-dark">How To Find An Estate Sale Company</h3>
-            <p class="text-sm text-gray-500">Questions to ask when hiring an estate sale company</p>
+            <p class="text-base text-gray-700">Questions to ask when hiring an estate sale company</p>
           </div>
         </a>
 
@@ -306,7 +307,7 @@
           </div>
           <div>
             <h3 class="font-bold text-tlh-dark">Estate Sales vs. Yard Sales: What's the Difference?</h3>
-            <p class="text-sm text-gray-500">Understanding when to use each type of sale</p>
+            <p class="text-base text-gray-700">Understanding when to use each type of sale</p>
           </div>
         </a>
 
@@ -316,7 +317,7 @@
           </div>
           <div>
             <h3 class="font-bold text-tlh-dark">What Is a 'Date Of Death' Appraisal</h3>
-            <p class="text-sm text-gray-500">Complete guide to estate appraisals</p>
+            <p class="text-base text-gray-700">Complete guide to estate appraisals</p>
           </div>
         </a>
 
@@ -397,7 +398,7 @@
   <!-- All Articles Link -->
   <section class="py-12 bg-white">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <p class="text-gray-600 mb-4">Browse all 155+ articles in our library</p>
+      <p class="text-gray-700 mb-4">Browse all 155+ articles in our library</p>
       <a href="blog/what-are-estate-sales.html" class="inline-block bg-tlh-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800">
         Start with: What Are Estate Sales?
       </a>
@@ -423,12 +424,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <img src="images/tlhLOGO.png" alt="True Legacy Homes" class="h-16 mb-4 brightness-200">
-          <p class="text-sm">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <p class="text-base">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
           <div class="flex gap-4 mt-4">
             <a href="https://facebook.com/truelegacyhomes"><img src="images/facebook-logo-black.png" alt="Facebook" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
             <a href="https://instagram.com/truelegacyhomes"><img src="images/instagram.png" alt="Instagram" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
@@ -436,7 +437,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="estate-sales.html" class="hover:text-white">Estate Sales</a></li>
             <li><a href="care-placement.html" class="hover:text-white">Care Placement</a></li>
             <li><a href="cash-offers.html" class="hover:text-white">Cash Home Offers</a></li>
@@ -444,7 +445,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Resources</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="blog.html" class="hover:text-white">Blog</a></li>
             <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
             <li><a href="testimonials.html" class="hover:text-white">Testimonials</a></li>
@@ -452,14 +453,14 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="tel:6194501702" class="hover:text-white">(619) 450-1702</a></li>
             <li><a href="mailto:info@truelegacyhomes.com" class="hover:text-white">info@truelegacyhomes.com</a></li>
             <li>3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
         <p>© 2026 True Legacy Homes. All rights reserved. · <a href="privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="terms.html" class="hover:text-white">Terms of Service</a></p>
       </div>
     </div>

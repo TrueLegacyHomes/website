@@ -17,6 +17,7 @@
   
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -32,11 +33,11 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 text-base leading-relaxed">
+<body class="bg-white text-gray-800 text-lg leading-loose">
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-sm text-gray-500 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -50,17 +51,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -69,13 +70,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -101,7 +102,7 @@
           <h1 class="text-4xl md:text-5xl font-bold text-tlh-dark mb-6 leading-tight">
             Estate Sales With Dignity
           </h1>
-          <p class="text-xl text-gray-600 mb-8">
+          <p class="text-xl text-gray-700 mb-8">
             From cluttered to clear in two weeks or less. Our professional teams organize, price, and manage your estate sale while honoring your family's legacy.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -116,11 +117,11 @@
           <div class="mt-8 flex flex-wrap items-center gap-4">
             <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
               <span class="text-yellow-400">★★★★★</span>
-              <span class="text-gray-600">4.6 (329 reviews)</span>
+              <span class="text-gray-700">4.6 (329 reviews)</span>
             </div>
             <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
               <span class="font-bold text-blue-800">BBB</span>
-              <span class="text-gray-600">A+ Rated</span>
+              <span class="text-gray-700">A+ Rated</span>
             </div>
           </div>
         </div>
@@ -160,7 +161,7 @@
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">What is an Estate Sale?</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
           An estate sale is a shopping event held at a home where personal belongings are sold—from furniture and antiques to collectibles and everyday household goods.
         </p>
       </div>
@@ -174,7 +175,7 @@
             </div>
             <div>
               <h4 class="font-semibold">Decluttering & Cleaning</h4>
-              <p class="text-gray-600 text-sm">Complete home organization before the sale</p>
+              <p class="text-gray-700">Complete home organization before the sale</p>
             </div>
           </div>
           <div class="flex items-start gap-4 bg-white p-4 rounded-xl">
@@ -183,7 +184,7 @@
             </div>
             <div>
               <h4 class="font-semibold">Professional Staging & Pricing</h4>
-              <p class="text-gray-600 text-sm">Every item organized and priced fairly</p>
+              <p class="text-gray-700">Every item organized and priced fairly</p>
             </div>
           </div>
           <div class="flex items-start gap-4 bg-white p-4 rounded-xl">
@@ -192,7 +193,7 @@
             </div>
             <div>
               <h4 class="font-semibold">Certified Appraisals</h4>
-              <p class="text-gray-600 text-sm">High-ticket items valued by experts</p>
+              <p class="text-gray-700">High-ticket items valued by experts</p>
             </div>
           </div>
           <div class="flex items-start gap-4 bg-white p-4 rounded-xl">
@@ -201,7 +202,7 @@
             </div>
             <div>
               <h4 class="font-semibold">Multiple Payment Options</h4>
-              <p class="text-gray-600 text-sm">Digital point-of-sale accepts all major cards</p>
+              <p class="text-gray-700">Digital point-of-sale accepts all major cards</p>
             </div>
           </div>
           <div class="flex items-start gap-4 bg-white p-4 rounded-xl">
@@ -210,7 +211,7 @@
             </div>
             <div>
               <h4 class="font-semibold">Full Transparency</h4>
-              <p class="text-gray-600 text-sm">Accurate accounting and detailed reports</p>
+              <p class="text-gray-700">Accurate accounting and detailed reports</p>
             </div>
           </div>
           <div class="flex items-start gap-4 bg-white p-4 rounded-xl">
@@ -219,7 +220,7 @@
             </div>
             <div>
               <h4 class="font-semibold">Complete Cleanout</h4>
-              <p class="text-gray-600 text-sm">Home left broom clean, unsold items donated</p>
+              <p class="text-gray-700">Home left broom clean, unsold items donated</p>
             </div>
           </div>
         </div>
@@ -236,22 +237,22 @@
         <div class="text-center">
           <div class="w-16 h-16 bg-tlh-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
           <h3 class="font-bold text-lg mb-2">Free Consultation</h3>
-          <p class="text-gray-600">We visit your home, assess the contents, and create a customized plan. <a href="schedule-consult.html" class="text-tlh-teal hover:underline">Book yours today</a>.</p>
+          <p class="text-gray-700">We visit your home, assess the contents, and create a customized plan. <a href="schedule-consult.html" class="text-tlh-teal hover:underline">Book yours today</a>.</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-tlh-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
           <h3 class="font-bold text-lg mb-2">Organize & Price</h3>
-          <p class="text-gray-600">Our team organizes, stages, and prices every item professionally.</p>
+          <p class="text-gray-700">Our team organizes, stages, and prices every item professionally.</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-tlh-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
           <h3 class="font-bold text-lg mb-2">Host the Sale</h3>
-          <p class="text-gray-600">We manage everything—marketing, checkout, security, and customer service.</p>
+          <p class="text-gray-700">We manage everything—marketing, checkout, security, and customer service.</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-tlh-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
           <h3 class="font-bold text-lg mb-2">Complete Cleanout</h3>
-          <p class="text-gray-600">Unsold items are donated or removed. You get a broom-clean home.</p>
+          <p class="text-gray-700">Unsold items are donated or removed. You get a broom-clean home.</p>
         </div>
       </div>
     </div>
@@ -267,14 +268,14 @@
           <div class="flex gap-1 mb-4">
             <span class="text-yellow-400">★★★★★</span>
           </div>
-          <p class="text-gray-600 mb-6 italic">
+          <p class="text-gray-700 mb-6 italic">
             "We just inherited our grandparent's estate after they passed, and True Legacy Homes truly understood what we were going through. They provided unwavering support and personalized guidance throughout. Their dedication and meticulous attention to detail turned what felt like an overwhelming task into a manageable and simple process."
           </p>
           <div class="flex items-center">
             <div class="w-12 h-12 bg-tlh-teal rounded-full flex items-center justify-center text-white font-bold">L</div>
             <div class="ml-4">
               <p class="font-bold">Linda</p>
-              <p class="text-sm text-gray-500">Inheritor • San Diego</p>
+              <p class="text-base text-gray-700">Inheritor • San Diego</p>
             </div>
           </div>
         </div>
@@ -283,14 +284,14 @@
           <div class="flex gap-1 mb-4">
             <span class="text-yellow-400">★★★★★</span>
           </div>
-          <p class="text-gray-600 mb-6 italic">
+          <p class="text-gray-700 mb-6 italic">
             "True Legacy Homes is extraordinary! After living in our home for over 50 years, we had collected many items. They meticulously organized every item, transforming our home into a showroom of memories. Before the sale, they even found my mother's wedding ring, which I thought I had lost!"
           </p>
           <div class="flex items-center">
             <div class="w-12 h-12 bg-tlh-teal rounded-full flex items-center justify-center text-white font-bold">R</div>
             <div class="ml-4">
               <p class="font-bold">Rochelle</p>
-              <p class="text-sm text-gray-500">Downsizing • Orange County</p>
+              <p class="text-base text-gray-700">Downsizing • Orange County</p>
             </div>
           </div>
         </div>
@@ -303,7 +304,7 @@
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-6">
         <h3 class="text-2xl font-bold text-tlh-dark">Get Notified About Upcoming Estate Sales</h3>
-        <p class="text-gray-600">Join thousands of treasure hunters who get first access to our sales. <a href="shop-sales.html" class="text-tlh-teal hover:underline">Browse current sales</a>.</p>
+        <p class="text-gray-700">Join thousands of treasure hunters who get first access to our sales. <a href="shop-sales.html" class="text-tlh-teal hover:underline">Browse current sales</a>.</p>
       </div>
       <form action="https://truelegacyhomes.us12.list-manage.com/subscribe/post?u=8fb80e36c3f769c67994988e71&amp;id=eb811b621b" method="post" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
         <input type="hidden" name="SOURCE" value="estate-sales-page">
@@ -314,7 +315,7 @@
           required
           class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal"
         >
-        <button type="submit" class="bg-tlh-teal text-white px-8 py-3 rounded-lg font-semibold hover:bg-tlh-teal-dark whitespace-nowrap">
+        <button type="submit" style="min-height: 52px;" class="bg-tlh-teal text-white px-8 py-3 rounded-lg font-semibold hover:bg-tlh-teal-dark whitespace-nowrap">
           Subscribe
         </button>
       </form>
@@ -325,40 +326,40 @@
   <section class="py-20 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
-      <p class="text-center text-gray-600 mb-12">Have more questions? <a href="faq.html" class="text-tlh-teal font-semibold hover:underline">See our complete FAQ</a> or check out <a href="testimonials.html" class="text-tlh-teal font-semibold hover:underline">what our clients say</a>.</p>
+      <p class="text-center text-gray-700 mb-12">Have more questions? <a href="faq.html" class="text-tlh-teal font-semibold hover:underline">See our complete FAQ</a> or check out <a href="testimonials.html" class="text-tlh-teal font-semibold hover:underline">what our clients say</a>.</p>
       
       <div class="space-y-4">
         <details class="bg-white rounded-lg p-6 shadow-sm" open>
-          <summary class="font-bold cursor-pointer">How is an estate sale different than a garage sale?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">How is an estate sale different than a garage sale?</summary>
+          <p class="mt-4 text-gray-700">
             An estate sale is basically a garage sale on steroids. Garage sales are great if you want to sell some items and make a few hundred bucks. Estate sales are used when you want to sell all (or almost all) of the contents of a home—typically when a loved one passes and you inherit a home, or if you need to downsize quickly.
           </p>
         </details>
 
         <details class="bg-white rounded-lg p-6 shadow-sm">
-          <summary class="font-bold cursor-pointer">How many items do I need to have a sale?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">How many items do I need to have a sale?</summary>
+          <p class="mt-4 text-gray-700">
             There are NO item minimums or limits. Even if you only have five items, give us a call.
           </p>
         </details>
 
         <details class="bg-white rounded-lg p-6 shadow-sm">
-          <summary class="font-bold cursor-pointer">Does my family maintain access to the home?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">Does my family maintain access to the home?</summary>
+          <p class="mt-4 text-gray-700">
             Yes! Your family has access to your home throughout the entire process. We encourage you to walk through before and after the sale—many families discover heirlooms that were missed during their original pass through the home.
           </p>
         </details>
 
         <details class="bg-white rounded-lg p-6 shadow-sm">
-          <summary class="font-bold cursor-pointer">After the estate sale, is my home completely empty?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">After the estate sale, is my home completely empty?</summary>
+          <p class="mt-4 text-gray-700">
             Yes. After your sale is completed, we use trash removal services and partnerships with the Salvation Army to donate any remaining items. Your home will be completely empty and left broom clean.
           </p>
         </details>
 
         <details class="bg-white rounded-lg p-6 shadow-sm">
-          <summary class="font-bold cursor-pointer">How do you differ from other estate sale companies?</summary>
-          <p class="mt-4 text-gray-600">
+          <summary class="font-bold cursor-pointer text-lg py-2 select-none">How do you differ from other estate sale companies?</summary>
+          <p class="mt-4 text-gray-700">
             We're truly accountable through our open door policy. Our certified appraiser ensures high-ticket items are valued appropriately. You have full transparency through our digital point-of-sale system. Unlike most companies, we don't require you to stay out of the home, and we accept all major cards—not just cash.
           </p>
         </details>
@@ -373,15 +374,15 @@
       <div class="grid md:grid-cols-3 gap-6">
         <a href="locations/san-diego.html" class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition text-center">
           <h3 class="text-xl font-bold mb-2">San Diego County</h3>
-          <p class="text-gray-600 text-sm">La Jolla, Del Mar, Carlsbad, Encinitas, Poway, and more</p>
+          <p class="text-gray-700">La Jolla, Del Mar, Carlsbad, Encinitas, Poway, and more</p>
         </a>
         <a href="locations/orange-county.html" class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition text-center">
           <h3 class="text-xl font-bold mb-2">Orange County</h3>
-          <p class="text-gray-600 text-sm">Irvine, Newport Beach, Laguna Beach, Huntington Beach, and more</p>
+          <p class="text-gray-700">Irvine, Newport Beach, Laguna Beach, Huntington Beach, and more</p>
         </a>
         <a href="locations/los-angeles.html" class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition text-center">
           <h3 class="text-xl font-bold mb-2">Los Angeles County</h3>
-          <p class="text-gray-600 text-sm">Long Beach, Downey, Whittier, La Mirada, and more</p>
+          <p class="text-gray-700">Long Beach, Downey, Whittier, La Mirada, and more</p>
         </a>
       </div>
     </div>
@@ -406,12 +407,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <img src="images/tlhLOGO.png" alt="True Legacy Homes" class="h-16 mb-4 brightness-200">
-          <p class="text-sm">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <p class="text-base">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
           <div class="flex gap-4 mt-4">
             <a href="https://facebook.com/truelegacyhomes" aria-label="Facebook"><img src="images/facebook-logo-black.png" alt="Facebook" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
             <a href="https://instagram.com/truelegacyhomes" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
@@ -419,7 +420,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="estate-sales.html" class="hover:text-white">Estate Sales</a></li>
             <li><a href="care-placement.html" class="hover:text-white">Care Placement</a></li>
             <li><a href="cash-offers.html" class="hover:text-white">Cash Home Offers</a></li>
@@ -427,7 +428,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Resources</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="blog.html" class="hover:text-white">Blog</a></li>
             <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
             <li><a href="testimonials.html" class="hover:text-white">Testimonials</a></li>
@@ -435,14 +436,14 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="tel:6194501702" class="hover:text-white">(619) 450-1702</a></li>
             <li><a href="mailto:info@truelegacyhomes.com" class="hover:text-white">info@truelegacyhomes.com</a></li>
             <li class="pt-2">3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
         <p>© 2026 True Legacy Homes. All rights reserved. · <a href="privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="terms.html" class="hover:text-white">Terms of Service</a></p>
       </div>
     </div>

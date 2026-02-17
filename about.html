@@ -17,6 +17,7 @@
   
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -32,11 +33,11 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-800 text-base leading-relaxed">
+<body class="bg-white text-gray-800 text-lg leading-loose">
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-sm text-gray-500 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -50,17 +51,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -69,13 +70,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -97,7 +98,7 @@
         <h1 class="text-4xl md:text-5xl font-bold text-tlh-dark mb-6 leading-tight">
           Estate Services for Life's Toughest Transitions
         </h1>
-        <p class="text-xl text-gray-600 mb-8">
+        <p class="text-xl text-gray-700 mb-8">
           From cleaning and organizing to giving you a cash offer on your home, our professional property services team provides support when you need it most.
         </p>
       </div>
@@ -133,13 +134,13 @@
         </div>
         <div>
           <h2 class="text-3xl font-bold mb-6">Our Story</h2>
-          <p class="text-gray-600 mb-4 text-lg">
+          <p class="text-gray-700 mb-4 text-lg">
             At True Legacy, we provide comprehensive estate sale services and cash home offers to California families in challenging transitions.
           </p>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-700 mb-4">
             Whether from age or the passing of a loved one, transitions are never easy. It's normal to feel sad, anxious, and everything in between. And when it comes time to deal with the home and its contents, it can be downright overwhelming.
           </p>
-          <p class="text-gray-600 mb-6">
+          <p class="text-gray-700 mb-6">
             That's why I built True Legacy. By listening to your story and understanding your challenges, we'll help you make informed, responsible decisions about the future of your estate—so you can focus on what matters most.
           </p>
           <blockquote class="border-l-4 border-tlh-teal pl-4 italic text-gray-700">
@@ -162,7 +163,7 @@
             <span class="text-3xl">📋</span>
           </div>
           <h3 class="font-bold text-xl mb-3">Systematic</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             Consistently using a structured and organized approach to achieve objectives.
           </p>
         </div>
@@ -172,7 +173,7 @@
             <span class="text-3xl">❤️</span>
           </div>
           <h3 class="font-bold text-xl mb-3">Dignifying Others</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             Respecting and valuing the worth of all people.
           </p>
         </div>
@@ -182,7 +183,7 @@
             <span class="text-3xl">📊</span>
           </div>
           <h3 class="font-bold text-xl mb-3">Measurable Performance</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             Establishing and pursuing clear and achievable objectives that can be quantified and evaluated.
           </p>
         </div>
@@ -192,7 +193,7 @@
             <span class="text-3xl">📚</span>
           </div>
           <h3 class="font-bold text-xl mb-3">Teachable Hearts</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             Being receptive to learning and growth, and having a willingness to teach and mentor others.
           </p>
         </div>
@@ -202,7 +203,7 @@
             <span class="text-3xl">🤝</span>
           </div>
           <h3 class="font-bold text-xl mb-3">Stewardship</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             Responsible use of client, company, and employee resources and talents.
           </p>
         </div>
@@ -212,7 +213,7 @@
             <span class="text-3xl">✨</span>
           </div>
           <h3 class="font-bold text-xl mb-3">Integrity</h3>
-          <p class="text-gray-600">
+          <p class="text-gray-700">
             Doing the right thing, even when no one is watching.
           </p>
         </div>
@@ -225,7 +226,7 @@
     <div class="max-w-4xl mx-auto px-4">
       <div class="bg-tlh-warm rounded-2xl p-8 md:p-12">
         <h2 class="text-3xl font-bold text-center mb-8">Our Promise to You</h2>
-        <p class="text-gray-600 text-lg text-center mb-8">
+        <p class="text-gray-700 text-lg text-center mb-8">
           At True Legacy, we're committed to protecting your family's legacy. And that means respectfully handling the sale of your family's property.
         </p>
         <div class="grid md:grid-cols-3 gap-6">
@@ -256,7 +257,7 @@
   <section class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">Leadership Team</h2>
-      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">
         "We provide trustworthy and comprehensive estate services so that our clients can get back to what matters most – family."
       </p>
       
@@ -266,7 +267,7 @@
             <span class="text-4xl font-bold text-tlh-teal">PW</span>
           </div>
           <h3 class="font-bold text-lg">Paul Williamson</h3>
-          <p class="text-gray-600">CEO | Founder</p>
+          <p class="text-gray-700">CEO | Founder</p>
         </div>
         
         <div class="text-center">
@@ -274,7 +275,7 @@
             <span class="text-4xl font-bold text-tlh-teal">JS</span>
           </div>
           <h3 class="font-bold text-lg">Jeff Stordahl</h3>
-          <p class="text-gray-600">COO | Founder</p>
+          <p class="text-gray-700">COO | Founder</p>
         </div>
         
         <div class="text-center">
@@ -282,7 +283,7 @@
             <span class="text-4xl font-bold text-tlh-teal">TV</span>
           </div>
           <h3 class="font-bold text-lg">Tanya Vallejo</h3>
-          <p class="text-gray-600">Director of HR</p>
+          <p class="text-gray-700">Director of HR</p>
         </div>
         
         <div class="text-center">
@@ -290,7 +291,7 @@
             <span class="text-4xl font-bold text-tlh-teal">PO</span>
           </div>
           <h3 class="font-bold text-lg">Peter Ohm</h3>
-          <p class="text-gray-600">Controller</p>
+          <p class="text-gray-700">Controller</p>
         </div>
       </div>
     </div>
@@ -300,23 +301,23 @@
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">Why Families Trust Us</h2>
-      <p class="text-center text-gray-600 mb-8">See what our clients say on our <a href="testimonials.html" class="text-tlh-teal font-semibold hover:underline">testimonials page</a>. We serve <a href="locations.html" class="text-tlh-teal font-semibold hover:underline">all of Southern California</a>.</p>
+      <p class="text-center text-gray-700 mb-8">See what our clients say on our <a href="testimonials.html" class="text-tlh-teal font-semibold hover:underline">testimonials page</a>. We serve <a href="locations.html" class="text-tlh-teal font-semibold hover:underline">all of Southern California</a>.</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div class="bg-gray-50 rounded-xl p-6">
           <div class="text-4xl font-bold text-tlh-teal mb-2">15+</div>
-          <div class="text-gray-600">Years in Business</div>
+          <div class="text-gray-700">Years in Business</div>
         </div>
         <div class="bg-gray-50 rounded-xl p-6">
           <div class="text-4xl font-bold text-tlh-teal mb-2">329</div>
-          <div class="text-gray-600">Google Reviews</div>
+          <div class="text-gray-700">Google Reviews</div>
         </div>
         <div class="bg-gray-50 rounded-xl p-6">
           <div class="text-4xl font-bold text-tlh-teal mb-2">4.6</div>
-          <div class="text-gray-600">Average Rating</div>
+          <div class="text-gray-700">Average Rating</div>
         </div>
         <div class="bg-gray-50 rounded-xl p-6">
           <div class="text-4xl font-bold text-tlh-teal mb-2">A+</div>
-          <div class="text-gray-600">BBB Rating</div>
+          <div class="text-gray-700">BBB Rating</div>
         </div>
       </div>
     </div>
@@ -326,24 +327,24 @@
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">What We Do</h2>
-      <p class="text-center text-gray-600 mb-8">Interested in joining our team? <a href="careers.html" class="text-tlh-teal font-semibold hover:underline">View open positions</a>. We're always looking for compassionate people.</p>
+      <p class="text-center text-gray-700 mb-8">Interested in joining our team? <a href="careers.html" class="text-tlh-teal font-semibold hover:underline">View open positions</a>. We're always looking for compassionate people.</p>
       <div class="grid md:grid-cols-3 gap-6">
         <a href="estate-sales.html" class="bg-white rounded-xl p-6 hover:shadow-lg transition">
           <img src="images/es_icon.png" alt="Estate Sales" class="w-12 h-12 mb-4">
           <h3 class="font-bold text-xl mb-2">Estate Sale Management</h3>
-          <p class="text-gray-600 mb-4">Professional estate sales that honor your family's legacy while maximizing value.</p>
+          <p class="text-gray-700 mb-4">Professional estate sales that honor your family's legacy while maximizing value.</p>
           <span class="text-tlh-teal font-semibold">Learn more →</span>
         </a>
         <a href="care-placement.html" class="bg-white rounded-xl p-6 hover:shadow-lg transition">
           <img src="images/care-icon.png" alt="Care Placement" class="w-12 h-12 mb-4">
           <h3 class="font-bold text-xl mb-2">Senior Care Placement</h3>
-          <p class="text-gray-600 mb-4">Free guidance to find the right assisted living or memory care for your loved one.</p>
+          <p class="text-gray-700 mb-4">Free guidance to find the right assisted living or memory care for your loved one.</p>
           <span class="text-tlh-teal font-semibold">Learn more →</span>
         </a>
         <a href="cash-offers.html" class="bg-white rounded-xl p-6 hover:shadow-lg transition">
           <img src="images/listing_icon.png" alt="Cash Offers" class="w-12 h-12 mb-4">
           <h3 class="font-bold text-xl mb-2">Cash Home Offers</h3>
-          <p class="text-gray-600 mb-4">Sell your home fast for cash. No repairs, no commissions, no hassle.</p>
+          <p class="text-gray-700 mb-4">Sell your home fast for cash. No repairs, no commissions, no hassle.</p>
           <span class="text-tlh-teal font-semibold">Learn more →</span>
         </a>
       </div>
@@ -369,12 +370,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <img src="images/tlhLOGO.png" alt="True Legacy Homes" class="h-16 mb-4 brightness-200">
-          <p class="text-sm">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <p class="text-base">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
           <div class="flex gap-4 mt-4">
             <a href="https://facebook.com/truelegacyhomes" aria-label="Facebook"><img src="images/facebook-logo-black.png" alt="Facebook" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
             <a href="https://instagram.com/truelegacyhomes" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" class="w-6 h-6 invert opacity-60 hover:opacity-100"></a>
@@ -382,7 +383,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="estate-sales.html" class="hover:text-white">Estate Sales</a></li>
             <li><a href="care-placement.html" class="hover:text-white">Care Placement</a></li>
             <li><a href="cash-offers.html" class="hover:text-white">Cash Home Offers</a></li>
@@ -390,7 +391,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Resources</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="blog.html" class="hover:text-white">Blog</a></li>
             <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
             <li><a href="testimonials.html" class="hover:text-white">Testimonials</a></li>
@@ -398,14 +399,14 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="tel:6194501702" class="hover:text-white">(619) 450-1702</a></li>
             <li><a href="mailto:info@truelegacyhomes.com" class="hover:text-white">info@truelegacyhomes.com</a></li>
             <li class="pt-2">3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
         <p>© 2026 True Legacy Homes. All rights reserved. · <a href="privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="terms.html" class="hover:text-white">Terms of Service</a></p>
       </div>
     </div>

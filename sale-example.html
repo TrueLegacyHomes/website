@@ -18,6 +18,7 @@
   
   <link rel="icon" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
   <script>
     tailwind.config = {
       theme: {
@@ -78,7 +79,7 @@
 
   <!-- Sticky Mobile CTA -->
   <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-xl p-3 md:hidden z-40">
-    <p class="text-center text-sm text-gray-500 mb-2">Have questions? We're here to help.</p>
+    <p class="text-center text-base text-gray-700 mb-2">Have questions? We're here to help.</p>
     <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center text-lg">
       📞 Call (619) 450-1702
     </a>
@@ -92,17 +93,17 @@
       </a>
       <!-- Desktop Nav -->
       <div class="hidden md:flex space-x-6">
-        <a href="estate-sales.html" class="hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="hover:text-tlh-teal">Contact</a>
+        <a href="estate-sales.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
+        <a href="contact.html" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Contact</a>
       </div>
-      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-2 rounded-lg hover:bg-tlh-teal-dark">
+      <a href="tel:6194501702" class="hidden md:flex items-center gap-2 bg-tlh-teal text-white px-4 py-3 rounded-lg hover:bg-tlh-teal-dark">
         <span>📞</span> (619) 450-1702
       </a>
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-tlh-teal" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -111,13 +112,13 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 space-y-3">
-        <a href="estate-sales.html" class="block py-2 text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="care-placement.html" class="block py-2 text-lg hover:text-tlh-teal">Care Placement</a>
-        <a href="cash-offers.html" class="block py-2 text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="about.html" class="block py-2 text-lg hover:text-tlh-teal">About</a>
-        <a href="contact.html" class="block py-2 text-lg hover:text-tlh-teal">Contact</a>
-        <a href="blog.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Blog</a>
-        <a href="locations.html" class="block py-2 text-gray-500 hover:text-tlh-teal">Locations</a>
+        <a href="estate-sales.html" class="block py-3 text-lg hover:text-tlh-teal">Estate Sales</a>
+        <a href="care-placement.html" class="block py-3 text-lg hover:text-tlh-teal">Care Placement</a>
+        <a href="cash-offers.html" class="block py-3 text-lg hover:text-tlh-teal">Cash Offers</a>
+        <a href="about.html" class="block py-3 text-lg hover:text-tlh-teal">About</a>
+        <a href="contact.html" class="block py-3 text-lg hover:text-tlh-teal">Contact</a>
+        <a href="blog.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Blog</a>
+        <a href="locations.html" class="block py-2 text-gray-700 hover:text-tlh-teal">Locations</a>
         <div class="pt-3 border-t">
           <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-3 rounded-lg font-semibold text-center">
             📞 Call (619) 450-1702
@@ -185,22 +186,22 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="bg-gray-50 rounded-xl p-4 text-center">
           <div class="text-3xl mb-1">📅</div>
-          <div class="text-sm text-gray-500">Dates</div>
+          <div class="text-base text-gray-700">Dates</div>
           <div class="font-bold">Feb 13-18, 2026</div>
         </div>
         <div class="bg-gray-50 rounded-xl p-4 text-center">
           <div class="text-3xl mb-1">🖥️</div>
-          <div class="text-sm text-gray-500">Type</div>
+          <div class="text-base text-gray-700">Type</div>
           <div class="font-bold">Online Auction</div>
         </div>
         <div class="bg-gray-50 rounded-xl p-4 text-center">
           <div class="text-3xl mb-1">📸</div>
-          <div class="text-sm text-gray-500">Photos</div>
+          <div class="text-base text-gray-700">Photos</div>
           <div class="font-bold">16 Items</div>
         </div>
         <div class="bg-gray-50 rounded-xl p-4 text-center">
           <div class="text-3xl mb-1">💳</div>
-          <div class="text-sm text-gray-500">Payment</div>
+          <div class="text-base text-gray-700">Payment</div>
           <div class="font-bold">All Major Cards</div>
         </div>
       </div>
@@ -213,7 +214,7 @@
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div class="flex-1">
           <h3 class="font-bold text-lg text-tlh-dark">Can't make this sale?</h3>
-          <p class="text-gray-600 text-sm">Get notified when new estate sales are listed in San Diego. Or <a href="joinourlist.html" class="text-tlh-teal hover:underline">join our shopper list</a> for all locations.</p>
+          <p class="text-gray-700">Get notified when new estate sales are listed in San Diego. Or <a href="joinourlist.html" class="text-tlh-teal hover:underline">join our shopper list</a> for all locations.</p>
         </div>
         <form action="https://truelegacyhomes.us12.list-manage.com/subscribe/post?u=8fb80e36c3f769c67994988e71&amp;id=eb811b621b" method="post" class="flex-1 flex gap-2">
           <input type="hidden" name="SOURCE" value="sale-example-page">
@@ -225,7 +226,7 @@
             class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
           >
           <button 
-            type="submit" 
+            type="submit" style="min-height: 52px;" 
             class="bg-tlh-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-tlh-teal-dark whitespace-nowrap"
           >
             Notify Me
@@ -238,7 +239,7 @@
   <!-- Photo Gallery -->
   <section class="py-12 bg-white" id="gallery">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6">Sale Photos <span class="text-gray-400 font-normal">(16 items)</span></h2>
+      <h2 class="text-2xl font-bold mb-6">Sale Photos <span class="text-gray-300 font-normal">(16 items)</span></h2>
       
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
         <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(0)">
@@ -320,11 +321,11 @@
       <div class="grid md:grid-cols-3 gap-8">
         <div class="md:col-span-2">
           <h2 class="text-2xl font-bold mb-4">About This Sale</h2>
-          <p class="text-gray-600 mb-4 text-lg">
+          <p class="text-gray-700 mb-4 text-lg">
             This unique San Diego estate sale features an eclectic collection of art, antiques, and curiosities. Perfect for collectors and treasure hunters looking for one-of-a-kind pieces.
           </p>
           <h3 class="font-bold text-lg mb-3">What you'll find:</h3>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-600">
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700">
             <li class="flex items-center gap-2 bg-white p-3 rounded-lg">
               <svg class="w-5 h-5 text-tlh-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
               Original artwork & prints
@@ -354,7 +355,7 @@
         <div>
           <div class="bg-white rounded-xl p-6 shadow-sm sticky top-24" id="directions">
             <h3 class="font-bold text-lg mb-4">📍 Location</h3>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-700 mb-4">
               San Diego, CA 92102
             </p>
             <div class="aspect-video bg-gray-200 rounded-lg mb-4 overflow-hidden">
@@ -384,24 +385,24 @@
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-8">
         <h2 class="text-2xl font-bold mb-2">Hosted by True Legacy Homes</h2>
-        <p class="text-gray-600">San Diego's most trusted estate sale company</p>
+        <p class="text-gray-700">San Diego's most trusted estate sale company</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
           <div class="text-4xl font-bold text-tlh-teal">15+</div>
-          <div class="text-gray-600">Years Experience</div>
+          <div class="text-gray-700">Years Experience</div>
         </div>
         <div>
           <div class="text-4xl font-bold text-tlh-teal">1,500+</div>
-          <div class="text-gray-600">Sales Completed</div>
+          <div class="text-gray-700">Sales Completed</div>
         </div>
         <div>
           <div class="text-4xl font-bold text-tlh-teal">329</div>
-          <div class="text-gray-600">Google Reviews</div>
+          <div class="text-gray-700">Google Reviews</div>
         </div>
         <div>
           <div class="text-4xl font-bold text-tlh-teal">A+</div>
-          <div class="text-gray-600">BBB Rating</div>
+          <div class="text-gray-700">BBB Rating</div>
         </div>
       </div>
     </div>
@@ -426,16 +427,16 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-tlh-dark text-gray-400 py-12 pb-24 md:pb-12">
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <img src="images/tlhLOGO.png" alt="True Legacy Homes" class="h-16 mb-4 brightness-200">
-          <p class="text-sm">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <p class="text-base">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="estate-sales.html" class="hover:text-white">Estate Sales</a></li>
             <li><a href="care-placement.html" class="hover:text-white">Care Placement</a></li>
             <li><a href="cash-offers.html" class="hover:text-white">Cash Home Offers</a></li>
@@ -443,7 +444,7 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Resources</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="blog.html" class="hover:text-white">Blog</a></li>
             <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
             <li><a href="testimonials.html" class="hover:text-white">Testimonials</a></li>
@@ -451,14 +452,14 @@
         </div>
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2">
             <li><a href="tel:6194501702" class="hover:text-white">(619) 450-1702</a></li>
             <li><a href="mailto:info@truelegacyhomes.com" class="hover:text-white">info@truelegacyhomes.com</a></li>
             <li class="pt-2">3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
         <p>© 2026 True Legacy Homes. All rights reserved. · <a href="privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="terms.html" class="hover:text-white">Terms of Service</a></p>
       </div>
     </div>
