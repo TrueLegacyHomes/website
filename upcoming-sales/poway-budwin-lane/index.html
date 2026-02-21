@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estate Sale: 14802 Budwin Lane, Poway | True Legacy Homes</title>
+  <meta name="description" content="Estate sale at 14802 Budwin Lane, Poway, CA 92064. February 21-22, 2026. Ranch-style home with furniture, collectibles, vintage items, and more.">
+  <link rel="icon" href="/website/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'tlh-teal': '#38b5ad',
+            'tlh-teal-dark': '#2d9e96',
+            'tlh-dark': '#1e293b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gallery-img { cursor: pointer; transition: transform 0.2s; }
+    .gallery-img:hover { transform: scale(1.05); }
+    #lightbox { display: none; }
+    #lightbox.active { display: flex; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-tlh-dark text-white py-4">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <a href="/website/">
+        <img src="/website/images/tlhLOGO.png" alt="True Legacy Homes" class="h-12 brightness-200">
+      </a>
+      <a href="/website/upcoming-sales/" class="text-sm bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20">← All Sales</a>
+    </div>
+  </header>
+
+  <!-- Hero Image -->
+  <div class="relative h-72 md:h-96 overflow-hidden">
+    <img src="https://picturescdn.estatesales.net/4806300/1-1/6c0334c0-c6b2-4b2b-8ac4-f53348fd4fd1.jpg" alt="Estate Sale in Poway" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+      <div class="max-w-6xl mx-auto">
+        <span class="bg-tlh-teal text-sm px-3 py-1 rounded-full font-semibold">This Weekend</span>
+        <h1 class="text-3xl md:text-4xl font-bold mt-3">14802 Budwin Lane</h1>
+        <p class="text-xl text-gray-200">Poway, CA 92064</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sale Details -->
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Main Content -->
+      <div class="md:col-span-2">
+        <div class="bg-white rounded-xl p-6 shadow-sm mb-6">
+          <h2 class="text-2xl font-bold mb-4">About This Sale</h2>
+          <p class="text-gray-700 mb-4">
+            Welcome to another great estate sale in the Poway area! This ranch-style home is packed with treasures for your home and for everyone in the family.
+          </p>
+          <p class="text-gray-700 mb-4">
+            You'll find quality furniture, collectibles, vintage items, kitchenware, home decor, tools, outdoor items, and much more. Everything must go!
+          </p>
+          <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded">
+            <p class="text-amber-800 font-semibold">⚠️ Parking Notice</p>
+            <p class="text-amber-700 text-sm">Parking is very limited. You cannot park on the street. Parking only in designated areas.</p>
+          </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h2 class="text-2xl font-bold mb-4">Photos</h2>
+          <div class="grid grid-cols-3 md:grid-cols-4 gap-3">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/6c0334c0-c6b2-4b2b-8ac4-f53348fd4fd1.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/345a10c7-a6b6-45cc-a13e-eb91271ef8f1.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/3232ca35-1a47-4d86-89bd-5e57a0ed02fa.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/87f298d8-ae04-40ba-9ba7-0aa264930e09.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/780c4d4a-b71f-42e8-a2d5-e1158436eff5.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/0c514c7d-a5dd-4dc7-9cd2-db8229ece6e9.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/15a234b5-3690-4ab7-8629-5db67e9add23.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/2c4c7228-ffd5-4106-ab9b-ae1dbae0e945.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/3d9111b8-975e-4627-adc4-7f9049b84530.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/46a6c90b-9c72-4edd-aa1f-2e60a009f1f0.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/7453f4d5-9af4-409a-a2c7-56f77be9d7c9.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/88b8138e-cc73-4c45-ad96-da34307d42b4.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/956fff0f-ea4b-41ca-a82b-98d59e0cc1ca.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/a9efa386-f0ac-4d5e-824a-1286307ea530.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/c6bb3ab8-4be9-41ad-9ed3-f31dc933de86.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+            <img src="https://picturescdn.estatesales.net/4806300/1-1/fc40ad41-0c10-4a2f-9f03-d60b531c12b6.jpg" alt="Sale photo" class="gallery-img w-full h-24 md:h-32 object-cover rounded-lg" onclick="openLightbox(this.src)">
+          </div>
+          <div class="mt-4 text-center">
+            <a href="https://www.estatesales.net/CA/Poway/92064/4806300" target="_blank" rel="noopener" class="text-tlh-teal font-semibold hover:underline">View all photos on EstateSales.NET →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="md:col-span-1">
+        <div class="bg-white rounded-xl p-6 shadow-sm sticky top-4">
+          <h3 class="text-xl font-bold mb-4">Sale Details</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <p class="font-semibold">Dates</p>
+                <p class="text-gray-600">Saturday, Feb 21</p>
+                <p class="text-gray-600">Sunday, Feb 22</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <p class="font-semibold">Hours</p>
+                <p class="text-gray-600">8:00 AM - 2:00 PM</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <p class="font-semibold">Address</p>
+                <p class="text-gray-600">14802 Budwin Lane</p>
+                <p class="text-gray-600">Poway, CA 92064</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+              </div>
+              <div>
+                <p class="font-semibold">Payment</p>
+                <p class="text-gray-600">Cash & Credit Cards</p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-6">
+
+          <a href="https://maps.google.com/maps?q=14802+Budwin+Lane,+Poway,+CA+92064" target="_blank" rel="noopener" class="block w-full bg-tlh-dark text-white text-center py-3 rounded-lg font-semibold hover:bg-gray-800 transition mb-3">
+            Get Directions →
+          </a>
+          
+          <a href="https://www.estatesales.net/CA/Poway/92064/4806300" target="_blank" rel="noopener" class="block w-full bg-tlh-teal text-white text-center py-3 rounded-lg font-semibold hover:bg-tlh-teal-dark transition">
+            View on EstateSales.NET
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms -->
+  <div class="max-w-6xl mx-auto px-4 pb-8">
+    <div class="bg-white rounded-xl p-6 shadow-sm">
+      <h3 class="font-bold mb-3">Terms & Conditions</h3>
+      <ul class="text-gray-600 text-sm space-y-1">
+        <li>• We accept all major credit cards</li>
+        <li>• Delivery services available for larger items</li>
+        <li>• We do NOT presell any items</li>
+        <li>• All sales are final</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-tlh-dark text-gray-400 py-6">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm">
+      <p>© 2026 True Legacy Homes. <a href="/website/" class="hover:text-white">Need an estate sale?</a></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 items-center justify-center p-4" onclick="closeLightbox()">
+    <button class="absolute top-4 right-4 text-white text-4xl" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  </script>
+
+</body>
+</html>
