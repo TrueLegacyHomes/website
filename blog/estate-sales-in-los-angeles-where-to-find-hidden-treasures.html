@@ -57,22 +57,7 @@
   }
   </script>
   
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>html { scroll-behavior: smooth; } [id] { scroll-margin-top: 80px; }</style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'tlh-teal': '#38b5ad',
-            'tlh-teal-dark': '#2d9e96',
-            'tlh-dark': '#1e293b',
-            'tlh-warm': '#fef3e2',
-          }
-        }
-      }
-    }
-  </script>
   <style>
     .article-content h2 { font-size: 1.75rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1e293b; }
     .article-content h3 { font-size: 1.5rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1e293b; }
@@ -146,7 +131,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </nav>
-  <script>
     document.getElementById('mobile-menu-btn').addEventListener('click', function() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
