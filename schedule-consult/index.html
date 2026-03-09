@@ -280,9 +280,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </form>
           
           <script>
-            // Supabase config
-            const SUPABASE_URL = 'https://inqbqchjxzvdvcslvskb.supabase.co';
-            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucWJxY2hqeHp2ZHZjc2x2c2tiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNzA4NzEsImV4cCI6MjA4ODY0Njg3MX0.cqOtZQQOdSI9hwVxI8RSAMsgxI3hJsZ8ttzehJRKVgk';
+            // Form submission endpoint (Cloudflare Worker - keeps keys secure)
+            const FORM_ENDPOINT = 'https://tlh-form-worker.brett-35e.workers.dev';
             
             // Spam protection: record page load time
             const PAGE_LOAD_TIME = Date.now();
@@ -367,13 +366,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               };
               
               try {
-                const response = await fetch(`${SUPABASE_URL}/rest/v1/form_submissions`, {
+                const response = await fetch(FORM_ENDPOINT, {
                   method: 'POST',
                   headers: {
-                    'apikey': SUPABASE_ANON_KEY,
-                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                    'Content-Type': 'application/json',
-                    'Prefer': 'return=minimal'
+                    'Content-Type': 'application/json'
                   },
                   body: JSON.stringify(formData)
                 });
