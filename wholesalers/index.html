@@ -291,14 +291,19 @@
         <div class="form-title">Deal Submission</div>
         <div class="form-sub">Tell us about the property. The messier the better.</div>
         <form id="dealForm">
+          <!-- Honeypot field - hidden from humans, bots will fill it -->
+          <div style="position:absolute;left:-9999px;" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="John Smith" required>
+              <input type="text" id="name" name="name" placeholder="John Smith" required minlength="2" maxlength="100">
             </div>
             <div class="form-group">
               <label for="phone">Your Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="949.555.0100" required>
+              <input type="tel" id="phone" name="phone" placeholder="949.555.0100" required pattern="[\d\s\.\-\(\)]{10,}" title="Please enter a valid phone number">
             </div>
           </div>
           <div class="form-row full">
@@ -396,23 +401,88 @@
 // Google Sheets submission via Google Apps Script Web App
 const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbx3D9TNqQ-Klxy93BveSmzdIbONnzbCiWNcHTiYhzgq5JDrDeiAzel2CF2LT0KNLmzC/exec';
 
+// Track form load time for bot detection
+const formLoadTime = Date.now();
+
+// Validation helpers
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPhone(phone) {
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 15;
+}
+
+function sanitizeInput(str) {
+  return str.trim().replace(/<[^>]*>/g, '');
+}
+
 document.getElementById('dealForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   
   const btn = document.getElementById('submitBtn');
   const originalText = btn.textContent;
+  
+  // Honeypot check - if filled, it's a bot
+  const honeypot = document.getElementById('website').value;
+  if (honeypot) {
+    // Silently "succeed" but don't submit
+    document.getElementById('formFields').classList.add('hide');
+    document.getElementById('formSuccess').classList.add('show');
+    return;
+  }
+  
+  // Time-based check - form filled too fast (< 3 seconds) is likely a bot
+  const timeElapsed = Date.now() - formLoadTime;
+  if (timeElapsed < 3000) {
+    document.getElementById('formFields').classList.add('hide');
+    document.getElementById('formSuccess').classList.add('show');
+    return;
+  }
+  
+  // Get and sanitize values
+  const name = sanitizeInput(document.getElementById('name').value);
+  const phone = sanitizeInput(document.getElementById('phone').value);
+  const email = sanitizeInput(document.getElementById('email').value);
+  const propertyAddress = sanitizeInput(document.getElementById('property_address').value);
+  const askingPrice = sanitizeInput(document.getElementById('asking_price').value);
+  const condition = document.getElementById('condition').value;
+  const notes = sanitizeInput(document.getElementById('notes').value);
+  
+  // Validation
+  if (name.length < 2) {
+    alert('Please enter your full name.');
+    return;
+  }
+  
+  if (!isValidPhone(phone)) {
+    alert('Please enter a valid phone number.');
+    return;
+  }
+  
+  if (!isValidEmail(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  
+  if (propertyAddress.length < 10) {
+    alert('Please enter a complete property address.');
+    return;
+  }
+  
   btn.disabled = true;
   btn.textContent = 'Submitting...';
   
   const formData = {
     timestamp: new Date().toISOString(),
-    name: document.getElementById('name').value,
-    phone: document.getElementById('phone').value,
-    email: document.getElementById('email').value,
-    property_address: document.getElementById('property_address').value,
-    asking_price: document.getElementById('asking_price').value,
-    condition: document.getElementById('condition').value,
-    notes: document.getElementById('notes').value
+    name: name,
+    phone: phone,
+    email: email,
+    property_address: propertyAddress,
+    asking_price: askingPrice,
+    condition: condition,
+    notes: notes
   };
   
   try {
