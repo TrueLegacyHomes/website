@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>33 Grassy Knoll Ln - Renovation Gallery - True Legacy Homes</title>
+  <meta name="description" content="Thoughtful renovation showcasing attention to detail. View the full transformation gallery.">
+  <link rel="icon" type="image/png" href="/images/tlhICON.webp">
+  <link href="/css/tailwind.min.css" rel="stylesheet">
+  
+  <style>
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .lightbox.active {
+      display: flex;
+    }
+    
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 1rem;
+      transition: background 0.3s;
+      z-index: 10000;
+    }
+    
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .lightbox-close {
+      top: 20px;
+      right: 20px;
+      font-size: 2.5rem;
+      line-height: 1;
+      padding: 0.5rem 1rem;
+    }
+    
+    .lightbox-prev {
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .lightbox-next {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .lightbox-counter {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-20">
+        <a href="/" class="flex items-center">
+          <img src="/images/tlhLOGO.webp" alt="True Legacy Homes" class="h-14" loading="eager">
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="/estate-sales/" class="text-gray-700 hover:text-tlh-teal transition font-medium">Estate Sales</a>
+          <a href="/care-placement/" class="text-gray-700 hover:text-tlh-teal transition font-medium">Care Placement</a>
+          <a href="/cash-home-offer/" class="text-gray-700 hover:text-tlh-teal transition font-medium">Cash Home Offers</a>
+          <a href="/schedule-consult/" class="bg-tlh-teal text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition font-semibold">Schedule Consult</a>
+          <a href="tel:6194501702" class="text-tlh-teal hover:text-tlh-dark transition font-bold text-lg">619.450.1702</a>
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <a href="/estate-sales/" class="block py-2 text-gray-700">Estate Sales</a>
+        <a href="/care-placement/" class="block py-2 text-gray-700">Care Placement</a>
+        <a href="/cash-home-offer/" class="block py-2 text-gray-700">Cash Home Offers</a>
+        <a href="/schedule-consult/" class="block py-2 text-tlh-teal font-semibold">Schedule Consult</a>
+        <a href="tel:6194501702" class="block py-2 text-tlh-teal font-bold">619.450.1702</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+      <div class="max-w-6xl mx-auto px-4">
+        <nav class="text-sm">
+          <a href="/" class="text-gray-600 hover:text-tlh-teal">Home</a>
+          <span class="mx-2 text-gray-400">/</span>
+          <a href="/renovations/" class="text-gray-600 hover:text-tlh-teal">Renovations</a>
+          <span class="mx-2 text-gray-400">/</span>
+          <span class="text-gray-900">33 Grassy Knoll Ln</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Header with Hero Image -->
+    <section class="py-12 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-tlh-dark">33 Grassy Knoll Ln</h1>
+            <p class="text-xl text-gray-600 mb-6">Thoughtful renovation showcasing attention to detail</p>
+            <div class="flex items-center gap-6 text-gray-700">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span class="font-semibold">20 Photos</span>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg overflow-hidden shadow-lg">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-1030x686.jpg" 
+                 alt="33 Grassy Knoll Ln" 
+                 class="w-full h-auto"
+                 loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery Grid -->
+    <section class="py-8 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery">
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="0">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="1">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/2-1030x674.jpg" alt="33 Grassy Knoll Ln - Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="2">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/3-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="3">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/4-1030x692.jpg" alt="33 Grassy Knoll Ln - Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="4">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/5-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="5">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/7-1030x745.jpg" alt="33 Grassy Knoll Ln - Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="6">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/8-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 7" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="7">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/10-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 8" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="8">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/11-1030x706.jpg" alt="33 Grassy Knoll Ln - Photo 9" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="9">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/12-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 10" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="10">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/13-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 11" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="11">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/14-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 12" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="12">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/15-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 13" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="13">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/18-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 14" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="14">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/22-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 15" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="15">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/23-1030x687.jpg" alt="33 Grassy Knoll Ln - Photo 16" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="16">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/25-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 17" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="17">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/27-1030x695.jpg" alt="33 Grassy Knoll Ln - Photo 18" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="18">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/30-1030x726.jpg" alt="33 Grassy Knoll Ln - Photo 19" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+          <div class="gallery-item cursor-pointer group relative aspect-square overflow-hidden rounded-lg" data-index="19">
+            <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/34-1030x686.jpg" alt="33 Grassy Knoll Ln - Photo 20" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-tlh-teal text-white py-16">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">View More Renovations</h2>
+        <p class="text-xl mb-8 opacity-90">
+          Explore our complete portfolio of home transformations across Southern California.
+        </p>
+        <a href="/renovations/" class="bg-white text-tlh-teal px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition inline-block">
+          Back to Renovations Gallery
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+    <button class="lightbox-next" aria-label="Next">&#8250;</button>
+    <div class="lightbox-counter">
+      <span id="lightbox-current">1</span> / <span id="lightbox-total">20</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-tlh-dark text-gray-300 py-12 pb-24 md:pb-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <img src="/images/tlhLOGO.webp" alt="True Legacy Homes" class="h-14 mb-4 brightness-200" loading="lazy">
+          <p class="text-base mb-4">Estate Sales with Dignity. Helping Southern California families navigate life's biggest transitions.</p>
+          <div class="flex gap-4">
+            <a href="https://facebook.com/truelegacyhomes" aria-label="Facebook" class="w-10 h-10 bg-gray-700 hover:bg-tlh-teal rounded-full flex items-center justify-center transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+            </a>
+            <a href="https://instagram.com/truelegacyhomes" aria-label="Instagram" class="w-10 h-10 bg-gray-700 hover:bg-tlh-teal rounded-full flex items-center justify-center transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="/estate-sales/" class="hover:text-white transition">Estate Sales</a></li>
+            <li><a href="/care-placement/" class="hover:text-white transition">Care Placement</a></li>
+            <li><a href="/cash-home-offer/" class="hover:text-white transition">Cash Home Offers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="/blog/" class="hover:text-white transition">Blog</a></li>
+            <li><a href="/faq/" class="hover:text-white transition">FAQ</a></li>
+            <li><a href="/testimonials/" class="hover:text-white transition">Testimonials</a></li>
+            <li><a href="/locations/" class="hover:text-white">Locations</a></li>
+            <li><a href="/upcoming-sales/" class="hover:text-white">Upcoming Sales</a></li>
+            <li><a href="/renovations/" class="hover:text-white">Renovations</a></li>
+          </ul>
+          <h4 class="text-white font-bold mb-4 mt-6">Partners</h4>
+          <ul class="space-y-2">
+            <li><a href="/fiduciaries/" class="hover:text-white transition">Fiduciaries</a></li>
+            <li><a href="/care-facilities/" class="hover:text-white transition">Care Facilities</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="tel:6194501702" class="hover:text-white transition flex items-center gap-2">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                (619) 450-1702
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@truelegacyhomes.com" class="hover:text-white transition flex items-center gap-2">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                info@truelegacyhomes.com
+              </a>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-tlh-teal mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span>3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-base">
+        <p>© 2026 True Legacy Homes. All rights reserved. · <a href="/privacy-policy/" class="hover:text-white">Privacy Policy</a> · <a href="/tos/" class="hover:text-white">Terms of Service</a> · <a href="/accessibility/" class="hover:text-white">Accessibility</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCurrent = document.getElementById('lightbox-current');
+    const lightboxTotal = document.getElementById('lightbox-total');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    let currentIndex = 0;
+    const images = [
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/2-1030x674.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/3-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/4-1030x692.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/5-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/7-1030x745.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/8-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/10-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/11-1030x706.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/12-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/13-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/14-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/15-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/18-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/22-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/23-1030x687.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/25-1030x686.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/27-1030x695.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/30-1030x726.jpg',
+      'https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/34-1030x686.jpg'
+    ];
+    
+    lightboxTotal.textContent = images.length;
+    
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = images[currentIndex];
+      lightboxCurrent.textContent = currentIndex + 1;
+      lightbox.classList.add('active');
+    }
+    
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+    }
+    
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex];
+      lightboxCurrent.textContent = currentIndex + 1;
+    }
+    
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex];
+      lightboxCurrent.textContent = currentIndex + 1;
+    }
+    
+    // Event listeners
+    galleryItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const index = parseInt(this.getAttribute('data-index'));
+        openLightbox(index);
+      });
+    });
+    
+    document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-next').addEventListener('click', showNext);
+    document.querySelector('.lightbox-prev').addEventListener('click', showPrev);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+    
+    // Close on background click
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  </script>
+</body>
+</html>
