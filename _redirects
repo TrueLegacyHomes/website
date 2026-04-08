@@ -1,7 +1,8 @@
 # Core page redirects
 /about-us/* /about/ 301
 /contact-us/* /contact/ 301
-/senior-care-placement/* /care-placement/ 301
+/senior-care-placement/* / 301
+/care-placement/* / 301
 /cash-offer/* /cash-home-offer/ 301
 /locations/orange-county/* /locations/orangecounty/ 301
 /our-team/* /about/ 301
