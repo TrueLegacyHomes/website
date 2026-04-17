@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estate Sale: Long Beach, CA 90808 | True Legacy Homes</title>
-  <meta name="description" content="Estate sale at Long Beach, CA 90808. April 18-19, 2026. 150 photos of furniture, collectibles, and more.">
+  <title>Estate Sale: 4525 East Village Road, Long Beach, CA 90808 | True Legacy Homes</title>
+  <meta name="description" content="Estate sale at 4525 East Village Road, Long Beach, CA 90808. April 18-19, 2026. 150 photos of furniture, collectibles, and more.">
   <link rel="icon" href="/images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -44,7 +44,7 @@
     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
     <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
       <div class="max-w-6xl mx-auto">
-        <span class="bg-tlh-teal text-sm px-3 py-1 rounded-full font-semibold">This Weekend</span>
+        <span class="bg-purple-600 text-white text-sm px-3 py-1 rounded-full font-semibold">LA County</span>
         <h1 class="text-3xl md:text-4xl font-bold mt-3">Long Beach Village Estate Sale</h1>
         <p class="text-xl text-gray-200">Long Beach, CA</p>
       </div>
@@ -79,7 +79,7 @@
               <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
               </div>
-              <div><p class="font-semibold">Dates</p><p class="text-gray-600">Fri-Sat, Apr 18-19</p></div>
+              <div><p class="font-semibold">Dates</p><p class="text-gray-600">Sat-Sun, Apr 18-19</p></div>
             </div>
             <div class="flex items-start gap-3">
               <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -132,6 +132,8 @@
   </footer>
   </main>
 
+  <script>
+    const saleId = '4881018';
     const imageGuids = [
       '0163ec92-44e0-4e2a-89b4-5c9754fdb3ec',
       '03bf591c-590e-4fab-8185-04886731097e',
@@ -283,13 +285,10 @@
       'fb20ea4b-2462-48e6-a43b-27d7cd732c66',
       'fdb21f55-1d00-45ff-bb23-79d8c010225b',
       'fe3a57f3-bfed-4811-b220-8326960434d5',
-    'fe3a57f3-bfed-4811-b220-8326960434d5',
-    'fd6c368e-9eb8-4ed7-8714-ecac4358c4fe',
-      'fdf58a2a-5660-425c-8ffe-e927cfbc8f1e',
-      'fe1b0308-e304-42f6-8a85-87449eb0f302',
-      'fecfe0ab-a8ad-481c-9f2d-8db6c70b6fa1',
-      'ff5450d5-a384-4876-968d-8d6a8d5b8359',
-      'ffb4f575-8e4f-4a83-9cb0-101ef609ad23',
+    ];
+
+    let currentIndex = 0;
+    const gallery = document.getElementById('gallery');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estate Sale: Costa Mesa, CA 92626 | True Legacy Homes</title>
-  <meta name="description" content="Estate sale at Costa Mesa, CA 92626. April 18-19, 2026. 129 photos of antique furniture, porcelain, collectibles, and more.">
+  <title>Estate Sale: 1806 Hummingbird Drive, Costa Mesa, CA 92626 | True Legacy Homes</title>
+  <meta name="description" content="Estate sale at 1806 Hummingbird Drive, Costa Mesa, CA 92626. April 18-19, 2026. 129 photos of antique furniture, porcelain, collectibles, and more.">
   <link rel="icon" href="/images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -44,7 +44,7 @@
     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
     <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
       <div class="max-w-6xl mx-auto">
-        <span class="bg-tlh-teal text-sm px-3 py-1 rounded-full font-semibold">This Weekend</span>
+        <span class="bg-orange-500 text-white text-sm px-3 py-1 rounded-full font-semibold">Orange County</span>
         <h1 class="text-3xl md:text-4xl font-bold mt-3">Costa Mesa Antiques & Collectibles</h1>
         <p class="text-xl text-gray-200">Costa Mesa, CA</p>
       </div>
@@ -73,7 +73,7 @@
               <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
               </div>
-              <div><p class="font-semibold">Dates</p><p class="text-gray-600">Fri-Sat, Apr 18-19</p></div>
+              <div><p class="font-semibold">Dates</p><p class="text-gray-600">Sat-Sun, Apr 18-19</p></div>
             </div>
             <div class="flex items-start gap-3">
               <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -128,10 +128,6 @@
 
   <script>
     const saleId = '4873938';
-    const imageGuids = [
-    const imageGuids = [
-      '003f2db6-b36e-4def-94c0-a87ebc60cbf9',
-      '02b23fb6-f943-4047-a645-9ed1c4461ade',
     const imageGuids = [
       '002931ea-c39d-44d2-b689-2a221d3fdd4d',
       '01adc9f1-a835-4f91-887f-411ef2241560',
@@ -262,6 +258,10 @@
       'fecfe0ab-a8ad-481c-9f2d-8db6c70b6fa1',
       'ff5450d5-a384-4876-968d-8d6a8d5b8359',
       'ffb4f575-8e4f-4a83-9cb0-101ef609ad23',
+    ];
+
+    let currentIndex = 0;
+    const gallery = document.getElementById('gallery');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
