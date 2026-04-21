@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-T3LD72P');</script>
+  <!-- Google Tag Manager (Deferred for Performance) -->
+  <script>
+  window.addEventListener('load', function() {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T3LD72P');
+  });
+  </script>
   <!-- End Google Tag Manager -->
   <!-- Facebook Domain Verification -->
   <meta name="facebook-domain-verification" content="3h2v8x84iqs6m8yhoz4fnmp9w3c83y" />
@@ -36,6 +40,9 @@
   <link rel="icon" href="images/favicon.png">
   
   <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://cdn.callrail.com">
+  <link rel="preconnect" href="https://analytics.ahrefs.com">
   <link rel="stylesheet" href="/css/tailwind.min.css">
   <link rel="preload" as="image" type="image/webp" href="/images/main-hero.webp">
   
@@ -157,17 +164,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Call (619) 450-1702
     </a>
   </div>
-  <script>
-    // Show mobile CTA after scrolling 150px
-    const mobileCta = document.getElementById('mobile-cta');
-    let shown = false;
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 250 && !shown) {
-        mobileCta.classList.remove('translate-y-full');
-        shown = true;
-      }
-    });
-  </script>
 
   <!-- Navigation -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
@@ -215,11 +211,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </nav>
-  <script>
-    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-  </script>
 
   <main>
   <!-- Hero Section -->
@@ -792,5 +783,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     })();
   </script>
+
+  <!-- Consolidated JavaScript (Optimized for Performance) -->
+  <script src="/js/main.js" defer></script>
+
 <!-- Artsai Conversion Pixel [lead] --><img src="https://arttrk.com/pixel/?ad_log=referer&action=lead&pixid=11ccb5e1-5765-413e-b101-f5e1940d6b72" width="1" height="1" border="0" alt="" style="display:none">
 </body>
