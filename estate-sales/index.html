@@ -202,8 +202,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- How It Works Section -->
-  <section class="py-20 bg-tlh-warm">
-    <div class="max-w-6xl mx-auto px-4">
+  <section class="relative py-20" style="min-height: 600px;">
+    <!-- Background image -->
+    <div class="absolute inset-0" style="background-image: url('/images/people.jpg'); background-size: cover; background-position: center; opacity: 1.0;"></div>
+    <!-- Beige overlay -->
+    <div class="absolute inset-0 bg-tlh-warm" style="opacity: 0.7;"></div>
+    <!-- Radial gradient for text readability -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, rgba(254, 243, 226, 0.4) 0%, rgba(254, 243, 226, 0.3) 50%, rgba(254, 243, 226, 0.1) 100%);"></div>
+    
+    <div class="relative z-10 max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
         <p class="text-xl text-gray-700">From first call to broom-clean home—typically in just <strong>2 weeks</strong>.</p>
@@ -211,25 +218,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="grid md:grid-cols-4 gap-6">
         <!-- Step 1 -->
-        <div class="text-center">
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg">
           <div class="w-16 h-16 bg-tlh-teal rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">1</div>
           <h3 class="font-bold text-lg mb-2">Free Consultation</h3>
           <p class="text-gray-700">We visit your home, listen to your situation, and explain your options—no pressure, no obligation.</p>
         </div>
         <!-- Step 2 -->
-        <div class="text-center">
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg">
           <div class="w-16 h-16 bg-tlh-teal rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">2</div>
           <h3 class="font-bold text-lg mb-2">We Handle Everything</h3>
           <p class="text-gray-700">Our team organizes, prices, stages, and photographs every item. You don't lift a finger.</p>
         </div>
         <!-- Step 3 -->
-        <div class="text-center">
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg">
           <div class="w-16 h-16 bg-tlh-teal rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">3</div>
           <h3 class="font-bold text-lg mb-2">The Sale Weekend</h3>
           <p class="text-gray-700">We run a 2-day estate sale with hundreds of buyers. You can stop by or stay away—your choice.</p>
         </div>
         <!-- Step 4 -->
-        <div class="text-center">
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg">
           <div class="w-16 h-16 bg-tlh-teal rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">4</div>
           <h3 class="font-bold text-lg mb-2">Clean & Clear</h3>
           <p class="text-gray-700">We donate remaining items, remove everything, and leave your home broom-clean and ready.</p>
@@ -237,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="text-center mt-10">
-        <a href="/schedule-consult/" class="inline-flex items-center gap-2 bg-tlh-teal text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal-dark transition">
+        <a href="/schedule-consult/" class="inline-flex items-center gap-2 bg-tlh-teal text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-tlh-teal-dark transition shadow-lg">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
           Schedule Your Free Consultation
         </a>
