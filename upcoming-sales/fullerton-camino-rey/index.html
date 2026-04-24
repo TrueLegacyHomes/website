@@ -260,7 +260,6 @@
     ];
     let currentIndex = 0;
     const gallery = document.getElementById('gallery');
-    images.forEach((url, i) => { const img = document.createElement('img'); img.src = url; img.className = 'w-full h-24 md:h-28 object-cover rounded-lg cursor-pointer hover:opacity-80 transition'; img.loading = 'lazy'; img.onclick = () => openLightbox(i + 1); gallery.appendChild(img); });
     function openLightbox(index) { currentIndex = index; document.getElementById('lightbox-img').src = images[index - 1]; document.getElementById('lightbox-counter').textContent = index + ' / ' + images.length; document.getElementById('lightbox').classList.add('active'); document.body.style.overflow = 'hidden'; }
     function closeLightbox(e) { if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; } }
     function prevImage(e) { e.stopPropagation(); currentIndex = currentIndex > 1 ? currentIndex - 1 : images.length; openLightbox(currentIndex); }
