@@ -86,6 +86,15 @@
     </div>
   </footer>
 
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
+    <button id="lightbox-prev" class="absolute left-4 text-white text-5xl hover:text-gray-300 z-10">&#8249;</button>
+    <button id="lightbox-next" class="absolute right-4 text-white text-5xl hover:text-gray-300 z-10">&#8250;</button>
+    <img id="lightbox-image" class="max-w-full max-h-full object-contain" src="" alt="">
+    <div id="lightbox-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded"></div>
+  </div>
+
   <script>
     const images = [
       "https://picturescdn.estatesales.net/4883967/1-2/01599c46-9ac4-4b24-a4d7-f7e894d03cfc.jpg",
@@ -451,13 +460,63 @@
     ];
     
     const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    let currentIndex = 0;
+
+    // Create gallery thumbnails
     images.forEach((url, i) => {
       const img = document.createElement('img');
       img.src = url;
       img.alt = 'Sale item ' + (i + 1);
       img.className = 'w-full h-24 object-cover rounded cursor-pointer hover:opacity-75 transition';
       img.loading = 'lazy';
+      img.onclick = () => openLightbox(i);
       gallery.appendChild(img);
+    });
+
+    // Lightbox functions
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+      lightboxImage.src = images[currentIndex].replace('/1-2/', '/1-1/');
+      lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightbox();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    }
+
+    // Event listeners
+    document.getElementById('lightbox-close').onclick = closeLightbox;
+    document.getElementById('lightbox-next').onclick = nextImage;
+    document.getElementById('lightbox-prev').onclick = prevImage;
+    lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
     });
   </script>
 </body>
