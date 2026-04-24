@@ -490,7 +490,7 @@
     }
 
     function updateLightbox() {
-      lightboxImage.src = images[currentIndex].replace('/1-2/', '/1-1/');
+      lightboxImage.src = images[currentIndex];
       lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
     }
 
