@@ -61,7 +61,7 @@
 
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <h2 class="text-2xl font-bold mb-4">Photos <span class="text-gray-400 text-lg font-normal">(126)</span></h2>
-          <div id="gallery" class="grid grid-cols-4 md:grid-cols-5 gap-2"></div>
+          <div id="gallery" class="grid grid-cols-1 md:grid-cols-5 gap-2"></div>
         </div>
       </div>
 
@@ -139,8 +139,6 @@
       a.appendChild(img);
       gallery.appendChild(a);
     });
-
-    let currentIndex = 0;
 
     function openLightbox(index) {
       currentIndex = index;

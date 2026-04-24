@@ -64,7 +64,7 @@
 
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <h2 class="text-2xl font-bold mb-4">Photos <span class="text-gray-400 text-lg font-normal">(414)</span></h2>
-          <div id="gallery" class="grid grid-cols-4 md:grid-cols-5 gap-2"></div>
+          <div id="gallery" class="grid grid-cols-1 md:grid-cols-5 gap-2"></div>
         </div>
       </div>
 
@@ -578,7 +578,6 @@
       img.src = src;
       img.alt = 'Estate sale item ' + (i + 1);
       img.className = 'w-full h-20 md:h-24 object-cover rounded cursor-pointer hover:opacity-80 transition';
-      img.onclick = () => openLightbox(i);
       gallery.appendChild(img);
     });
     function openLightbox(index) {

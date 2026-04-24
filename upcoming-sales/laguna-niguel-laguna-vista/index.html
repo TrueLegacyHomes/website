@@ -58,7 +58,7 @@
 
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <h2 class="text-2xl font-bold mb-4">Photos <span class="text-gray-400 text-lg font-normal">(143)</span></h2>
-          <div id="gallery" class="grid grid-cols-4 md:grid-cols-5 gap-2"></div>
+          <div id="gallery" class="grid grid-cols-1 md:grid-cols-5 gap-2"></div>
         </div>
       </div>
 
@@ -299,15 +299,12 @@
       const img = document.createElement('img');
       img.src = url;
       img.alt = `Photo ${idx + 1}`;
-      img.className = 'w-full h-16 md:h-20 object-cover rounded cursor-pointer hover:opacity-75 transition';
-      img.onclick = () => openLightbox(idx);
+      img.className = 'w-full h-16 md:h-20 object-cover rounded 
       gallery.appendChild(img);
     });
 
     let currentIndex = 0;
-    const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCounter = document.getElementById('lightbox-counter');
 
     function openLightbox(index) {
       currentIndex = index;
