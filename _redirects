@@ -220,3 +220,59 @@
 /why-estate-sales-are-so-popular/ /blog/why-estate-sales-are-so-popular 301
 /your-trash-is-someones-treasure-resell-all-your-unwanted-items /blog/your-trash-is-someones-treasure-resell-all-your-unwanted-items 301
 /your-trash-is-someones-treasure-resell-all-your-unwanted-items/ /blog/your-trash-is-someones-treasure-resell-all-your-unwanted-items 301
+
+# ============================================================================
+# 39 new rules for Ahrefs-flagged 404 URLs (April 13, 2026 crawl)
+# Cross-checked against existing 219 rules — zero collisions.
+# ============================================================================
+
+# ─── Priority (organic traffic or inlinks) ──────────────────────────────────
+/shop-current-estate-sales/ /upcoming-sales/ 301
+/locations/la-jolla/ /locations/san-diego/ 301
+
+# ─── OC estate-sales city taxonomy URLs ─────────────────────────────────────
+/estate-sales/lake-forest-ca/ /orange-county.html 301
+/estate-sales/chula-vista-ca/ /locations/san-diego/ 301
+/estate-sales/huntington-beach-ca/ /orange-county.html 301
+/estate-sales/irvine-ca/ /orange-county.html 301
+/estate-sales/san-diego-ca/ /locations/san-diego/ 301
+/estate-sales/newport-beach-ca/ /orange-county.html 301
+/estate-sales/mission-viejo-ca/ /orange-county.html 301
+/estate-sales/oceanside-ca/ /locations/san-diego/ 301
+/estate-sales/fullerton-ca/ /orange-county.html 301
+
+# ─── Removed senior-care page ───────────────────────────────────────────────
+/senior-care.html / 301
+
+# ─── Old neighborhood pages (not on new site) ───────────────────────────────
+/locations/costa-mesa/ /orange-county.html 301
+/locations/orange/ /orange-county.html 301
+/locations/oceanside/ /locations/san-diego/ 301
+/locations/laguna-niguel/ /orange-county.html 301
+/locations/seal-beach/ /orange-county.html 301
+
+# ─── Old blog URLs (hyphen-capitalized WordPress slugs) ─────────────────────
+/What-to-Look-for-in-an-Estate-Sale /blog/ 301
+/The-Most-Important-Elements-of-Estate-Sale-Planning /blog/ 301
+/How-to-Compare-Estate-Sale-Prices /blog/ 301
+/Estate-Sale-Etiquette /blog/ 301
+/Why-Estate-Sales-are-So-Popular /blog/ 301
+/9-Tips-to-Hiring-a-Professional-Estate-Sale-Company /blog/ 301
+
+# ─── Old .html-extension URLs (WordPress-era) ───────────────────────────────
+/about.html /about/ 301
+/faq.html /faq/ 301
+/blog.html /blog/ 301
+/schedule-consult.html /schedule-consult/ 301
+/contact.html /contact/ 301
+/testimonials.html /testimonials/ 301
+/careers.html /careers/ 301
+/estate-sales.html /estate-sales/ 301
+/fiduciaries.html /fiduciaries/ 301
+/joinourlist.html /joinourlist/ 301
+/downsize-guide.html /downsize-guide/ 301
+/shop-sales.html /shop-sales/ 301
+/locations.html /locations/san-diego/ 301
+/cash-offers.html /cash-home-offer/ 301
+/privacy.html /privacy-policy/ 301
+/terms.html /tos/ 301
