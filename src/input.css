@@ -8,3 +8,8 @@ h1 {
   font-weight: 600;
   color: #223656 !important;
 }
+
+/* Inter font for header/nav */
+nav {
+  font-family: 'Inter', sans-serif;
+}
