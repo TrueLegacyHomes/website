@@ -5,4 +5,5 @@
 /* Source Serif for h1 headings */
 h1 {
   font-family: 'Source Serif 4', serif;
+  font-weight: 500;
 }
