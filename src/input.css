@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Source Serif for h1 headings */
+/* Source Serif Pro for h1 headings */
 h1 {
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Source Serif Pro', serif;
   font-weight: 600;
   color: #1e293b; /* tlh-dark */
 }
