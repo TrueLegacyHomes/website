@@ -11,6 +11,10 @@ module.exports = {
         'tlh-dark': '#1e293b',
         'tlh-warm': '#f4efea',
         'tlh-purple': '#A47EAF',
+      },
+      fontSize: {
+        'lg': '1.15rem',
+        'xl': '1.15rem',
       }
     }
   },

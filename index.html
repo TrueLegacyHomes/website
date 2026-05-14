@@ -251,11 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             Serving <strong>San Diego</strong>, <strong>Orange County</strong> & <strong>Los Angeles</strong> — we help families navigate estate sales and home sales with compassion and clarity.
           </p>
           
-          <!-- Response time badge -->
-          <p class="text-tlh-teal font-medium mb-6 flex items-center gap-2">
-            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <span>We respond within 2 hours · Free consultations</span>
-          </p>
+
           
           <!-- Mobile hero image -->
           <div class="md:hidden mb-6">
@@ -304,9 +300,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Hero image: hidden on mobile, shown on tablet+ -->
         <div class="hidden md:block relative overflow-hidden rounded-2xl shadow-2xl">
           <!-- Background image -->
-          <div class="absolute inset-0" style="background-image: url('/images/people.jpg'); background-size: cover; background-position: center;"></div>
-          <!-- Gradient overlay for readability -->
-          <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0" style="background-image: url('/images/people.jpg'); background-size: cover; background-position: right center;"></div>
+          <!-- Blend gradient overlay - fades from transparent on left to visible on right -->
+          <div class="absolute inset-0 bg-gradient-to-r from-tlh-warm via-transparent to-transparent" style="background: linear-gradient(to right, #fef3e2 0%, rgba(254, 243, 226, 0.8) 15%, transparent 35%);"></div>
+          <!-- Subtle vignette for depth -->
+          <div class="absolute inset-0 bg-gradient-to-br from-transparent via-black/5 to-black/20"></div>
           
           <!-- Content overlay -->
           <div class="relative z-10 p-8 lg:p-12 min-h-[500px]">
