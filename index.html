@@ -237,8 +237,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <main>
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-tlh-warm to-white py-12 md:py-24">
-    <div class="max-w-7xl mx-auto px-4">
+  <section class="relative py-12 md:py-24 overflow-hidden">
+    <!-- Background image - hidden on mobile, shown on desktop -->
+    <div class="hidden md:block absolute inset-0" style="background-image: url('/images/people.jpg'); background-size: cover; background-position: right center;"></div>
+    <!-- Gradient overlay - fades from solid warm color on left to transparent on right -->
+    <div class="hidden md:block absolute inset-0" style="background: linear-gradient(to right, #fef3e2 0%, #fef3e2 30%, rgba(254, 243, 226, 0.85) 50%, transparent 75%);"></div>
+    <!-- Mobile background -->
+    <div class="md:hidden absolute inset-0 bg-gradient-to-br from-tlh-warm to-white"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
       <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
           <!-- Tagline -->
@@ -297,19 +304,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
         </div>
         
-        <!-- Hero image: hidden on mobile, shown on tablet+ -->
-        <div class="hidden md:block relative overflow-hidden rounded-2xl shadow-2xl">
-          <!-- Background image -->
-          <div class="absolute inset-0" style="background-image: url('/images/people.jpg'); background-size: cover; background-position: right center;"></div>
-          <!-- Blend gradient overlay - fades from transparent on left to visible on right -->
-          <div class="absolute inset-0 bg-gradient-to-r from-tlh-warm via-transparent to-transparent" style="background: linear-gradient(to right, #fef3e2 0%, rgba(254, 243, 226, 0.8) 15%, transparent 35%);"></div>
-          <!-- Subtle vignette for depth -->
-          <div class="absolute inset-0 bg-gradient-to-br from-transparent via-black/5 to-black/20"></div>
-          
-          <!-- Content overlay -->
-          <div class="relative z-10 p-8 lg:p-12 min-h-[500px]">
-          </div>
-        </div>
+        <!-- Spacer for right column on desktop (image is now in background) -->
+        <div class="hidden md:block"></div>
       </div>
     </div>
   </section>
