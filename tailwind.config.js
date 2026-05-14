@@ -15,6 +15,10 @@ module.exports = {
       fontSize: {
         'lg': '1.15rem',
         'xl': '1.15rem',
+      },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        'serif': ['Source Serif Pro', 'Georgia', 'serif'],
       }
     }
   },
