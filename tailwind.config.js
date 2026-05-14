@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'tlh-teal': '#38b5ad',
+        'tlh-teal': '#158c8b',
         'tlh-teal-dark': '#117170',
         'tlh-dark': '#132b42',
         'tlh-warm': '#fef3e2',
