@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Source Serif Pro for h1 headings */
+h1 {
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 600;
+  color: #223656 !important;
+}
+
+/* Inter font for header/nav */
+nav {
+  font-family: 'Inter', sans-serif;
+}
