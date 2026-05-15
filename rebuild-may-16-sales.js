@@ -85,6 +85,7 @@ const betterTemplate = (sale) => `<!DOCTYPE html>
 
   <footer class="bg-tlh-dark text-white py-8 mt-12">
     <div class="max-w-6xl mx-auto px-4 text-center">
+      <img src="/images/clientLOGO.png" alt="True Legacy Homes" class="h-12 mx-auto mb-4" loading="lazy">
       <p>&copy; 2026 True Legacy Homes. All rights reserved.</p>
     </div>
   </footer>
