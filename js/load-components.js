@@ -1,6 +1,6 @@
 /**
  * TLH Component Loader
- * Loads reusable HTML components (header/nav) into pages
+ * Loads reusable HTML components (header/nav and footer) into pages
  */
 
 (function() {
@@ -17,6 +17,19 @@
         initMobileCTA();
       })
       .catch(err => console.error('Failed to load header-nav:', err));
+  }
+
+  // Load footer component
+  function loadFooter() {
+    const placeholder = document.getElementById('footer-placeholder');
+    if (!placeholder) return;
+
+    fetch('/components/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        placeholder.outerHTML = html;
+      })
+      .catch(err => console.error('Failed to load footer:', err));
   }
 
   // Initialize mobile menu toggle
@@ -50,8 +63,12 @@
 
   // Load components when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadHeaderNav);
+    document.addEventListener('DOMContentLoaded', function() {
+      loadHeaderNav();
+      loadFooter();
+    });
   } else {
     loadHeaderNav();
+    loadFooter();
   }
 })();
