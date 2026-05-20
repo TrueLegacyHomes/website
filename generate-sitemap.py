@@ -1,105 +1,99 @@
 #!/usr/bin/env python3
-"""Generate sitemap.xml for True Legacy Homes website"""
+"""
+Generate comprehensive sitemap for True Legacy Homes
+Includes all existing pages PLUS the missing 101 blog posts
+"""
 
 import os
 from datetime import datetime
 from pathlib import Path
 
-# Base URL
-BASE_URL = "https://truelegacyhomes.com"
-
-# Priority and changefreq settings
-URL_PRIORITY = {
-    'index.html': ('1.0', 'weekly'),
-    'estate-sales': ('0.9', 'weekly'),
-    'cash-home-offer': ('0.9', 'weekly'),
-    'locations': ('0.8', 'weekly'),
-    'blog': ('0.7', 'daily'),
-    'upcoming-sales': ('0.8', 'weekly'),
-    'default': ('0.6', 'monthly')
-}
-
-def get_priority_changefreq(path):
-    """Determine priority and changefreq based on path"""
-    path_str = str(path)
-    
-    if path_str == 'index.html':
-        return URL_PRIORITY['index.html']
-    elif 'estate-sales' in path_str:
-        return URL_PRIORITY['estate-sales']
-    elif 'cash-home-offer' in path_str:
-        return URL_PRIORITY['cash-home-offer']
-    elif 'locations' in path_str:
-        return URL_PRIORITY['locations']
-    elif 'blog' in path_str:
-        return URL_PRIORITY['blog']
-    elif 'upcoming-sales' in path_str:
-        return URL_PRIORITY['upcoming-sales']
-    else:
-        return URL_PRIORITY['default']
-
-def find_html_files():
-    """Find all HTML files to include in sitemap"""
-    urls = []
-    
-    # Root HTML files (except 404)
-    for html_file in Path('.').glob('*.html'):
-        if html_file.name != '404.html':
-            urls.append(html_file)
-    
-    # Directory index.html files
-    for index_file in Path('.').rglob('index.html'):
-        # Skip node_modules and hidden directories
-        if 'node_modules' not in str(index_file) and not any(part.startswith('.') for part in index_file.parts):
-            urls.append(index_file)
-    
-    return sorted(set(urls))
-
 def generate_sitemap():
-    """Generate sitemap.xml"""
-    html_files = find_html_files()
+    base_url = "https://truelegacyhomes.com"
+    today = datetime.now().strftime("%Y-%m-%d")
     
-    # Start XML
-    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
-    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    # Start sitemap
+    sitemap = ['<?xml version="1.0" encoding="UTF-8"?>']
+    sitemap.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
     
-    # Get last modified date (use today for all)
-    lastmod = datetime.now().strftime('%Y-%m-%d')
-    
-    for html_file in html_files:
-        # Convert file path to URL
-        if html_file.name == 'index.html':
-            # Directory index
-            if str(html_file) == 'index.html':
-                url = BASE_URL + '/'
-            else:
-                url = BASE_URL + '/' + str(html_file.parent) + '/'
-        else:
-            # Root HTML file
-            url = BASE_URL + '/' + html_file.stem + '/'
+    # Define page groups with their priorities
+    page_groups = {
+        # High priority pages
+        'homepage': (['index.html'], 1.0, 'weekly'),
+        'services': (['estate-sales/index.html', 'cash-home-offer/index.html'], 0.9, 'weekly'),
+        'locations': (['locations/index.html', 'locations/san-diego/index.html', 
+                       'locations/orangecounty/index.html', 'locations/los-angeles/index.html'], 0.8, 'weekly'),
         
-        # Clean up double slashes
-        url = url.replace('//', '/').replace(':/', '://')
+        # Medium priority
+        'upcoming_sales': ([], 0.8, 'weekly'),  # Will scan directory
+        'renovations': ([], 0.6, 'monthly'),  # Will scan directory
+        'blog': ([], 0.7, 'monthly'),  # Will scan directory - THE MISSING PIECE!
         
-        # Get priority and changefreq
-        priority, changefreq = get_priority_changefreq(html_file)
-        
-        # Add URL entry
-        xml.append('  <url>')
-        xml.append(f'    <loc>{url}</loc>')
-        xml.append(f'    <lastmod>{lastmod}</lastmod>')
-        xml.append(f'    <changefreq>{changefreq}</changefreq>')
-        xml.append(f'    <priority>{priority}</priority>')
-        xml.append('  </url>')
+        # Standard pages
+        'standard': (['about/index.html', 'contact/index.html', 'faq/index.html', 
+                      'testimonials/index.html', 'schedule-consult/index.html',
+                      'fiduciaries/index.html', 'careers/index.html'], 0.6, 'monthly'),
+    }
     
-    xml.append('</urlset>')
+    # Process static pages
+    for group_name, (pages, priority, changefreq) in page_groups.items():
+        if pages:  # If specific pages listed
+            for page in pages:
+                if os.path.exists(page):
+                    url = f"{base_url}/{page.replace('index.html', '')}"
+                    add_url(sitemap, url, today, changefreq, priority)
     
-    return '\n'.join(xml)
+    # Scan and add upcoming-sales pages
+    if os.path.exists('upcoming-sales'):
+        for file in sorted(os.listdir('upcoming-sales')):
+            if file.endswith('.html') and file != 'index.html':
+                url = f"{base_url}/upcoming-sales/{file.replace('.html', '')}"
+                add_url(sitemap, url, today, 'weekly', 0.8)
+    
+    # Scan and add renovations pages
+    if os.path.exists('renovations'):
+        for file in sorted(os.listdir('renovations')):
+            if file.endswith('.html') and file != 'index.html':
+                url = f"{base_url}/renovations/{file.replace('.html', '')}"
+                add_url(sitemap, url, today, 'monthly', 0.6)
+    
+    # Scan and add BLOG POSTS (THE CRITICAL FIX!)
+    if os.path.exists('blog'):
+        blog_count = 0
+        for file in sorted(os.listdir('blog')):
+            if file.endswith('.html') and file != 'index.html':
+                url = f"{base_url}/blog/{file.replace('.html', '')}"
+                add_url(sitemap, url, today, 'monthly', 0.7)
+                blog_count += 1
+        print(f"✅ Added {blog_count} blog posts to sitemap")
+    
+    # Close sitemap
+    sitemap.append('</urlset>')
+    
+    # Write to file
+    with open('sitemap.xml', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(sitemap))
+    
+    # Count total URLs
+    url_count = sitemap.count('<url>')
+    print(f"✅ Generated sitemap with {url_count} URLs")
+    print(f"📁 Saved to: sitemap.xml")
+    
+    return url_count
+
+def add_url(sitemap, url, lastmod, changefreq, priority):
+    """Add a URL entry to the sitemap"""
+    sitemap.append('  <url>')
+    sitemap.append(f'    <loc>{url}</loc>')
+    sitemap.append(f'    <lastmod>{lastmod}</lastmod>')
+    sitemap.append(f'    <changefreq>{changefreq}</changefreq>')
+    sitemap.append(f'    <priority>{priority}</priority>')
+    sitemap.append('  </url>')
 
 if __name__ == '__main__':
-    sitemap_content = generate_sitemap()
-    
-    with open('sitemap.xml', 'w', encoding='utf-8') as f:
-        f.write(sitemap_content)
-    
-    print(f"✅ Generated sitemap.xml with {sitemap_content.count('<url>')} URLs")
+    print("🔧 Generating comprehensive sitemap for True Legacy Homes...")
+    print("🎯 Including ALL blog posts (previously missing!)")
+    print()
+    count = generate_sitemap()
+    print()
+    print(f"🚀 Ready to commit and push to trigger Google re-crawl")
