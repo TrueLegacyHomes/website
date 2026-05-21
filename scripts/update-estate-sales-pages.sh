@@ -110,6 +110,11 @@ git pull origin staging
 chmod +x "$WORKSPACE/scripts/generate-pages.py"
 python3 "$WORKSPACE/scripts/generate-pages.py" "$TMP_DIR"
 
+echo ""
+echo "📋 Step 5b: Updating main listing page..."
+chmod +x "$WORKSPACE/scripts/update-listing-page.py"
+python3 "$WORKSPACE/scripts/update-listing-page.py" "$TMP_DIR"
+
 # Step 6: Commit to staging
 echo ""
 echo "📤 Step 6: Pushing to staging..."
