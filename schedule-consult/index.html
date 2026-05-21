@@ -116,6 +116,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
             <input type="hidden" name="utm_term" id="utm_term" value="">
             <input type="hidden" name="utm_content" id="utm_content" value="">
+            <input type="hidden" name="lead_source" id="lead_source" value="">
             
             <!-- Honeypot field - hidden from humans, bots fill it out -->
             <div style="position: absolute; left: -9999px;" aria-hidden="true">
@@ -271,6 +272,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             serviceSelect.addEventListener('change', togglePropertyFields);
             togglePropertyFields(); // Run on load
             
+            // Determine lead source from UTM params and referrer
+            function getLeadSource() {
+              const params = new URLSearchParams(window.location.search);
+              const utmSource = params.get('utm_source');
+              const utmMedium = params.get('utm_medium');
+              const referrer = document.referrer;
+              
+              // Check for paid traffic
+              if (utmMedium === 'cpc' || utmMedium === 'paid' || utmMedium === 'ppc') return 'Paid';
+              
+              // Check for email
+              if (utmSource === 'email' || utmMedium === 'email') return 'Email';
+              
+              // Any UTM params = referral (unless paid/email)
+              if (utmSource || utmMedium) return 'Referral';
+              
+              // Check referrer for organic search
+              if (referrer) {
+                if (referrer.includes('google.com') || referrer.includes('bing.com') || 
+                    referrer.includes('yahoo.com') || referrer.includes('duckduckgo.com')) {
+                  return 'Organic';
+                }
+                // External referrer
+                if (!referrer.includes('truelegacyhomes.com')) return 'Referral';
+              }
+              
+              // No referrer or UTM params = direct
+              return 'Direct';
+            }
+            
             // Populate tracking fields from URL params
             const urlParams = new URLSearchParams(window.location.search);
             document.getElementById('channel').value = urlParams.get('utm_source') || '';
@@ -280,6 +311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.getElementById('utm_campaign').value = urlParams.get('utm_campaign') || '';
             document.getElementById('utm_term').value = urlParams.get('utm_term') || '';
             document.getElementById('utm_content').value = urlParams.get('utm_content') || '';
+            document.getElementById('lead_source').value = getLeadSource();
             
             // Handle form submission
             document.getElementById('consult-form').addEventListener('submit', async function(e) {
@@ -326,6 +358,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 utm_campaign: document.getElementById('utm_campaign').value || null,
                 utm_term: document.getElementById('utm_term').value || null,
                 utm_content: document.getElementById('utm_content').value || null,
+                lead_source: document.getElementById('lead_source').value || null,
                 metadata: {
                   messaging_optin: document.getElementById('messaging_optin').checked,
                   referrer: document.referrer,
