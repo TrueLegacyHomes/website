@@ -103,15 +103,17 @@ def main():
         count=1
     )
     
-    # Find the grid section and replace all cards
-    # Pattern: from first "<!-- " comment to the closing </div> of the grid
-    grid_pattern = r'(<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">)\s*\n(.*?)\n(\s*</div>)'
+    # Find and replace the grid section
+    # Use a more robust pattern that matches the grid div and everything up to the next </section>
+    grid_pattern = r'(<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">).*?(</div>\s*</div>\s*</section>)'
     
-    new_grid = '\n'.join(cards)
+    new_grid_content = '\n'.join(cards)
+    
+    replacement = rf'\1\n{new_grid_content}\n      \2'
     
     content = re.sub(
         grid_pattern,
-        rf'\1\n{new_grid}\n\3',
+        replacement,
         content,
         flags=re.DOTALL
     )
