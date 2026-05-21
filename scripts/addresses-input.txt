@@ -1,0 +1,9 @@
+# Estate Sales Addresses
+# Format: One address per line (street, city, state zip)
+
+# This Weekend's Sales:
+1783 Medinah Road, San Marcos, CA 92069
+3228 Emerson Street, San Diego, CA 92106
+915 Moody Drive, Escondido, CA 92027
+63 Garcilla Dr, Trabuco Canyon, CA 92679
+28181 Josefina, Mission Viejo, CA 92692
