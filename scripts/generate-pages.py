@@ -50,6 +50,9 @@ def main():
     
     print(f"Weekend dates: {date_short}")
     
+    # Track created slugs for cleanup
+    created_slugs = []
+    
     # Process each sale
     for sale in sales:
         sale_id = sale['id']
@@ -103,13 +106,25 @@ def main():
         with open(f"{base_dir}/{slug}/index.html", 'w') as f:
             f.write(page)
         
+        created_slugs.append(slug)
         print(f"✅ Created {slug} ({len(guids)} images)")
+    
+    # Clean up old sales - remove directories not in created_slugs
+    print(f"\n🗑️  Cleaning up old sales...")
+    import shutil
+    for item in os.listdir(base_dir):
+        item_path = os.path.join(base_dir, item)
+        if os.path.isdir(item_path) and item not in created_slugs:
+            shutil.rmtree(item_path)
+            print(f"   Deleted: {item}")
     
     # Save weekend dates for email script
     with open(f"{tmp_dir}/weekend-dates.txt", 'w') as f:
         f.write(f"{date_short}\n{date_long}")
     
     print(f"\n✅ All pages generated!")
+    print(f"   Created: {len(created_slugs)} sales")
+    print(f"   Cleaned up old sales")
 
 if __name__ == "__main__":
     main()

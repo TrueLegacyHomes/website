@@ -42,7 +42,7 @@ def load_sales_data(tmp_dir):
     
     # Load validated images for each sale
     for sale in sales:
-        sale_id = sale['saleId']
+        sale_id = sale.get('saleId') or sale.get('id')
         validated_file = f"{tmp_dir}/sale-{sale_id}-validated.txt"
         if os.path.exists(validated_file):
             with open(validated_file, 'r') as f:
@@ -78,7 +78,7 @@ def build_email_html(sales, email_template, card_template, date_range="TBD"):
             images.append("placeholder")  # Will be replaced with actual placeholder URL
         
         # Build image URLs
-        sale_id = sale['saleId']
+        sale_id = sale.get('saleId') or sale.get('id')
         image_vars = {}
         for i, guid in enumerate(images, 1):
             if guid == "placeholder":
