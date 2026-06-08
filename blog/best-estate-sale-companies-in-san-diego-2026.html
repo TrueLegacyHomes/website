@@ -88,6 +88,8 @@
     .article-content ul, .article-content ol { margin-left: 1.5rem; margin-bottom: 2rem; }
     .article-content li { margin-bottom: 0.75rem; }
     .article-content strong { font-weight: 600; color: #1f2937; }
+    .article-content a { color: #38b5ad; text-decoration: underline; }
+    .article-content a:hover { color: #2a8a84; }
   </style>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="ZnPLvtc/3QdsII1NHSnmkA" async></script>
 </head>
@@ -97,55 +99,8 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Navigation -->
-  <nav class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center">
-      <a href="/">
-        <img src="../images/tlhLOGO.webp" alt="True Legacy Homes" class="h-12 md:h-16 w-auto">
-      </a>
-      <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="/estate-sales/" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Estate Sales</a>
-        <a href="/cash-home-offer/" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">Cash Offers</a>
-        <a href="/about/" class="hover:text-tlh-teal focus:text-tlh-teal focus:outline-2 focus:outline-tlh-teal">About</a>
-      </div>
-      <div class="hidden md:flex items-center gap-2">
-        <a href="tel:6194501702" class="flex items-center gap-2 bg-tlh-dark text-white px-[12px] py-[10px] rounded-[5px] hover:bg-gray-800">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> (619) 450-1702
-        </a>
-        <a href="/schedule-consult/" class="flex items-center bg-tlh-teal text-white px-[12px] py-[10px] rounded-[5px] hover:bg-tlh-teal-dark font-medium">Get Free Guidance</a>
-      </div>
-      <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-tlh-teal" aria-label="Open menu">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-      <div class="px-4 py-4 space-y-3">
-        <a href="/estate-sales/" class="block py-[10px] text-lg hover:text-tlh-teal">Estate Sales</a>
-        <a href="/cash-home-offer/" class="block py-[10px] text-lg hover:text-tlh-teal">Cash Offers</a>
-        <a href="/about/" class="block py-[10px] text-lg hover:text-tlh-teal">About</a>
-        <a href="/schedule-consult/" class="block py-[10px] text-lg font-semibold text-tlh-teal hover:text-tlh-teal-dark">Get Free Guidance →</a>
-        <a href="/blog/" class="block py-[10px] text-gray-700 hover:text-tlh-teal">Blog</a>
-        <a href="/locations/" class="block py-[10px] text-gray-700 hover:text-tlh-teal">Locations</a>
-        <a href="/upcoming-sales/" class="block py-[10px] text-gray-700 hover:text-tlh-teal">Upcoming Sales</a>
-        <a href="/contact/" class="block py-[10px] text-gray-700 hover:text-tlh-teal">Contact</a>
-        <div class="pt-3 border-t">
-          <a href="tel:6194501702" class="block w-full bg-tlh-teal text-white py-[10px] rounded-[5px] font-medium text-center">
-            <svg class="w-5 h-5 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> Call (619) 450-1702
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <script>
-    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-  </script>
+  <!-- Header & Navigation (loaded from component) -->
+  <div id="header-nav-placeholder"></div>
 
   <!-- Article Content -->
   <article class="max-w-4xl mx-auto px-4 py-12">
@@ -157,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="article-content text-gray-700">
       <p>The best estate sale companies in San Diego combine full-service liquidation expertise, transparent commission structures, and compassionate support for families navigating difficult transitions. Whether you're managing a loved one's estate, downsizing before a move, or facing a relocation deadline, choosing the right company means matching their service model to your specific situation, timeline, and emotional needs. This guide compares the top San Diego estate sales companies, breaks down typical fees, and provides a clear framework for making the best decision for your family.</p>
 
-      <p>If you're reading this, you're likely facing one of life's most challenging moments. Managing an estate—whether after a loss, during a major life transition, or under time pressure—requires more than just selling belongings. It requires a partner who understands both the practical and emotional weight of the process. The estate sales San Diego market includes everything from national franchises to boutique local operators, and not every company is the right fit for every situation.</p>
+      <p>If you're reading this, you're likely facing one of life's most challenging moments. Managing an estate—whether after a loss, during a major life transition, or under time pressure—requires more than just selling belongings. It requires a partner who understands both the practical and emotional weight of the process. The <a href="/locations/san-diego/">estate sales San Diego</a> market includes everything from national franchises to boutique local operators, and not every company is the right fit for every situation.</p>
 
       <p>This honest comparison will help you understand your options, avoid common pitfalls, and find a company that treats your family's belongings—and your family—with the care they deserve.</p>
 
@@ -173,20 +128,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <p>When evaluating alternatives in Southern California, consider whether a national franchise's standardized approach or a local company's personalized service better fits your needs. National franchises offer brand recognition and consistent processes, while local operators often provide deeper community connections and more flexible service terms.</p>
 
-      <p>For downsizing seniors moving to assisted living, a full-service company that includes clean-out and donation coordination can eliminate the stress of managing multiple vendors. Relocating professionals with firm deadlines should prioritize companies with proven track records for quick turnarounds and clear communication about timelines.</p>
+      <p>For <a href="/care-placement/">downsizing seniors moving to assisted living</a>, a full-service company that includes clean-out and donation coordination can eliminate the stress of managing multiple vendors. Relocating professionals with firm deadlines should prioritize companies with proven track records for quick turnarounds and clear communication about timelines.</p>
 
       <h2>Top Estate Sale Companies in San Diego Compared</h2>
 
       <p>San Diego's estate sale market includes several reputable companies, each with distinct strengths, service areas, and specializations. The following comparison highlights key differentiators to help you identify which provider aligns with your situation.</p>
 
       <h3>True Legacy Homes</h3>
-      <p>Operates throughout Southern California with a strong presence in San Diego County, including North County, La Jolla, and Chula Vista. The company emphasizes a compassionate, family-first approach alongside professional liquidation services. True Legacy Homes offers full-service estate sales, clean-out coordination, and support for families navigating emotionally complex transitions. Their team is known for transparent communication and personalized service plans.</p>
+      <p>Operates throughout Southern California with a strong presence in San Diego County, including North County, La Jolla, and Chula Vista. The company emphasizes a compassionate, family-first approach alongside professional liquidation services. <a href="/estate-sales/">True Legacy Homes offers full-service estate sales</a>, clean-out coordination, and support for families navigating emotionally complex transitions. Their team is known for transparent communication and personalized service plans.</p>
 
       <h3>Mattco Estates</h3>
       <p>Positions itself as San Diego's premier estate sale and liquidation service, with decades of experience in the local market. They handle high-value estates and offer comprehensive staging and marketing. Mattco is a strong choice for families with antiques, fine art, or collectibles requiring specialized appraisal expertise.</p>
 
       <h3>San Diego Estate Services</h3>
-      <p>Highlights its BBB A+ rating, licensing, bonding, and insurance as key trust signals. They serve the greater San Diego area and emphasize professionalism and accountability. This company appeals to executors who prioritize credentials and formal business practices.</p>
+      <p>Highlights its <a href="https://www.bbb.org/" target="_blank" rel="noopener">BBB A+ rating</a>, licensing, bonding, and insurance as key trust signals. They serve the greater San Diego area and emphasize professionalism and accountability. This company appeals to executors who prioritize credentials and formal business practices.</p>
 
       <h3>Grasons of Elite North San Diego County</h3>
       <p>Part of a national franchise network with a geo-targeted focus on North County communities. Franchise models offer standardized processes and training, which can provide consistency but may feel less personalized than independent operators.</p>
@@ -220,7 +175,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <p>Choosing the best estate sale company requires evaluating credentials, service fit, communication style, and references—not just price. A systematic approach ensures you find a partner who meets both your practical requirements and emotional needs during a difficult time.</p>
 
-      <p><strong>Start with credentials and trust signals.</strong> Verify that any company you consider is properly licensed, bonded, and insured. A BBB rating, membership in professional associations like the American Society of Estate Liquidators, and positive online reviews provide baseline assurance. However, credentials alone don't guarantee a good experience—they simply establish minimum professionalism.</p>
+      <p><strong>Start with credentials and trust signals.</strong> Verify that any company you consider is properly licensed, bonded, and insured. A BBB rating, membership in professional associations like the <a href="https://www.aselonline.com/" target="_blank" rel="noopener">American Society of Estate Liquidators</a>, and positive online reviews provide baseline assurance. However, credentials alone don't guarantee a good experience—they simply establish minimum professionalism.</p>
 
       <p><strong>Assess service fit for your situation.</strong> If you're a grieving executor managing a parent's estate from out of state, you need a company that handles everything and communicates proactively. If you're a downsizing senior with time to be involved, you might prefer a company that welcomes your participation. Relocating professionals facing tight deadlines should prioritize companies with proven fast-turnaround capabilities.</p>
 
@@ -256,7 +211,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <p><strong>Pricing and staging (Week 3):</strong> Items are priced based on market research, comparable sales, and the company's experience. The home is staged to optimize traffic flow and presentation. Quality staging significantly impacts final sale results—professional companies know how to create appealing displays that encourage buying.</p>
 
-      <p><strong>Marketing (Week 3-4):</strong> The company advertises the sale through EstateSales.net, social media, email lists to their buyer network, and physical signage. Effective marketing determines crowd size and buyer quality. Ask how many people typically attend their sales.</p>
+      <p><strong>Marketing (Week 3-4):</strong> The company advertises the sale through <a href="https://www.estatesales.net/" target="_blank" rel="noopener">EstateSales.net</a>, social media, email lists to their buyer network, and physical signage. Effective marketing determines crowd size and buyer quality. Ask how many people typically attend their sales.</p>
 
       <p><strong>Sale days (typically Friday-Sunday):</strong> The estate sale typically runs two to three days, often Friday through Sunday. Many companies reduce prices on the final day to move remaining inventory. The company staffs the sale, manages the flow of buyers, processes payments, and maintains security. You typically should not be present during the sale unless you specifically want to be.</p>
 
@@ -287,17 +242,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <h2>Let True Legacy Homes Guide You Through Your Estate Sale</h2>
 
-      <p>Choosing an estate sale company is about more than comparing commission rates—it's about finding a partner who understands the emotional complexity of liquidating a lifetime of belongings while maximizing your financial return. True Legacy Homes brings full-service estate sale expertise to families throughout San Diego County, combining professional liquidation services with compassionate support during difficult transitions.</p>
+      <p>Choosing an estate sale company is about more than comparing commission rates—it's about finding a partner who understands the emotional complexity of liquidating a lifetime of belongings while maximizing your financial return. <a href="/estate-sales/">True Legacy Homes</a> brings full-service estate sale expertise to families throughout San Diego County, combining professional liquidation services with compassionate support during difficult transitions.</p>
 
       <p>Whether you're managing an estate after loss, helping a parent downsize, or preparing for a major move, the True Legacy Homes team provides personalized guidance from first consultation through final clean-out. Their approach prioritizes transparent communication, fair pricing, and respect for the memories attached to every item.</p>
 
-      <p>You don't have to navigate this process alone. Reach out to True Legacy Homes for a consultation and discover how the right partner can transform a stressful obligation into a manageable, even meaningful, experience.</p>
+      <p>You don't have to navigate this process alone. <a href="/schedule-consult/">Reach out to True Legacy Homes for a consultation</a> and discover how the right partner can transform a stressful obligation into a manageable, even meaningful, experience.</p>
     </div>
   </article>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
-  <script src="../js/footer.js"></script>
+  <script src="/js/load-components.js"></script>
 
 </body>
 </html>
