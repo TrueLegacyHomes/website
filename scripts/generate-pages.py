@@ -110,13 +110,38 @@ def main():
         print(f"✅ Created {slug} ({len(guids)} images)")
     
     # Clean up old sales - remove directories not in created_slugs
+    # Write 301 redirects to _redirects before deleting so Google doesn't see bare 404s
     print(f"\n🗑️  Cleaning up old sales...")
     import shutil
+    redirects_path = "/Users/admin/.openclaw/workspace/tlh-rebuild/_redirects"
+    redirect_marker = "# === Auto-generated sale redirects (managed by generate-pages.py) ==="
+
+    # Read existing _redirects, strip old auto-generated sale redirect block
+    with open(redirects_path, 'r') as f:
+        existing_content = f.read()
+    if redirect_marker in existing_content:
+        existing_content = existing_content[:existing_content.index(redirect_marker)].rstrip()
+
+    # Build new redirect lines for stale sales
+    new_redirect_lines = []
+    deleted_slugs = []
     for item in os.listdir(base_dir):
         item_path = os.path.join(base_dir, item)
         if os.path.isdir(item_path) and item not in created_slugs:
             shutil.rmtree(item_path)
-            print(f"   Deleted: {item}")
+            deleted_slugs.append(item)
+            new_redirect_lines.append(f"/upcoming-sales/{item} /upcoming-sales/ 301")
+            new_redirect_lines.append(f"/upcoming-sales/{item}/ /upcoming-sales/ 301")
+            print(f"   Deleted + redirected: {item}")
+
+    # Append updated redirect block
+    if new_redirect_lines:
+        redirect_block = f"\n\n{redirect_marker}\n" + "\n".join(new_redirect_lines)
+        with open(redirects_path, 'w') as f:
+            f.write(existing_content + redirect_block + "\n")
+        print(f"   Added {len(new_redirect_lines)} redirect rules to _redirects")
+    else:
+        print(f"   No old sales to clean up")
     
     # Save weekend dates for email script
     with open(f"{tmp_dir}/weekend-dates.txt", 'w') as f:

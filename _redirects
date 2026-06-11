@@ -11,6 +11,9 @@
 /join-our-list/* /joinourlist/ 301
 /sales/* /upcoming-sales/ 301
 
+# Orphaned .html blog URLs
+/blog/hummel-plates.html /blog/hummel-plates 301
+
 # Priority blog redirects (high-traffic collectibles guides)
 /hummel-figurines /blog/hummel-figurines 301
 /hummel-figurines/ /blog/hummel-figurines 301
