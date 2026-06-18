@@ -606,8 +606,8 @@
 
 
     // ── Mailchimp config (public — safe to expose, no API key) ─────────────────────
-    var MC_U  = '55246077';      // Mailchimp account user ID
-    var MC_ID = '5034baf84b';    // TLH - Website Leads / Marketing audience
+    var MC_U  = 'd000ea6786220cdf01bdde2cd'; // Mailchimp account ID
+    var MC_ID = '5034baf84b';                // TLH - Website Leads / Marketing audience
     var MC_TAG = 'Renovation Preview'; // stored in ROLE merge field
 
     // Subscribe via JSONP (Mailchimp's own browser-safe method, no API key needed)
@@ -638,7 +638,7 @@
           c:     cbName
         });
 
-        script.src = 'https://us12.list-manage.com/subscribe/post-json?' + params;
+        script.src = 'https://truelegacyhomes.us12.list-manage.com/subscribe/post-json?' + params;
         script.onerror = function() { reject(new Error('network error')); };
         document.body.appendChild(script);
       });
