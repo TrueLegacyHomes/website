@@ -2,177 +2,303 @@
 <html lang="en">
 <head>
   <!-- Magellan AI Tracking Pixel -->
-  <script> 
-     (function(w, d, n){ 
-          if (w.MAI) return; 
-          w.MAI = w.MAI || {emit: function() {(w.MAI.q = w.MAI.q || []).push(arguments);}} 
-          var e = d.createElement(n); e.async=1; 
-          e.src = 'https://cdn.mgln.ai/pixel.min.js'; 
-          var s = d.getElementsByTagName(n)[0]; 
-          s.parentNode.insertBefore(e, s); 
-     })(window, document, 'script'); 
-     MAI.emit('conf', '019db0a111347e3c950d831cf980ab09'); 
-     MAI.emit('view'); 
+  <script>
+    (function(w,d,n){
+      if(w.MAI)return;
+      w.MAI=w.MAI||{emit:function(){(w.MAI.q=w.MAI.q||[]).push(arguments);}};
+      var e=d.createElement(n);e.async=1;
+      e.src='https://cdn.mgln.ai/pixel.min.js';
+      var s=d.getElementsByTagName(n)[0];s.parentNode.insertBefore(e,s);
+    })(window,document,'script');
+    MAI.emit('conf','019db0a111347e3c950d831cf980ab09');
+    MAI.emit('view');
   </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P3E4DKXFFM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-P3E4DKXFFM');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3E4DKXFFM"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-P3E4DKXFFM');
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recent Renovations - True Legacy Homes</title>
-  <meta name="description" content="Explore our portfolio of thoughtfully renovated homes across Southern California. Style, class, sophistication—design and remodeling done with detailed perfection.">
+  <title>Home Renovations Southern California | True Legacy Homes</title>
+  <meta name="description" content="Explore True Legacy Homes' portfolio of thoughtfully renovated properties across San Diego, Orange County, and Los Angeles. Style, craftsmanship, and quiet luxury.">
+  <link rel="canonical" href="https://www.truelegacyhomes.com/renovations/">
   <link rel="icon" type="image/png" href="/images/tlhICON.webp">
-  <link href="/css/tailwind.min.css?v=1778728661" rel="stylesheet">
-  
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/tailwind.min.css?v=1778728661">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Recent Renovations - True Legacy Homes">
-  <meta property="og:description" content="Explore our portfolio of thoughtfully renovated homes across Southern California.">
+  <meta property="og:title" content="Home Renovations Southern California | True Legacy Homes">
+  <meta property="og:description" content="Portfolio of thoughtfully renovated homes across San Diego, Orange County, and Los Angeles.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://truelegacyhomes.com/images/tlhLOGO.webp">
-  
-  <!-- Schema.org -->
+  <meta property="og:image" content="https://truelegacyhomes.com/renovations/1812-highland/images/highland-kitchen.webp">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    "name": "True Legacy Homes Recent Renovations",
-    "description": "Portfolio of home renovations by True Legacy Homes across San Diego, Orange County, and Los Angeles",
-    "provider": {
-      "@type": "Organization",
-      "name": "True Legacy Homes",
-      "url": "https://truelegacyhomes.com"
-    }
+    "name": "True Legacy Homes Renovation Portfolio",
+    "description": "Portfolio of home renovations by True Legacy Homes across Southern California.",
+    "provider": { "@type": "Organization", "name": "True Legacy Homes", "url": "https://truelegacyhomes.com" }
   }
   </script>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="ZnPLvtc/3QdsII1NHSnmkA" async></script>
-</head>
-<body class="font-sans antialiased">
 
-  <!-- Header & Navigation (loaded from component) -->
+  <style>
+    html { scroll-behavior: smooth; }
+    h1, h2, h3, h4 {
+      font-family: 'Source Serif Pro', Georgia, serif;
+      color: #132b42;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 text-lg leading-loose antialiased" style="font-family:'Inter',sans-serif;">
+
+  <!-- Header & Navigation -->
   <div id="header-nav-placeholder"></div>
 
   <main>
-    <!-- Hero Section -->
-    <section class="bg-tlh-dark text-white py-20">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h1 class="text-2xl md:text-2xl font-medium mb-6">Recent Renovations</h1>
-        <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto">
-          Style, class, sophistication. Design and remodeling done with detailed perfection.
-        </p>
+
+    <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
+    <section class="relative overflow-hidden" style="min-height: 480px;">
+      <!-- Background: 1812 Highland kitchen render -->
+      <div class="absolute inset-0">
+        <img src="/renovations/1812-highland/images/highland-kitchen.webp"
+             alt="True Legacy Homes renovation"
+             class="w-full h-full object-cover object-center"
+             fetchpriority="high">
+        <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(19,43,66,0.92) 0%, rgba(19,43,66,0.85) 45%, rgba(19,43,66,0.4) 100%);"></div>
       </div>
-    </section>
 
-    <!-- Featured Projects -->
-    <section class="py-16 bg-white">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-tlh-dark">Featured Projects</h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <!-- Project: 1812 Highland — Design Preview -->
-          <a href="/renovations/1812-highland/" class="group block bg-white rounded-[5px] shadow-md hover:shadow-xl transition overflow-hidden">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="/renovations/1812-highland/images/highland-kitchen.jpg"
-                   alt="1812 Highland Design Preview"
-                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                   loading="lazy">
-              <span class="absolute top-3 left-3 bg-tlh-teal text-white text-xs font-medium tracking-wide uppercase px-2 py-1 rounded">Design Preview</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-tlh-dark mb-2 group-hover:text-tlh-teal transition">1812 Highland</h3>
-              <p class="text-gray-600">Exclusive first look at the planned transformation before renovation begins</p>
-            </div>
-          </a>
-
-          <!-- Project 1: 25112 Vespucci Rd -->
-          <a href="/renovations/25112-vespucci-rd/" class="group block bg-white rounded-[5px] shadow-md hover:shadow-xl transition overflow-hidden">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-2-1030x686.jpg" 
-                   alt="25112 Vespucci Rd" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                   loading="lazy">
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-tlh-dark mb-2 group-hover:text-tlh-teal transition">25112 Vespucci Rd</h3>
-              <p class="text-gray-600">Complete renovation featuring modern finishes and elegant design</p>
-            </div>
-          </a>
-
-          <!-- Project 2: 8195 Dracaena Dr -->
-          <a href="/renovations/8195-dracaena-dr/" class="group block bg-white rounded-[5px] shadow-md hover:shadow-xl transition overflow-hidden">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-cropped-1030x823.jpg" 
-                   alt="8195 Dracaena Dr" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                   loading="lazy">
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-tlh-dark mb-2 group-hover:text-tlh-teal transition">8195 Dracaena Dr</h3>
-              <p class="text-gray-600">Stunning transformation with contemporary style and quality craftsmanship</p>
-            </div>
-          </a>
-
-          <!-- Project 3: 33 Grassy Knoll Ln -->
-          <a href="/renovations/33-grassy-knoll-ln/" class="group block bg-white rounded-[5px] shadow-md hover:shadow-xl transition overflow-hidden">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-1030x686.jpg" 
-                   alt="33 Grassy Knoll Ln" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                   loading="lazy">
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-tlh-dark mb-2 group-hover:text-tlh-teal transition">33 Grassy Knoll Ln</h3>
-              <p class="text-gray-600">Thoughtful renovation showcasing attention to detail</p>
-            </div>
-          </a>
-
-          <!-- Project 4: 5432 Marjan Ave -->
-          <a href="/renovations/5432-marjan-ave/" class="group block bg-white rounded-[5px] shadow-md hover:shadow-xl transition overflow-hidden">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/07/1-11-1030x577.jpg" 
-                   alt="5432 Marjan Ave" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                   loading="lazy">
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-tlh-dark mb-2 group-hover:text-tlh-teal transition">5432 Marjan Ave</h3>
-              <p class="text-gray-600">Beautiful remodel combining classic charm with modern updates</p>
-            </div>
-          </a>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 py-24 md:py-32">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-4">Our Work</p>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" style="font-family:'Source Serif Pro',Georgia,serif; color:#ffffff;">
+            Renovations Done Right.
+          </h1>
+          <p class="text-xl text-white/80 mb-10 leading-relaxed">
+            Style, craftsmanship, and attention to detail — across San Diego, Orange County, and Los Angeles.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#projects" class="bg-tlh-teal text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark transition inline-flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              View Projects
+            </a>
+            <a href="/schedule-consult/" class="border-2 border-white text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-white hover:text-tlh-dark transition inline-flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Schedule a Consultation
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- ─── 1812 HIGHLAND FEATURE ─────────────────────────────────────────── -->
+    <section class="py-16 md:py-20" style="background-color:#f9f4eb; background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%221%22/%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.04%22/%3E%3C/svg%3E');">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+          <!-- Image -->
+          <a href="/renovations/1812-highland/" class="group block relative overflow-hidden rounded-[5px] shadow-xl aspect-[4/3]">
+            <img src="/renovations/1812-highland/images/highland-kitchen.webp"
+                 alt="1812 Highland Huntington Beach renovation design preview"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                 loading="eager">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.5) 0%, transparent 60%);"></div>
+            <span class="absolute top-4 left-4 bg-tlh-teal text-white text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-sm">
+              Coming Soon
+            </span>
+          </a>
+
+          <!-- Text -->
+          <div>
+            <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-4">Design Preview</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" style="line-height:1.2;">1812 Highland<br><span class="text-gray-500 text-2xl font-normal">Huntington Beach, CA</span></h2>
+            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+              A full home renovation currently in progress — kitchen, primary suite, bathrooms, family room, and entry. Get an exclusive look at the design renders before construction begins.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="/renovations/1812-highland/" class="bg-tlh-dark text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-gray-800 transition inline-flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                View Design Preview
+              </a>
+              <a href="/renovations/1812-highland/1812-highland-design-preview.pdf" download
+                 class="border-2 border-tlh-dark text-tlh-dark px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-dark hover:text-white transition inline-flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Download Lookbook
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── COMPLETED PROJECTS ────────────────────────────────────────────── -->
+    <section id="projects" class="py-16 md:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+
+        <div class="mb-12">
+          <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-3">Portfolio</p>
+          <h2 class="text-3xl md:text-4xl font-bold">Completed Renovations</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- 25112 Vespucci Rd -->
+          <a href="/renovations/25112-vespucci-rd/" class="group block rounded-[5px] overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-tlh-teal transition" style="background-color:#fdfcfc;">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-2-1030x686.jpg"
+                   alt="25112 Vespucci Rd renovation — True Legacy Homes San Diego"
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                   loading="lazy">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-tlh-dark mb-1 group-hover:text-tlh-teal transition">25112 Vespucci Rd</h3>
+              <p class="text-sm text-gray-500 mb-3">San Diego, CA</p>
+              <p class="text-gray-600 text-base">Complete renovation featuring modern finishes and elegant design</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-tlh-teal font-semibold text-sm group-hover:gap-2 transition-all">
+                View Gallery
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- 8195 Dracaena Dr -->
+          <a href="/renovations/8195-dracaena-dr/" class="group block rounded-[5px] overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-tlh-teal transition" style="background-color:#fdfcfc;">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-cropped-1030x823.jpg"
+                   alt="8195 Dracaena Dr renovation — True Legacy Homes"
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                   loading="lazy">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-tlh-dark mb-1 group-hover:text-tlh-teal transition">8195 Dracaena Dr</h3>
+              <p class="text-sm text-gray-500 mb-3">San Diego, CA</p>
+              <p class="text-gray-600 text-base">Stunning transformation with contemporary style and quality craftsmanship</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-tlh-teal font-semibold text-sm group-hover:gap-2 transition-all">
+                View Gallery
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- 33 Grassy Knoll Ln -->
+          <a href="/renovations/33-grassy-knoll-ln/" class="group block rounded-[5px] overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-tlh-teal transition" style="background-color:#fdfcfc;">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/08/1-1030x686.jpg"
+                   alt="33 Grassy Knoll Ln renovation — True Legacy Homes"
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                   loading="lazy">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-tlh-dark mb-1 group-hover:text-tlh-teal transition">33 Grassy Knoll Ln</h3>
+              <p class="text-sm text-gray-500 mb-3">San Diego, CA</p>
+              <p class="text-gray-600 text-base">Thoughtful renovation showcasing attention to detail and craftsmanship</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-tlh-teal font-semibold text-sm group-hover:gap-2 transition-all">
+                View Gallery
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- 5432 Marjan Ave -->
+          <a href="/renovations/5432-marjan-ave/" class="group block rounded-[5px] overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-tlh-teal transition" style="background-color:#fdfcfc;">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://wordpress-1007224-3553830.cloudwaysapps.com/wp-content/uploads/2025/07/1-11-1030x577.jpg"
+                   alt="5432 Marjan Ave renovation — True Legacy Homes"
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                   loading="lazy">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-tlh-dark mb-1 group-hover:text-tlh-teal transition">5432 Marjan Ave</h3>
+              <p class="text-sm text-gray-500 mb-3">San Diego, CA</p>
+              <p class="text-gray-600 text-base">Beautiful remodel combining classic charm with modern updates</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-tlh-teal font-semibold text-sm group-hover:gap-2 transition-all">
+                View Gallery
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHY TLH ────────────────────────────────────────────────────────── -->
+    <section class="py-16 md:py-20" style="background-color:#f9f4eb; background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%221%22/%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.04%22/%3E%3C/svg%3E');">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-3">Why True Legacy Homes</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-3">More than a renovation company.</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">We handle the full picture — from estate cleanouts to complete home transformations.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <div class="p-6 rounded-[5px] shadow-sm border border-gray-100 text-center" style="background-color:#fdfcfc;">
+            <div class="w-12 h-12 bg-tlh-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-xl mb-2">Designed with purpose</h3>
+            <p class="text-gray-600 text-base">Every renovation is planned with the end buyer in mind — finishes, flow, and long-term value.</p>
+          </div>
+
+          <div class="p-6 rounded-[5px] shadow-sm border border-gray-100 text-center" style="background-color:#fdfcfc;">
+            <div class="w-12 h-12 bg-tlh-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3 class="text-xl mb-2">One team, start to finish</h3>
+            <p class="text-gray-600 text-base">From estate cleanout to final staging — we coordinate everything so you don't have to.</p>
+          </div>
+
+          <div class="p-6 rounded-[5px] shadow-sm border border-gray-100 text-center" style="background-color:#fdfcfc;">
+            <div class="w-12 h-12 bg-tlh-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            </div>
+            <h3 class="text-xl mb-2">Southern California experts</h3>
+            <p class="text-gray-600 text-base">1,500+ transactions across San Diego, Orange County, and Los Angeles. We know these markets.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA ───────────────────────────────────────────────────────────── -->
     <section class="bg-tlh-teal text-white py-16">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Interested in Our Renovation Services?</h2>
-        <p class="text-xl mb-8 opacity-90">
-          From estate cleanouts to complete home transformations, True Legacy Homes handles it all with care and expertise.
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white" style="font-family:'Source Serif Pro',Georgia,serif; color:#fff;">
+          Interested in a Renovation?
+        </h2>
+        <p class="text-xl text-white/85 mb-8">
+          From estate cleanouts to complete home transformations — let's talk about what's possible.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/schedule-consult/" class="bg-white text-tlh-teal px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-gray-100 transition inline-flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             Schedule a Consultation
           </a>
           <a href="tel:6194501702" class="border-2 border-white text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-white hover:text-tlh-teal transition inline-flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             (619) 450-1702
           </a>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- Footer -->
-  <!-- Footer (loaded from component) -->
-  <div id="footer-placeholder"></div>  <!-- Component Loader -->
+  <div id="footer-placeholder"></div>
   <script src="/js/load-components.js?v=20260529"></script>
 </body>
 </html>
