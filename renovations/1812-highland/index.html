@@ -3,59 +3,66 @@
 <head>
   <!-- Magellan AI Tracking Pixel -->
   <script>
-    (function(w, d, n){
-      if (w.MAI) return;
-      w.MAI = w.MAI || {emit: function() {(w.MAI.q = w.MAI.q || []).push(arguments);}}
-      var e = d.createElement(n); e.async=1;
-      e.src = 'https://cdn.mgln.ai/pixel.min.js';
-      var s = d.getElementsByTagName(n)[0]; s.parentNode.insertBefore(e, s);
-    })(window, document, 'script');
-    MAI.emit('conf', '019db0a111347e3c950d831cf980ab09');
+    (function(w,d,n){
+      if(w.MAI)return;
+      w.MAI=w.MAI||{emit:function(){(w.MAI.q=w.MAI.q||[]).push(arguments);}};
+      var e=d.createElement(n);e.async=1;
+      e.src='https://cdn.mgln.ai/pixel.min.js';
+      var s=d.getElementsByTagName(n)[0];s.parentNode.insertBefore(e,s);
+    })(window,document,'script');
+    MAI.emit('conf','019db0a111347e3c950d831cf980ab09');
     MAI.emit('view');
   </script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3E4DKXFFM"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer=window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-P3E4DKXFFM');
+    gtag('js',new Date());
+    gtag('config','G-P3E4DKXFFM');
   </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1812 Highland — Design Preview | True Legacy Homes Renovations</title>
-  <meta name="description" content="Get an exclusive first look at our planned transformation of 1812 Highland. View design renders, download the full lookbook, and sign up for early access to upcoming renovation previews.">
+  <meta name="description" content="An exclusive first look at the planned transformation of 1812 Highland. View design renders, download the full lookbook, and sign up for early renovation previews.">
   <link rel="icon" type="image/png" href="/images/tlhICON.webp">
-  <link href="/css/tailwind.min.css?v=1778728661" rel="stylesheet">
+
+  <!-- Fonts (matching home page) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/tailwind.min.css?v=1778728661">
+  <link rel="preload" as="image" href="/renovations/1812-highland/images/highland-kitchen.jpg">
 
   <!-- Open Graph -->
   <meta property="og:title" content="1812 Highland — Design Preview | True Legacy Homes">
-  <meta property="og:description" content="A first look at the planned transformation of 1812 Highland. View design renders and download the full lookbook.">
+  <meta property="og:description" content="A first look at the planned transformation of 1812 Highland. View renders and download the lookbook.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://truelegacyhomes.com/renovations/1812-highland/images/highland-kitchen.jpg">
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
     "name": "1812 Highland Design Preview — True Legacy Homes",
     "description": "Design renders for the upcoming renovation of 1812 Highland by True Legacy Homes.",
-    "provider": {
-      "@type": "Organization",
-      "name": "True Legacy Homes",
-      "url": "https://truelegacyhomes.com"
-    }
+    "provider": { "@type": "Organization", "name": "True Legacy Homes", "url": "https://truelegacyhomes.com" }
   }
   </script>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="ZnPLvtc/3QdsII1NHSnmkA" async></script>
 
   <style>
-    /* Hero overlay */
-    .hero-overlay {
-      background: linear-gradient(to bottom, rgba(19,43,66,0.55) 0%, rgba(19,43,66,0.35) 60%, rgba(19,43,66,0.7) 100%);
+    html { scroll-behavior: smooth; }
+    [id] { scroll-margin-top: 80px; }
+    h1, h2, h3, h4 {
+      font-family: 'Source Serif Pro', Georgia, serif;
+      color: #132b42;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
     }
 
     /* Lightbox */
@@ -65,7 +72,7 @@
       z-index: 9999;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.88);
+      background: rgba(0,0,0,0.92);
       align-items: center;
       justify-content: center;
     }
@@ -88,347 +95,396 @@
     .lightbox-prev,
     .lightbox-next {
       position: absolute;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.1);
       color: white;
       border: none;
-      font-size: 2rem;
       cursor: pointer;
-      padding: 1rem;
+      padding: 1rem 1.25rem;
+      font-size: 1.75rem;
       transition: background 0.2s;
       z-index: 10000;
+      line-height: 1;
     }
     .lightbox-close:hover,
     .lightbox-prev:hover,
-    .lightbox-next:hover { background: rgba(255,255,255,0.25); }
-    .lightbox-close {
-      top: 20px; right: 20px;
-      font-size: 2.5rem;
-      line-height: 1;
-      padding: 0.5rem 1rem;
-    }
-    .lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
-    .lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+    .lightbox-next:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-close { top: 20px; right: 20px; font-size: 2rem; }
+    .lightbox-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+    .lightbox-next { right: 16px; top: 50%; transform: translateY(-50%); }
     .lightbox-caption {
       position: absolute;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(0,0,0,0.65);
+      background: rgba(0,0,0,0.6);
       color: white;
       padding: 0.4rem 1rem;
-      border-radius: 0.5rem;
-      font-size: 0.875rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
       white-space: nowrap;
     }
+
+    /* Gallery hover */
+    .gallery-item { cursor: pointer; }
+    .gallery-item img { transition: transform 0.35s ease; }
+    .gallery-item:hover img { transform: scale(1.04); }
   </style>
 </head>
-<body class="font-sans antialiased">
+<body class="bg-white text-gray-800 text-lg leading-loose antialiased">
 
   <!-- Header & Navigation -->
   <div id="header-nav-placeholder"></div>
 
   <main>
 
-    <!-- Breadcrumb -->
-    <div class="bg-gray-50 py-4">
-      <div class="max-w-6xl mx-auto px-4">
-        <nav class="text-sm">
-          <a href="/" class="text-gray-500 hover:text-tlh-teal">Home</a>
-          <span class="mx-2 text-gray-400">/</span>
-          <a href="/renovations/" class="text-gray-500 hover:text-tlh-teal">Renovations</a>
-          <span class="mx-2 text-gray-400">/</span>
-          <span class="text-gray-900">1812 Highland</span>
-        </nav>
-      </div>
-    </div>
-
-    <!-- Hero -->
-    <section class="relative h-[70vh] min-h-[480px] overflow-hidden">
+    <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
+    <section class="relative overflow-hidden" style="height: 85vh; min-height: 540px;">
       <img
         src="/renovations/1812-highland/images/highland-kitchen.jpg"
         alt="1812 Highland — Kitchen Design Render"
         class="absolute inset-0 w-full h-full object-cover object-center"
-        loading="eager"
+        fetchpriority="high"
       >
-      <div class="hero-overlay absolute inset-0"></div>
-      <div class="relative z-10 h-full flex flex-col justify-end pb-14 px-6 md:px-16 max-w-6xl mx-auto w-full">
-        <span class="inline-block border border-white/70 text-white/90 text-xs tracking-widest uppercase px-3 py-1 mb-4 w-fit">
+      <!-- Gradient: subtle at top, strong at bottom for text legibility -->
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(19,43,66,0.15) 0%, rgba(19,43,66,0.25) 40%, rgba(19,43,66,0.80) 100%);"></div>
+
+      <!-- Content anchored to bottom-left -->
+      <div class="absolute bottom-0 left-0 right-0 pb-14 px-6 md:px-12 max-w-6xl mx-auto w-full">
+        <span class="inline-block border border-white/60 text-white/90 text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5 rounded-sm">
           Design Preview
         </span>
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-3 leading-tight">1812 Highland</h1>
-        <p class="text-lg md:text-xl text-white/85 max-w-xl">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 leading-none" style="font-family:'Source Serif Pro',Georgia,serif; color:#fff;">
+          1812 Highland
+        </h1>
+        <p class="text-xl md:text-2xl text-white/80 mb-8 max-w-lg font-light">
           A first look at the planned transformation.
         </p>
-      </div>
-    </section>
-
-    <!-- Intro -->
-    <section class="py-14 bg-white">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <p class="text-sm tracking-widest uppercase text-tlh-teal font-medium mb-4">What's Coming</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-tlh-dark mb-6">Warm modern. Timeless by nature.</h2>
-        <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-          Before we break ground, we're giving you an exclusive look at the vision. These design renders show
-          the complete transformation planned for 1812 Highland — from the kitchen to the primary suite,
-          every space designed with care, quality, and quiet luxury in mind.
-        </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#gallery" class="bg-tlh-teal text-white px-8 py-[14px] rounded-[5px] font-medium hover:bg-tlh-teal-dark transition inline-flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#gallery" class="bg-tlh-teal text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark transition inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             View All Renders
           </a>
-          <a href="/renovations/1812-highland/1812-highland-design-preview.pdf" download class="border-2 border-tlh-dark text-tlh-dark px-8 py-[14px] rounded-[5px] font-medium hover:bg-tlh-dark hover:text-white transition inline-flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
+          <a href="/renovations/1812-highland/1812-highland-design-preview.pdf" download
+             class="border-2 border-white text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-white hover:text-tlh-dark transition inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             Download Lookbook
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="py-12 bg-gray-50">
+    <!-- ─── BREADCRUMB ────────────────────────────────────────────────────── -->
+    <div class="bg-gray-50 border-b border-gray-100 py-3">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl font-bold text-tlh-dark mb-2">Design Renders</h2>
-        <p class="text-gray-500 mb-8 text-sm tracking-wide uppercase">Room-by-Room Preview · Click any image to enlarge</p>
+        <nav class="text-sm text-gray-500">
+          <a href="/" class="hover:text-tlh-teal">Home</a>
+          <span class="mx-2 text-gray-300">/</span>
+          <a href="/renovations/" class="hover:text-tlh-teal">Renovations</a>
+          <span class="mx-2 text-gray-300">/</span>
+          <span class="text-gray-800 font-medium">1812 Highland</span>
+        </nav>
+      </div>
+    </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
+    <!-- ─── STATS BAR ─────────────────────────────────────────────────────── -->
+    <section class="bg-tlh-dark text-white py-6">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-3 divide-x divide-white/20 items-center justify-items-center">
+          <div class="flex items-center gap-3 px-4">
+            <svg class="w-5 h-5 text-tlh-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <div>
+              <div class="font-bold text-white text-lg leading-tight">13</div>
+              <div class="text-white/60 text-xs uppercase tracking-wide">Design Renders</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 px-4">
+            <svg class="w-5 h-5 text-tlh-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <div>
+              <div class="font-bold text-white text-lg leading-tight">PDF</div>
+              <div class="text-white/60 text-xs uppercase tracking-wide">Lookbook Available</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 px-4">
+            <svg class="w-5 h-5 text-tlh-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div>
+              <div class="font-bold text-white text-lg leading-tight">Coming Soon</div>
+              <div class="text-white/60 text-xs uppercase tracking-wide">Renovation in Progress</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Kitchen (hero room) -->
-          <div class="gallery-item col-span-2 md:col-span-2 cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[16/9]" data-index="0">
+    <!-- ─── ABOUT ──────────────────────────────────────────────────────────── -->
+    <section class="py-16 md:py-20" style="background-color: #f9f4eb; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%221%22 /%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.04%22/%3E%3C/svg%3E');">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+
+          <!-- Text -->
+          <div>
+            <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-4">The Vision</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" style="line-height: 1.2;">Warm modern.<br>Timeless by nature.</h2>
+            <p class="text-gray-700 mb-5 text-lg leading-relaxed">
+              Before we break ground, we're giving you an exclusive look at the vision. These design renders capture every detail of the planned transformation — from the open kitchen to the primary suite — crafted with care, quality, and quiet luxury in mind.
+            </p>
+            <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+              Download the full lookbook for a room-by-room breakdown of finishes, fixtures, and design direction.
+            </p>
+            <a href="/renovations/1812-highland/1812-highland-design-preview.pdf" download
+               class="bg-tlh-dark text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-gray-800 transition inline-flex items-center gap-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Download the Design Lookbook
+            </a>
+          </div>
+
+          <!-- Featured image -->
+          <div class="relative">
+            <div class="relative overflow-hidden rounded-[5px] shadow-xl aspect-[4/3]">
+              <img src="/renovations/1812-highland/images/highland-primary-suite.jpg"
+                   alt="1812 Highland — Primary Suite Render"
+                   class="w-full h-full object-cover"
+                   loading="lazy">
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 50%);"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="text-white/90 text-sm font-medium">Primary Suite</span>
+              </div>
+            </div>
+            <!-- Decorative badge -->
+            <div class="absolute -top-4 -right-4 w-24 h-24 bg-tlh-teal rounded-full flex flex-col items-center justify-center shadow-lg text-white text-center">
+              <span class="text-xs font-bold uppercase tracking-wide leading-tight">Design<br>Preview</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── GALLERY ────────────────────────────────────────────────────────── -->
+    <section id="gallery" class="py-16 md:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+
+        <div class="mb-10">
+          <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-2">Room by Room</p>
+          <h2 class="text-3xl md:text-4xl font-bold">Design Renders</h2>
+          <p class="text-gray-500 mt-2">Click any image to expand · Use arrow keys to navigate</p>
+        </div>
+
+        <!-- Gallery grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+
+          <!-- Kitchen — featured 2-col -->
+          <div class="gallery-item col-span-2 relative overflow-hidden rounded-[5px] shadow-md aspect-video" data-index="0">
             <img src="/renovations/1812-highland/images/highland-kitchen.jpg"
-                 alt="1812 Highland — Kitchen"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="eager">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Kitchen</span>
+                 alt="Kitchen" class="w-full h-full object-cover" loading="eager">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.6) 0%, transparent 50%);"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
+              <span class="text-white font-semibold text-base">Kitchen</span>
+              <span class="text-white/70 text-xs">Click to expand</span>
+            </div>
           </div>
 
           <!-- Breakfast Nook -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="1">
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="1">
             <img src="/renovations/1812-highland/images/highland-breakfast-nook.jpg"
-                 alt="1812 Highland — Breakfast Nook"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Breakfast Nook</span>
+                 alt="Breakfast Nook" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Breakfast Nook</span>
           </div>
 
-          <!-- Family Room Fireplace -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="2">
+          <!-- Family Room -->
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="2">
             <img src="/renovations/1812-highland/images/highland-family-fireplace.jpg"
-                 alt="1812 Highland — Family Room"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Family Room</span>
+                 alt="Family Room" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Family Room</span>
           </div>
 
           <!-- Fireplace -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="3">
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="3">
             <img src="/renovations/1812-highland/images/highland-fireplace-1.jpg"
-                 alt="1812 Highland — Fireplace"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Fireplace</span>
+                 alt="Fireplace" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Fireplace</span>
           </div>
 
           <!-- Stairs & Entry -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="4">
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="4">
             <img src="/renovations/1812-highland/images/highland-stairs-entry.jpg"
-                 alt="1812 Highland — Entry & Staircase"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Entry & Staircase</span>
+                 alt="Entry & Staircase" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Entry & Staircase</span>
           </div>
 
-          <!-- Primary Suite -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="5">
+          <!-- Primary Suite — featured 2-col on md -->
+          <div class="gallery-item col-span-2 md:col-span-1 relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="5">
             <img src="/renovations/1812-highland/images/highland-primary-suite.jpg"
-                 alt="1812 Highland — Primary Suite"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Primary Suite</span>
+                 alt="Primary Suite" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Primary Suite</span>
           </div>
 
           <!-- Primary Bedroom -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="6">
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="6">
             <img src="/renovations/1812-highland/images/highland-primary-bedroom.jpg"
-                 alt="1812 Highland — Primary Bedroom"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Primary Bedroom</span>
+                 alt="Primary Bedroom" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Primary Bedroom</span>
           </div>
 
-          <!-- Primary Bathroom 1 -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="7">
+          <!-- Primary Bath 1 -->
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="7">
             <img src="/renovations/1812-highland/images/highland-primary-bathroom-1.jpg"
-                 alt="1812 Highland — Primary Bathroom"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Primary Bathroom</span>
+                 alt="Primary Bathroom" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Primary Bathroom</span>
           </div>
 
-          <!-- Primary Bathroom 2 -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="8">
+          <!-- Primary Bath 2 -->
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="8">
             <img src="/renovations/1812-highland/images/highland-primary-bathroom-2.jpg"
-                 alt="1812 Highland — Primary Bathroom"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Primary Bathroom</span>
+                 alt="Primary Bathroom" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Primary Bathroom</span>
           </div>
 
           <!-- Powder Room -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="9">
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="9">
             <img src="/renovations/1812-highland/images/highland-powder-room.jpg"
-                 alt="1812 Highland — Powder Room"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Powder Room</span>
+                 alt="Powder Room" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Powder Room</span>
           </div>
 
           <!-- Laundry -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="10">
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="10">
             <img src="/renovations/1812-highland/images/highland-laundry.jpg"
-                 alt="1812 Highland — Laundry Room"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Laundry Room</span>
+                 alt="Laundry Room" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Laundry Room</span>
           </div>
 
           <!-- Laundry 2 -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="11">
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="11">
             <img src="/renovations/1812-highland/images/highland-laundry-2.jpg"
-                 alt="1812 Highland — Laundry Room"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Laundry Room</span>
+                 alt="Laundry Room" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Laundry Room</span>
           </div>
 
           <!-- Laundry 2b -->
-          <div class="gallery-item cursor-pointer group relative overflow-hidden rounded-[5px] aspect-[4/3]" data-index="12">
+          <div class="gallery-item relative overflow-hidden rounded-[5px] shadow-md aspect-[4/3]" data-index="12">
             <img src="/renovations/1812-highland/images/highland-laundry-2b.jpg"
-                 alt="1812 Highland — Laundry Room"
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-15 transition"></div>
-            <span class="absolute bottom-3 left-3 bg-tlh-dark/75 text-white text-xs px-2 py-1 rounded">Laundry Room</span>
+                 alt="Laundry Room" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(19,43,66,0.55) 0%, transparent 55%);"></div>
+            <span class="absolute bottom-3 left-3 text-white text-sm font-medium">Laundry Room</span>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Download Lookbook -->
-    <section class="bg-tlh-dark text-white py-16">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <svg class="w-12 h-12 mx-auto mb-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-        </svg>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Download the Full Lookbook</h2>
-        <p class="text-lg text-white/80 mb-8 max-w-xl mx-auto">
-          Get the complete 1812 Highland Design Preview — room-by-room layouts, finish details, and the full design vision. Print it, share it, or keep it for reference.
-        </p>
-        <a
-          href="/renovations/1812-highland/1812-highland-design-preview.pdf"
-          download
-          class="bg-tlh-teal text-white px-10 py-[16px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark transition inline-flex items-center justify-center gap-3"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-          </svg>
-          Download Design Preview (PDF)
-        </a>
-      </div>
-    </section>
+    <!-- ─── SIGNUP + DOWNLOAD ─────────────────────────────────────────────── -->
+    <section id="notify" class="py-16 md:py-24 bg-tlh-dark">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
 
-    <!-- Email Signup -->
-    <section id="notify" class="py-16 bg-white">
-      <div class="max-w-2xl mx-auto px-4 text-center">
-        <svg class="w-10 h-10 mx-auto mb-4 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-        </svg>
-        <h2 class="text-3xl font-bold text-tlh-dark mb-3">Be the First to See Our Next Renovation Preview</h2>
-        <p class="text-gray-500 mb-8">
-          Sign up and we'll notify you when the next design preview drops — before it goes public.
-        </p>
+          <!-- Left: Download -->
+          <div class="text-white">
+            <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-4">The Lookbook</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-5 text-white" style="font-family:'Source Serif Pro',Georgia,serif; color:#fff;">
+              Take it with you.
+            </h2>
+            <p class="text-white/75 text-lg leading-relaxed mb-8">
+              Download the full 1812 Highland Design Preview — a room-by-room walkthrough of finishes, fixtures, and the complete vision. Print it, share it, or save it for later.
+            </p>
+            <a href="/renovations/1812-highland/1812-highland-design-preview.pdf" download
+               class="bg-tlh-teal text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark transition inline-flex items-center gap-3 mb-8">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Download Design Preview (PDF)
+            </a>
 
-        <!-- Success state (hidden by default) -->
-        <div id="signup-success" class="hidden bg-green-50 border border-green-200 rounded-[5px] p-6 text-center">
-          <svg class="w-8 h-8 text-green-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          <p class="text-green-800 font-medium text-lg">You're on the list!</p>
-          <p class="text-green-700 mt-1">We'll reach out as soon as the next renovation preview is ready.</p>
-        </div>
-
-        <!-- Form -->
-        <form id="renovation-signup-form" class="space-y-4 text-left">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label for="signup-name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-              <input
-                type="text"
-                id="signup-name"
-                name="name"
-                required
-                placeholder="Jane Smith"
-                class="w-full border border-gray-300 rounded-[5px] px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
-              >
-            </div>
-            <div>
-              <label for="signup-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-              <input
-                type="email"
-                id="signup-email"
-                name="email"
-                required
-                placeholder="jane@example.com"
-                class="w-full border border-gray-300 rounded-[5px] px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
-              >
+            <!-- Divider -->
+            <div class="border-t border-white/10 pt-8 mt-2">
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-tlh-teal mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <p class="text-white/60 text-base">
+                  Interested in a True Legacy Homes renovation for your property?
+                  <a href="/schedule-consult/" class="text-tlh-teal underline underline-offset-2 hover:text-white transition ml-1">Let's talk.</a>
+                </p>
+              </div>
             </div>
           </div>
 
-          <!-- Error message -->
-          <div id="signup-error" class="hidden bg-red-50 border border-red-200 text-red-700 rounded-[5px] px-4 py-3 text-sm"></div>
+          <!-- Right: Email Signup -->
+          <div class="rounded-[5px] p-8 md:p-10" style="background-color: #f9f4eb;">
+            <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-3">Stay in the Loop</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-tlh-dark mb-3">Be the first to see our next renovation preview.</h3>
+            <p class="text-gray-600 mb-6 text-base">
+              Sign up and we'll notify you when the next design preview drops — before it goes public.
+            </p>
 
-          <button
-            type="submit"
-            id="signup-btn"
-            class="w-full bg-tlh-teal text-white py-[14px] rounded-[5px] font-medium text-base hover:bg-tlh-teal-dark transition flex items-center justify-center gap-2"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            Notify Me
-          </button>
-          <p class="text-xs text-gray-400 text-center">No spam. Just renovation previews, sent directly to your inbox.</p>
-        </form>
+            <!-- Success -->
+            <div id="signup-success" class="hidden text-center py-6">
+              <svg class="w-10 h-10 text-tlh-teal mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <p class="text-tlh-dark font-bold text-lg">You're on the list!</p>
+              <p class="text-gray-600 mt-1 text-base">We'll reach out as soon as the next preview is ready.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="renovation-signup-form">
+              <div class="space-y-4">
+                <div>
+                  <label for="signup-name" class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
+                  <input
+                    type="text" id="signup-name" name="name" required
+                    placeholder="Jane Smith"
+                    class="w-full border border-gray-300 rounded-[5px] px-4 py-3 text-gray-900 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent text-base"
+                  >
+                </div>
+                <div>
+                  <label for="signup-email" class="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
+                  <input
+                    type="email" id="signup-email" name="email" required
+                    placeholder="jane@example.com"
+                    class="w-full border border-gray-300 rounded-[5px] px-4 py-3 text-gray-900 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent text-base"
+                  >
+                </div>
+
+                <div id="signup-error" class="hidden bg-red-50 border border-red-200 text-red-700 rounded-[5px] px-4 py-3 text-sm"></div>
+
+                <button type="submit" id="signup-btn"
+                  class="w-full bg-tlh-teal text-white py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark transition flex items-center justify-center gap-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  Notify Me
+                </button>
+                <p class="text-xs text-gray-400 text-center">No spam. Just renovation previews, straight to your inbox.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- Back to Renovations CTA -->
-    <section class="bg-tlh-teal text-white py-14">
+    <!-- ─── CTA ───────────────────────────────────────────────────────────── -->
+    <section class="bg-tlh-teal text-white py-16">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-3">Explore Our Renovation Portfolio</h2>
-        <p class="text-lg text-white/85 mb-8">
-          See the before-and-after transformations from our completed renovation projects across Southern California.
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white" style="font-family:'Source Serif Pro',Georgia,serif; color:#fff;">
+          Explore Our Renovation Portfolio
+        </h2>
+        <p class="text-xl text-white/85 mb-8">
+          See the complete transformations from our finished renovation projects across Southern California.
         </p>
-        <a href="/renovations/" class="bg-white text-tlh-teal px-8 py-[14px] rounded-[5px] font-medium hover:bg-gray-100 transition inline-block">
-          Back to Renovations Gallery
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/renovations/" class="bg-white text-tlh-teal px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-gray-100 transition inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Back to Renovations Gallery
+          </a>
+          <a href="/schedule-consult/" class="border-2 border-white text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-white hover:text-tlh-teal transition inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Schedule a Consultation
+          </a>
+        </div>
       </div>
     </section>
 
@@ -437,111 +493,93 @@
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <!-- ─── LIGHTBOX ──────────────────────────────────────────────────────────── -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
     <button class="lightbox-close" aria-label="Close">&times;</button>
-    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
     <div class="lightbox-content">
       <img id="lightbox-img" src="" alt="">
     </div>
-    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+    <button class="lightbox-next" aria-label="Next">&#8250;</button>
     <div class="lightbox-caption">
       <span id="lightbox-label"></span>
-      &nbsp;·&nbsp;
-      <span id="lightbox-current">1</span> / <span id="lightbox-total">13</span>
+      <span class="mx-2 opacity-40">·</span>
+      <span id="lightbox-cur">1</span> / <span id="lightbox-tot">13</span>
     </div>
   </div>
 
   <script>
-    // ── Gallery Lightbox ──────────────────────────────────────────────────────
-    const galleryImages = [
-      { src: '/renovations/1812-highland/images/highland-kitchen.jpg',              label: 'Kitchen' },
-      { src: '/renovations/1812-highland/images/highland-breakfast-nook.jpg',       label: 'Breakfast Nook' },
-      { src: '/renovations/1812-highland/images/highland-family-fireplace.jpg',     label: 'Family Room' },
-      { src: '/renovations/1812-highland/images/highland-fireplace-1.jpg',          label: 'Fireplace' },
-      { src: '/renovations/1812-highland/images/highland-stairs-entry.jpg',         label: 'Entry & Staircase' },
-      { src: '/renovations/1812-highland/images/highland-primary-suite.jpg',        label: 'Primary Suite' },
-      { src: '/renovations/1812-highland/images/highland-primary-bedroom.jpg',      label: 'Primary Bedroom' },
-      { src: '/renovations/1812-highland/images/highland-primary-bathroom-1.jpg',   label: 'Primary Bathroom' },
-      { src: '/renovations/1812-highland/images/highland-primary-bathroom-2.jpg',   label: 'Primary Bathroom' },
-      { src: '/renovations/1812-highland/images/highland-powder-room.jpg',          label: 'Powder Room' },
-      { src: '/renovations/1812-highland/images/highland-laundry.jpg',              label: 'Laundry Room' },
-      { src: '/renovations/1812-highland/images/highland-laundry-2.jpg',            label: 'Laundry Room' },
-      { src: '/renovations/1812-highland/images/highland-laundry-2b.jpg',           label: 'Laundry Room' },
+    // ── Lightbox ──────────────────────────────────────────────────────────────
+    const galleryData = [
+      { src: '/renovations/1812-highland/images/highland-kitchen.jpg',            label: 'Kitchen' },
+      { src: '/renovations/1812-highland/images/highland-breakfast-nook.jpg',     label: 'Breakfast Nook' },
+      { src: '/renovations/1812-highland/images/highland-family-fireplace.jpg',   label: 'Family Room' },
+      { src: '/renovations/1812-highland/images/highland-fireplace-1.jpg',        label: 'Fireplace' },
+      { src: '/renovations/1812-highland/images/highland-stairs-entry.jpg',       label: 'Entry & Staircase' },
+      { src: '/renovations/1812-highland/images/highland-primary-suite.jpg',      label: 'Primary Suite' },
+      { src: '/renovations/1812-highland/images/highland-primary-bedroom.jpg',    label: 'Primary Bedroom' },
+      { src: '/renovations/1812-highland/images/highland-primary-bathroom-1.jpg', label: 'Primary Bathroom' },
+      { src: '/renovations/1812-highland/images/highland-primary-bathroom-2.jpg', label: 'Primary Bathroom' },
+      { src: '/renovations/1812-highland/images/highland-powder-room.jpg',        label: 'Powder Room' },
+      { src: '/renovations/1812-highland/images/highland-laundry.jpg',            label: 'Laundry Room' },
+      { src: '/renovations/1812-highland/images/highland-laundry-2.jpg',          label: 'Laundry Room' },
+      { src: '/renovations/1812-highland/images/highland-laundry-2b.jpg',         label: 'Laundry Room' },
     ];
 
-    const lightbox       = document.getElementById('lightbox');
-    const lightboxImg    = document.getElementById('lightbox-img');
-    const lightboxLabel  = document.getElementById('lightbox-label');
-    const lightboxCur    = document.getElementById('lightbox-current');
-    const lightboxTotal  = document.getElementById('lightbox-total');
-    let currentIndex = 0;
+    const lb     = document.getElementById('lightbox');
+    const lbImg  = document.getElementById('lightbox-img');
+    const lbLbl  = document.getElementById('lightbox-label');
+    const lbCur  = document.getElementById('lightbox-cur');
+    const lbTot  = document.getElementById('lightbox-tot');
+    let idx = 0;
 
-    lightboxTotal.textContent = galleryImages.length;
+    lbTot.textContent = galleryData.length;
 
-    function openLightbox(index) {
-      currentIndex = index;
-      updateLightbox();
-      lightbox.classList.add('active');
+    function openLb(i) {
+      idx = i; render();
+      lb.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
+    function closeLb() {
+      lb.classList.remove('active');
       document.body.style.overflow = '';
     }
-
-    function updateLightbox() {
-      const item = galleryImages[currentIndex];
-      lightboxImg.src = item.src;
-      lightboxImg.alt = '1812 Highland — ' + item.label;
-      lightboxLabel.textContent = item.label;
-      lightboxCur.textContent = currentIndex + 1;
+    function render() {
+      const d = galleryData[idx];
+      lbImg.src = d.src;
+      lbImg.alt = '1812 Highland — ' + d.label;
+      lbLbl.textContent = d.label;
+      lbCur.textContent = idx + 1;
     }
-
-    function showNext() {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      updateLightbox();
-    }
-
-    function showPrev() {
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      updateLightbox();
-    }
+    function next() { idx = (idx + 1) % galleryData.length; render(); }
+    function prev() { idx = (idx - 1 + galleryData.length) % galleryData.length; render(); }
 
     document.querySelectorAll('.gallery-item').forEach(function(el) {
-      el.addEventListener('click', function() {
-        openLightbox(parseInt(this.dataset.index));
-      });
+      el.addEventListener('click', function() { openLb(parseInt(this.dataset.index)); });
     });
-
-    document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-    document.querySelector('.lightbox-next').addEventListener('click', showNext);
-    document.querySelector('.lightbox-prev').addEventListener('click', showPrev);
-
-    lightbox.addEventListener('click', function(e) {
-      if (e.target === lightbox) closeLightbox();
-    });
-
+    document.querySelector('.lightbox-close').addEventListener('click', closeLb);
+    document.querySelector('.lightbox-next').addEventListener('click', next);
+    document.querySelector('.lightbox-prev').addEventListener('click', prev);
+    lb.addEventListener('click', function(e) { if (e.target === lb) closeLb(); });
     document.addEventListener('keydown', function(e) {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape')      closeLightbox();
-      if (e.key === 'ArrowRight')  showNext();
-      if (e.key === 'ArrowLeft')   showPrev();
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
     });
 
-    // ── Renovation Preview Signup ─────────────────────────────────────────────
+    // ── Email Signup ──────────────────────────────────────────────────────────
     const SUPABASE_URL = 'https://inqbqchjxzvdvcslvskb.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucWJxY2hqeHp2ZHZjc2x2c2tiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNzA4NzEsImV4cCI6MjA4ODY0Njg3MX0.cqOtZQQOdSI9hwVxI8RSAMsgxI3hJsZ8ttzehJRKVgk';
 
     function detectLeadSource() {
-      const params = new URLSearchParams(window.location.search);
-      const medium = (params.get('utm_medium') || '').toLowerCase();
-      const source = (params.get('utm_source') || '').toLowerCase();
-      if (/cpc|paid|ppc/.test(medium)) return 'Paid';
-      if (/email/.test(medium) || /email/.test(source)) return 'Email';
-      if (params.toString()) return 'Referral';
-      const ref = document.referrer;
+      var p = new URLSearchParams(window.location.search);
+      var m = (p.get('utm_medium') || '').toLowerCase();
+      var s = (p.get('utm_source') || '').toLowerCase();
+      if (/cpc|paid|ppc/.test(m)) return 'Paid';
+      if (/email/.test(m) || /email/.test(s)) return 'Email';
+      if (p.toString()) return 'Referral';
+      var ref = document.referrer;
       if (/google|bing|yahoo|duckduckgo/.test(ref)) return 'Organic';
       if (ref) return 'Referral';
       return 'Direct';
@@ -549,18 +587,17 @@
 
     document.getElementById('renovation-signup-form').addEventListener('submit', async function(e) {
       e.preventDefault();
-
-      const btn   = document.getElementById('signup-btn');
-      const error = document.getElementById('signup-error');
-      const name  = document.getElementById('signup-name').value.trim();
-      const email = document.getElementById('signup-email').value.trim();
+      var btn   = document.getElementById('signup-btn');
+      var errEl = document.getElementById('signup-error');
+      var name  = document.getElementById('signup-name').value.trim();
+      var email = document.getElementById('signup-email').value.trim();
 
       btn.disabled = true;
       btn.textContent = 'Signing you up…';
-      error.classList.add('hidden');
+      errEl.classList.add('hidden');
 
       try {
-        const res = await fetch(SUPABASE_URL + '/rest/v1/form_submissions', {
+        var res = await fetch(SUPABASE_URL + '/rest/v1/form_submissions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -569,22 +606,19 @@
             'Prefer': 'return=minimal'
           },
           body: JSON.stringify({
-            form_type:   'renovation-preview',
-            name:        name,
-            email:       email,
+            form_type: 'renovation-preview',
+            name: name,
+            email: email,
             lead_source: detectLeadSource(),
-            page:        window.location.pathname
+            page: window.location.pathname
           })
         });
-
-        if (!res.ok) throw new Error('Submission failed');
-
+        if (!res.ok) throw new Error('failed');
         document.getElementById('renovation-signup-form').classList.add('hidden');
         document.getElementById('signup-success').classList.remove('hidden');
-
-      } catch (err) {
-        error.textContent = 'Something went wrong. Please try again or call us at (619) 450-1702.';
-        error.classList.remove('hidden');
+      } catch(err) {
+        errEl.textContent = 'Something went wrong. Please try again or call us at (619) 450-1702.';
+        errEl.classList.remove('hidden');
         btn.disabled = false;
         btn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Notify Me';
       }
