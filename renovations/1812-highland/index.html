@@ -238,6 +238,31 @@
       </div>
     </section>
 
+    <!-- ─── SIGNUP BAR ──────────────────────────────────────────────────────── -->
+    <section class="bg-tlh-dark py-5">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+          <div class="flex-shrink-0">
+            <p class="text-white font-semibold text-base">Get notified when 1812 Highland is ready.</p>
+            <p class="text-white/55 text-sm">Sign up for early access — before it goes public.</p>
+          </div>
+          <form id="bar-signup-form" class="flex flex-col sm:flex-row gap-2 flex-1">
+            <input type="text" id="bar-name" placeholder="Your name" required
+              class="flex-1 min-w-0 border border-white/20 bg-white/10 text-white placeholder-white/40 rounded-[5px] px-4 py-[11px] text-sm focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent">
+            <input type="email" id="bar-email" placeholder="Email address" required
+              class="flex-1 min-w-0 border border-white/20 bg-white/10 text-white placeholder-white/40 rounded-[5px] px-4 py-[11px] text-sm focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent">
+            <button type="submit" id="bar-btn"
+              class="bg-tlh-teal text-white px-6 py-[11px] rounded-[5px] text-sm font-medium hover:bg-tlh-teal-dark transition whitespace-nowrap flex-shrink-0">
+              Notify Me
+            </button>
+          </form>
+          <div id="bar-success" class="hidden text-white/90 text-sm font-medium">
+            ✓ You're on the list!
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── BREADCRUMB ────────────────────────────────────────────────────── -->
     <div class="bg-gray-50 border-b border-gray-100 py-3">
       <div class="max-w-6xl mx-auto px-4">
@@ -603,7 +628,7 @@
       if (e.key === 'ArrowLeft') prev();
     });
 
-    // ── Email Signup ──────────────────────────────────────────────────────────
+    // ── Shared helpers ────────────────────────────────────────────────────────
     const SUPABASE_URL = 'https://inqbqchjxzvdvcslvskb.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucWJxY2hqeHp2ZHZjc2x2c2tiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNzA4NzEsImV4cCI6MjA4ODY0Njg3MX0.cqOtZQQOdSI9hwVxI8RSAMsgxI3hJsZ8ttzehJRKVgk';
 
@@ -620,37 +645,64 @@
       return 'Direct';
     }
 
+    async function submitSignup(name, email) {
+      var res = await fetch(SUPABASE_URL + '/rest/v1/form_submissions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          form_type: 'renovation-preview',
+          name: name,
+          email: email,
+          lead_source: detectLeadSource(),
+          page: window.location.pathname
+        })
+      });
+      if (!res.ok) throw new Error('failed');
+    }
+
+    // ── Bar signup (top) ──────────────────────────────────────────────────────
+    document.getElementById('bar-signup-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var btn  = document.getElementById('bar-btn');
+      var name  = document.getElementById('bar-name').value.trim();
+      var email = document.getElementById('bar-email').value.trim();
+      btn.disabled = true;
+      btn.textContent = '…';
+      try {
+        await submitSignup(name, email);
+        this.classList.add('hidden');
+        document.getElementById('bar-success').classList.remove('hidden');
+        // Pre-fill and hide the bottom form too
+        document.getElementById('renovation-signup-form').classList.add('hidden');
+        document.getElementById('signup-success').classList.remove('hidden');
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'Notify Me';
+      }
+    });
+
+    // ── Bottom signup form ────────────────────────────────────────────────────
     document.getElementById('renovation-signup-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       var btn   = document.getElementById('signup-btn');
       var errEl = document.getElementById('signup-error');
       var name  = document.getElementById('signup-name').value.trim();
       var email = document.getElementById('signup-email').value.trim();
-
       btn.disabled = true;
       btn.textContent = 'Signing you up…';
       errEl.classList.add('hidden');
-
       try {
-        var res = await fetch(SUPABASE_URL + '/rest/v1/form_submissions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'apikey': SUPABASE_KEY,
-            'Authorization': 'Bearer ' + SUPABASE_KEY,
-            'Prefer': 'return=minimal'
-          },
-          body: JSON.stringify({
-            form_type: 'renovation-preview',
-            name: name,
-            email: email,
-            lead_source: detectLeadSource(),
-            page: window.location.pathname
-          })
-        });
-        if (!res.ok) throw new Error('failed');
-        document.getElementById('renovation-signup-form').classList.add('hidden');
+        await submitSignup(name, email);
+        this.classList.add('hidden');
         document.getElementById('signup-success').classList.remove('hidden');
+        // Also mark bar as done
+        document.getElementById('bar-signup-form').classList.add('hidden');
+        document.getElementById('bar-success').classList.remove('hidden');
       } catch(err) {
         errEl.textContent = 'Something went wrong. Please try again or call us at (619) 450-1702.';
         errEl.classList.remove('hidden');
