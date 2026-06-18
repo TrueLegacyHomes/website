@@ -186,6 +186,18 @@
       white-space: nowrap;
     }
 
+    /* Honeypot — visually hidden but NOT display:none (bots detect that) */
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
+      tab-size: 0;
+    }
+
     /* Gallery hover */
     .gallery-item { cursor: pointer; }
     .gallery-item img { transition: transform 0.35s ease; }
@@ -449,6 +461,11 @@
 
             <!-- Form -->
             <form id="renovation-signup-form">
+              <!-- Honeypot: hidden from humans, bots fill it in -->
+              <div class="hp-field" aria-hidden="true">
+                <label for="hp-website">Website</label>
+                <input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
               <div class="space-y-4">
                 <div>
                   <label for="signup-name" class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
@@ -584,6 +601,9 @@
       if (e.key === 'ArrowLeft') prev();
     });
 
+    // Track page load time for timing check
+    var _formLoadTime = Date.now();
+
     // ── Shared helpers ────────────────────────────────────────────────────────
     const SUPABASE_URL = 'https://inqbqchjxzvdvcslvskb.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucWJxY2hqeHp2ZHZjc2x2c2tiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNzA4NzEsImV4cCI6MjA4ODY0Njg3MX0.cqOtZQQOdSI9hwVxI8RSAMsgxI3hJsZ8ttzehJRKVgk';
@@ -602,6 +622,21 @@
     }
 
     async function submitSignup(name, email) {
+      // ── Spam checks (silent — fake success so bots think they won) ──
+
+      // 1. Honeypot: hidden field filled = bot
+      var hp = document.getElementById('hp-website');
+      if (hp && hp.value) return;
+
+      // 2. Timing: real humans take at least 3 seconds
+      if (Date.now() - _formLoadTime < 3000) return;
+
+      // 3. Rate limit: block resubmission within 60s
+      var lastSent = parseInt(sessionStorage.getItem('rp_last_sent') || '0');
+      if (Date.now() - lastSent < 60000) return;
+      sessionStorage.setItem('rp_last_sent', Date.now().toString());
+
+      // ── Legit submission ──
       var res = await fetch(SUPABASE_URL + '/rest/v1/form_submissions', {
         method: 'POST',
         headers: {
