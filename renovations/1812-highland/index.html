@@ -604,56 +604,44 @@
     // Track page load time for timing check
     var _formLoadTime = Date.now();
 
-    // ── Shared helpers ────────────────────────────────────────────────────────
-    const SUPABASE_URL = 'https://inqbqchjxzvdvcslvskb.supabase.co';
-    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucWJxY2hqeHp2ZHZjc2x2c2tiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNzA4NzEsImV4cCI6MjA4ODY0Njg3MX0.cqOtZQQOdSI9hwVxI8RSAMsgxI3hJsZ8ttzehJRKVgk';
 
-    function detectLeadSource() {
-      var p = new URLSearchParams(window.location.search);
-      var m = (p.get('utm_medium') || '').toLowerCase();
-      var s = (p.get('utm_source') || '').toLowerCase();
-      if (/cpc|paid|ppc/.test(m)) return 'Paid';
-      if (/email/.test(m) || /email/.test(s)) return 'Email';
-      if (p.toString()) return 'Referral';
-      var ref = document.referrer;
-      if (/google|bing|yahoo|duckduckgo/.test(ref)) return 'Organic';
-      if (ref) return 'Referral';
-      return 'Direct';
-    }
+    // ── Mailchimp config (public — safe to expose, no API key) ─────────────────────
+    var MC_U  = '55246077';      // Mailchimp account user ID
+    var MC_ID = '5034baf84b';    // TLH - Website Leads / Marketing audience
+    var MC_TAG = 'Renovation Preview'; // stored in ROLE merge field
 
-    async function submitSignup(name, email) {
-      // ── Spam checks (silent — fake success so bots think they won) ──
+    // Subscribe via JSONP (Mailchimp's own browser-safe method, no API key needed)
+    function subscribeMailchimp(name, email) {
+      return new Promise(function(resolve, reject) {
+        var cbName = 'mc_cb_' + Date.now();
+        var script  = document.createElement('script');
+        var timeout = setTimeout(function() { reject(new Error('timeout')); }, 10000);
 
-      // 1. Honeypot: hidden field filled = bot
-      var hp = document.getElementById('hp-website');
-      if (hp && hp.value) return;
+        window[cbName] = function(data) {
+          clearTimeout(timeout);
+          delete window[cbName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+          // 'already subscribed' is still a win
+          if (data.result === 'success' || /already subscribed/i.test(data.msg || '')) {
+            resolve();
+          } else {
+            reject(new Error(data.msg || 'error'));
+          }
+        };
 
-      // 2. Timing: real humans take at least 3 seconds
-      if (Date.now() - _formLoadTime < 3000) return;
+        var params = new URLSearchParams({
+          u:     MC_U,
+          id:    MC_ID,
+          EMAIL: email,
+          FNAME: name,
+          ROLE:  MC_TAG,
+          c:     cbName
+        });
 
-      // 3. Rate limit: block resubmission within 60s
-      var lastSent = parseInt(sessionStorage.getItem('rp_last_sent') || '0');
-      if (Date.now() - lastSent < 60000) return;
-      sessionStorage.setItem('rp_last_sent', Date.now().toString());
-
-      // ── Legit submission ──
-      var res = await fetch(SUPABASE_URL + '/rest/v1/form_submissions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_KEY,
-          'Authorization': 'Bearer ' + SUPABASE_KEY,
-          'Prefer': 'return=minimal'
-        },
-        body: JSON.stringify({
-          form_type: 'renovation-preview',
-          name: name,
-          email: email,
-          lead_source: detectLeadSource(),
-          page: window.location.pathname
-        })
+        script.src = 'https://us12.list-manage.com/subscribe/post-json?' + params;
+        script.onerror = function() { reject(new Error('network error')); };
+        document.body.appendChild(script);
       });
-      if (!res.ok) throw new Error('failed');
     }
 
     // ── Signup form ───────────────────────────────────────────────────────────────
@@ -663,18 +651,32 @@
       var errEl = document.getElementById('signup-error');
       var name  = document.getElementById('signup-name').value.trim();
       var email = document.getElementById('signup-email').value.trim();
+
+      // ── Spam checks (silent — fake success so bots move on) ──
+      var hp = document.getElementById('hp-website');
+      if (hp && hp.value) { showSuccess(); return; }
+      if (Date.now() - _formLoadTime < 3000) { showSuccess(); return; }
+      var lastSent = parseInt(sessionStorage.getItem('rp_last_sent') || '0');
+      if (Date.now() - lastSent < 60000) { showSuccess(); return; }
+      sessionStorage.setItem('rp_last_sent', Date.now().toString());
+
       btn.disabled = true;
       btn.textContent = 'Signing you up…';
       errEl.classList.add('hidden');
+
       try {
-        await submitSignup(name, email);
-        this.classList.add('hidden');
-        document.getElementById('signup-success').classList.remove('hidden');
+        await subscribeMailchimp(name, email);
+        showSuccess();
       } catch(err) {
         errEl.textContent = 'Something went wrong. Please try again or call us at (619) 450-1702.';
         errEl.classList.remove('hidden');
         btn.disabled = false;
         btn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Notify Me';
+      }
+
+      function showSuccess() {
+        document.getElementById('renovation-signup-form').classList.add('hidden');
+        document.getElementById('signup-success').classList.remove('hidden');
       }
     });
   </script>
