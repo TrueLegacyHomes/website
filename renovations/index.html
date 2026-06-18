@@ -61,6 +61,7 @@
       color: #132b42;
     }
     .hero-heading { color: #ffffff !important; }
+    .hp-field { position:absolute; left:-9999px; top:-9999px; opacity:0; height:0; overflow:hidden; pointer-events:none; }
   </style>
 </head>
 <body class="bg-white text-gray-800 text-lg leading-loose antialiased" style="font-family:'Inter',sans-serif;">
@@ -274,6 +275,78 @@
       </div>
     </section>
 
+
+    <!-- ─── RENOVATION PREVIEW SIGNUP ─────────────────────────────────────── -->
+    <section class="bg-tlh-dark py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+
+          <!-- Left -->
+          <div class="text-white">
+            <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-4">Renovation Previews</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-5 text-white" style="font-family:'Source Serif Pro',Georgia,serif; color:#fff; line-height:1.2;">
+              Get early access to every new renovation.
+            </h2>
+            <p class="text-white/75 text-lg leading-relaxed mb-2">
+              We release exclusive design previews before each renovation begins — renders, materials, and the full vision. Be first in line.
+            </p>
+            <p class="text-white/45 text-sm mb-8">From the team behind 1,500+ Southern California home transformations.</p>
+            <a href="/renovations/1812-highland/" class="bg-tlh-teal text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark transition inline-flex items-center gap-3 mb-8">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              See the 1812 Highland Preview
+            </a>
+            <div class="border-t border-white/10 pt-8 mt-2">
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-tlh-teal mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <p class="text-white/60 text-base">
+                  Interested in a renovation for your property?
+                  <a href="/schedule-consult/" class="text-tlh-teal underline underline-offset-2 hover:text-white transition ml-1">Let's talk.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="rounded-[5px] p-8 md:p-10" style="background-color:#f9f4eb;">
+            <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-3">Stay in the Loop</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-tlh-dark mb-3">Be the first to see our next renovation preview.</h3>
+            <p class="text-gray-600 mb-6 text-base">Sign up and we'll notify you when the next design preview drops — before it goes public.</p>
+            <div id="reno-index-success" class="hidden text-center py-6">
+              <svg class="w-10 h-10 text-tlh-teal mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <p class="text-tlh-dark font-bold text-lg">You're on the list!</p>
+              <p class="text-gray-600 mt-1 text-base">We'll reach out as soon as the next preview is ready.</p>
+            </div>
+            <form id="reno-index-form">
+              <div class="hp-field" aria-hidden="true">
+                <label for="hp-reno">Website</label>
+                <input type="text" id="hp-reno" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <label for="reno-name" class="block text-sm font-semibold text-gray-700 mb-1">Your Name</label>
+                  <input type="text" id="reno-name" required placeholder="Jane Smith"
+                    class="w-full border border-gray-300 rounded-[5px] px-4 py-3 text-gray-900 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent text-base">
+                </div>
+                <div>
+                  <label for="reno-email" class="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
+                  <input type="email" id="reno-email" required placeholder="jane@example.com"
+                    class="w-full border border-gray-300 rounded-[5px] px-4 py-3 text-gray-900 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent text-base">
+                </div>
+                <div id="reno-index-error" class="hidden bg-red-50 border border-red-200 text-red-700 rounded-[5px] px-4 py-3 text-sm"></div>
+                <button type="submit" id="reno-index-btn"
+                  class="w-full bg-tlh-teal text-white py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark transition flex items-center justify-center gap-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  Notify Me
+                </button>
+                <p class="text-xs text-gray-400 text-center">No spam. Just renovation previews, straight to your inbox.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ─── CTA ───────────────────────────────────────────────────────────── -->
     <section class="bg-tlh-teal text-white py-16">
       <div class="max-w-4xl mx-auto px-4 text-center">
@@ -300,6 +373,58 @@
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
+  <script>
+    var _formLoadTime = Date.now();
+    var MC_U  = 'd000ea6786220cdf01bdde2cd';
+    var MC_ID = '5034baf84b';
+
+    function subscribeMailchimp(name, email) {
+      return new Promise(function(resolve, reject) {
+        var cbName = 'mc_cb_' + Date.now();
+        var script  = document.createElement('script');
+        var timeout = setTimeout(function() { reject(new Error('timeout')); }, 10000);
+        window[cbName] = function(data) {
+          clearTimeout(timeout);
+          delete window[cbName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+          if (data.result === 'success' || /already subscribed/i.test(data.msg || '')) { resolve(); }
+          else { reject(new Error(data.msg || 'error')); }
+        };
+        var params = new URLSearchParams({ u: MC_U, id: MC_ID, EMAIL: email, FNAME: name, ROLE: 'Renovation Preview', c: cbName });
+        script.src = 'https://truelegacyhomes.us12.list-manage.com/subscribe/post-json?' + params;
+        script.onerror = function() { reject(new Error('network error')); };
+        document.body.appendChild(script);
+      });
+    }
+
+    document.getElementById('reno-index-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var btn   = document.getElementById('reno-index-btn');
+      var errEl = document.getElementById('reno-index-error');
+      var name  = document.getElementById('reno-name').value.trim();
+      var email = document.getElementById('reno-email').value.trim();
+      var hp    = document.getElementById('hp-reno');
+      if (hp && hp.value) { showOk(); return; }
+      if (Date.now() - _formLoadTime < 3000) { showOk(); return; }
+      var last = parseInt(sessionStorage.getItem('ri_last') || '0');
+      if (Date.now() - last < 60000) { showOk(); return; }
+      sessionStorage.setItem('ri_last', Date.now().toString());
+      btn.disabled = true; btn.textContent = 'Signing you up…'; errEl.classList.add('hidden');
+      try {
+        await subscribeMailchimp(name, email);
+        showOk();
+      } catch(err) {
+        errEl.textContent = 'Something went wrong. Please try again or call (619) 450-1702.';
+        errEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Notify Me';
+      }
+      function showOk() {
+        document.getElementById('reno-index-form').classList.add('hidden');
+        document.getElementById('reno-index-success').classList.remove('hidden');
+      }
+    });
+  </script>
   <script src="/js/load-components.js?v=20260529"></script>
 </body>
 </html>
