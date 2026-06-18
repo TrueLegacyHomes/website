@@ -74,7 +74,16 @@
   <main>
 
     <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
-    <section class="relative overflow-hidden" style="min-height: 500px; background-color: #132b42; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%221%22/%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.06%22/%3E%3C/svg%3E');">
+    <section class="relative overflow-hidden" style="min-height: 500px;">
+      <!-- Background image -->
+      <div class="absolute inset-0">
+        <img src="/images/refer.webp"
+             alt="Family gathering — True Legacy Homes referral program"
+             class="w-full h-full object-cover object-center"
+             fetchpriority="high">
+        <!-- Dark overlay: heavy on left for text legibility, lighter on right -->
+        <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(19,43,66,0.93) 0%, rgba(19,43,66,0.88) 50%, rgba(19,43,66,0.65) 100%);"></div>
+      </div>
       <div class="relative z-10 max-w-6xl mx-auto px-4 py-24 md:py-32">
         <div class="max-w-2xl">
           <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-4">$500 Referral Program</p>
