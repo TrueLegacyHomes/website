@@ -603,8 +603,11 @@
 
     // Track page load time for timing check
     var _formLoadTime = Date.now();
-    // Reset timer on first form interaction so fast users aren't blocked
-    document.addEventListener('focusin', function(e) { if (e.target.closest && e.target.closest('form')) { _formLoadTime = Date.now() - 3500; } }, { once: true });
+    var _timingReset = false;
+    // Reset timer on first FORM field interaction (listen on the form, not document)
+    document.getElementById('renovation-signup-form').addEventListener('focusin', function() {
+      if (!_timingReset) { _formLoadTime = Date.now() - 3500; _timingReset = true; }
+    });
 
 
     // ── Mailchimp config (public — safe to expose, no API key) ─────────────────────
@@ -660,14 +663,13 @@
       if (Date.now() - _formLoadTime < 1500) { showSuccess(); return; }
       var lastSent = parseInt(sessionStorage.getItem('rp_last_sent') || '0');
       if (Date.now() - lastSent < 60000) { showSuccess(); return; }
-      sessionStorage.setItem('rp_last_sent', Date.now().toString());
-
       btn.disabled = true;
       btn.textContent = 'Signing you up…';
       errEl.classList.add('hidden');
 
       try {
         await subscribeMailchimp(name, email);
+        sessionStorage.setItem('rp_last_sent', Date.now().toString()); // only rate-limit after success
         showSuccess();
       } catch(err) {
         errEl.textContent = 'Something went wrong. Please try again or call us at (619) 450-1702.';
