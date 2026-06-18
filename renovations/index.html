@@ -375,6 +375,11 @@
   <div id="footer-placeholder"></div>
   <script>
     var _formLoadTime = Date.now();
+    var _timingReset = false;
+    // Reset timer on first FORM field interaction (listen on the form, not document)
+    document.getElementById('reno-index-form').addEventListener('focusin', function() {
+      if (!_timingReset) { _formLoadTime = Date.now() - 3500; _timingReset = true; }
+    });
     var MC_U  = 'd000ea6786220cdf01bdde2cd';
     var MC_ID = '5034baf84b';
 
@@ -405,13 +410,13 @@
       var email = document.getElementById('reno-email').value.trim();
       var hp    = document.getElementById('hp-reno');
       if (hp && hp.value) { showOk(); return; }
-      if (Date.now() - _formLoadTime < 3000) { showOk(); return; }
+      if (Date.now() - _formLoadTime < 1500) { showOk(); return; }
       var last = parseInt(sessionStorage.getItem('ri_last') || '0');
       if (Date.now() - last < 60000) { showOk(); return; }
-      sessionStorage.setItem('ri_last', Date.now().toString());
       btn.disabled = true; btn.textContent = 'Signing you up…'; errEl.classList.add('hidden');
       try {
         await subscribeMailchimp(name, email);
+        sessionStorage.setItem('ri_last', Date.now().toString()); // only rate-limit after success
         showOk();
       } catch(err) {
         errEl.textContent = 'Something went wrong. Please try again or call (619) 450-1702.';
