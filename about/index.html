@@ -103,67 +103,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Our Story Section -->
-  <section class="py-20 bg-white">
+  <section class="py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
 
-      <!-- Eyebrow + heading -->
-      <div class="text-center mb-12">
-        <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-3">Our Story</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family:'Source Serif Pro',Georgia,serif;">Why We Do This</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Every family deserves someone in their corner during life's hardest moments.</p>
-      </div>
-
-      <!-- Text + quote grid -->
-      <div class="grid md:grid-cols-2 gap-10 mb-14 items-start">
+        <!-- Video facade -->
         <div>
-          <p class="text-gray-700 mb-4 text-lg">
+          <div id="about-video-facade" class="relative rounded-[5px] overflow-hidden shadow-xl cursor-pointer group" style="padding-top:56.25%;" onclick="loadAboutVideo()">
+            <img
+              src="https://vumbnail.com/852469895.jpg"
+              alt="Paul Williamson - Why We Do This"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy">
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition">
+              <div class="flex flex-col items-center gap-3 group-hover:scale-105 transition">
+                <div class="w-20 h-20 bg-white/75 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+                  <svg class="w-10 h-10 text-tlh-dark ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <span class="text-white font-semibold text-lg tracking-wide">Watch Paul's Story</span>
+              </div>
+            </div>
+          </div>
+          <script>
+            function loadAboutVideo() {
+              document.getElementById('about-video-facade').innerHTML = '<iframe src="https://player.vimeo.com/video/852469895?h=0&title=0&byline=0&portrait=0&autoplay=1&dnt=1" class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+            }
+          </script>
+        </div>
+
+        <!-- Text -->
+        <div>
+          <p class="text-sm font-semibold tracking-widest uppercase text-tlh-teal mb-3">Our Story</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6" style="font-family:'Source Serif Pro',Georgia,serif;">Why We Do This</h2>
+          <p class="text-gray-700 mb-5 text-lg leading-relaxed">
             When my own family went through a difficult transition, I saw firsthand how overwhelming it can be. The house. The belongings. The memories. The decisions that feel impossible to make when you're grieving.
           </p>
-          <p class="text-gray-700 mb-4">
+          <p class="text-gray-700 mb-5 leading-relaxed">
             I wished there had been someone to help—not just with the logistics, but with the emotional weight of it all. Someone who would treat my family's things with respect, and give us space to process while handling the details.
           </p>
-          <p class="text-gray-700">
+          <p class="text-gray-700 mb-8 leading-relaxed">
             That's why I built True Legacy. We don't just manage estate sales or buy houses—we walk alongside families during some of the hardest chapters of their lives.
           </p>
-        </div>
-        <!-- Paul's quote card -->
-        <div class="rounded-[5px] p-8 flex flex-col justify-between h-full" style="background-color:#132b42;">
-          <div class="text-4xl text-tlh-teal mb-4" style="font-family:'Times New Roman',serif;">&#8220;</div>
-          <p class="text-white text-xl italic leading-relaxed mb-6" style="font-family:'Source Serif Pro',Georgia,serif;">
-            We all need support sometimes. And it's my heart's desire to support your family in any way we can.
-          </p>
-          <div class="flex items-center gap-4 mt-auto">
-            <img src="/images/paulceo.png" alt="Paul Williamson" class="w-14 h-14 rounded-full object-cover border-2 border-tlh-teal">
-            <div>
-              <p class="text-white font-bold">Paul Williamson</p>
-              <p class="text-white/60 text-sm">Founder & CEO, True Legacy Homes</p>
+          <blockquote class="border-l-4 border-tlh-teal pl-5 py-1">
+            <p class="italic text-gray-700 text-lg leading-relaxed mb-3">"We all need support sometimes. And it's my heart's desire to support your family in any way we can."</p>
+            <div class="flex items-center gap-3">
+              <img src="/images/paulceo.png" alt="Paul Williamson" class="w-10 h-10 rounded-full object-cover">
+              <p class="font-bold text-tlh-dark text-sm">Paul Williamson &mdash; Founder &amp; CEO</p>
             </div>
-          </div>
+          </blockquote>
         </div>
-      </div>
 
-      <!-- Video facade -->
-      <div id="about-video-facade" class="relative rounded-[5px] overflow-hidden shadow-2xl cursor-pointer group" style="padding-top:56.25%;" onclick="loadAboutVideo()">
-        <img
-          src="https://vumbnail.com/852469895.jpg"
-          alt="Paul Williamson - Why We Do This"
-          class="absolute inset-0 w-full h-full object-cover"
-          loading="lazy">
-        <div class="absolute inset-0 bg-black/35 flex items-center justify-center group-hover:bg-black/45 transition">
-          <div class="flex flex-col items-center gap-3 group-hover:scale-105 transition">
-            <div class="w-20 h-20 bg-white/75 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-              <svg class="w-10 h-10 text-tlh-dark ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <span class="text-white font-semibold text-lg tracking-wide">Watch Paul's Story</span>
-          </div>
-        </div>
       </div>
-      <script>
-        function loadAboutVideo() {
-          document.getElementById('about-video-facade').innerHTML = '<iframe src="https://player.vimeo.com/video/852469895?h=0&title=0&byline=0&portrait=0&autoplay=1&dnt=1" class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
-        }
-      </script>
-
     </div>
   </section>
 
