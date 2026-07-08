@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="36" viewBox="0 0 150 36">
+  <rect width="150" height="36" rx="4" fill="#d32323"/>
+  <!-- Yelp burst icon -->
+  <text x="12" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">★</text>
+  <!-- Text -->
+  <text x="34" y="14" font-family="Arial, sans-serif" font-size="8.5" fill="white" opacity="0.9">Review us on</text>
+  <text x="34" y="27" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Yelp</text>
+</svg>
