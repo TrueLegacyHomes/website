@@ -180,6 +180,10 @@ def main():
     print("📊 Loading sales data...")
     sales = load_sales_data(tmp_dir)
     print(f"✅ Loaded {len(sales)} sales")
+
+    # Filter to only matched sales (skip "Address TBD" entries)
+    sales = [s for s in sales if s.get('street') != 'Address TBD']
+    print(f"✅ After filtering unmatched: {len(sales)} sale(s)")
     
     # Load weekend dates from Part 1
     date_file = f"{tmp_dir}/weekend-dates.txt"
