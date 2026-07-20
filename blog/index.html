@@ -61,6 +61,27 @@
   <style>
     html { scroll-behavior: smooth; }
     [id] { scroll-margin-top: 80px; }
+
+    .filter-btn {
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: 1.5px solid #d1d5db;
+      color: #4b5563;
+      background: white;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover {
+      border-color: #38b5ad;
+      color: #38b5ad;
+    }
+    .filter-btn.active {
+      background-color: #38b5ad;
+      border-color: #38b5ad;
+      color: white;
+    }
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Source Serif Pro', Georgia, serif;
       color: #142d45;
@@ -113,6 +134,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+
+  <!-- Topic Filter Bar -->
+  <div class="bg-white border-b border-gray-100 py-4 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-wrap gap-2" id="topic-filters">
+        <button data-filter="all"           class="filter-btn active">Recently Added</button>
+        <button data-filter="estate-sales"  class="filter-btn">Estate Sales</button>
+        <button data-filter="cash-offer"    class="filter-btn">Cash Offer &amp; Inherited</button>
+        <button data-filter="san-diego"     class="filter-btn">San Diego</button>
+        <button data-filter="orange-county" class="filter-btn">Orange County</button>
+        <button data-filter="collectibles"  class="filter-btn">Collectibles</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Blog Grid -->
   <section class="py-12" style="background-color: #f9f4eb; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%221%22 /%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.03%22/%3E%3C/svg%3E');">
     <div class="max-w-6xl mx-auto px-4">
@@ -121,7 +157,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- Cash-offer set: Jul 16 -->
         <!-- Post: Who Buys Inherited Homes for Cash in Southern California? -->
-        <a href="who-buys-inherited-homes-for-cash-southern-california.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="who-buys-inherited-homes-for-cash-southern-california.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="cash-offer" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sales-san-diego-true-legacy-homes.jpg" alt="Who Buys Inherited Homes for Cash in Southern California?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -138,7 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post: Cash Offer vs. Listing With a Realtor for an Inherited Home -->
-        <a href="cash-offer-vs-listing-realtor-inherited-home.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="cash-offer-vs-listing-realtor-inherited-home.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="cash-offer" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/off-market-property-guide-for-realtors.jpg" alt="Cash Offer vs. Listing With a Realtor for an Inherited Home" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -155,7 +191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post: How to Sell an Inherited House for Cash in California (2026 Guide) -->
-        <a href="how-to-sell-inherited-house-for-cash-california.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="how-to-sell-inherited-house-for-cash-california.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="cash-offer" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/sell-your-inherited-house-fast-california.jpg" alt="How to Sell an Inherited House for Cash in California (2026 Guide)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -172,7 +208,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post: How Much Will a Cash Buyer Pay for an Inherited House? -->
-        <a href="how-much-will-cash-buyer-pay-inherited-house.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="how-much-will-cash-buyer-pay-inherited-house.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="cash-offer" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/date-of-death-appraisal.jpg" alt="How Much Will a Cash Buyer Pay for an Inherited House?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -189,7 +225,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post: Best Estate Sale Companies SD 2026 -->
-        <a href="best-estate-sale-companies-in-san-diego-2026.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="best-estate-sale-companies-in-san-diego-2026.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="san-diego" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sales-san-diego-true-legacy-homes.jpg" alt="Best Estate Sale Companies in San Diego 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -206,7 +242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post: Best Estate Sale Companies OC 2026 -->
-        <a href="best-estate-sale-companies-in-orange-county-2026.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="best-estate-sale-companies-in-orange-county-2026.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="orange-county" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/affordable-estate-sale-companies-in-orange-county.jpg" alt="Best Estate Sale Companies in Orange County 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -223,7 +259,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post: How Long Does an Estate Sale Take -->
-        <a href="how-long-does-an-estate-sale-take.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="how-long-does-an-estate-sale-take.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sale-steps.jpg" alt="How Long Does an Estate Sale Take" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -240,7 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post: Estate Sale vs Liquidator vs Cash Offer -->
-        <a href="estate-sale-vs-liquidator-vs-cash-offer.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="estate-sale-vs-liquidator-vs-cash-offer.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-liquidators.jpg" alt="Estate Sale vs Liquidator vs Cash Offer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -257,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post: How to Choose an Estate Sale Company -->
-        <a href="how-to-choose-an-estate-sale-company-2026.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="how-to-choose-an-estate-sale-company-2026.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/choose-estate-sale-services-company.jpg" alt="How to Choose an Estate Sale Company 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -274,7 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 1 -->
-        <a href="caring-transitions-alternatives-southern-california.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="caring-transitions-alternatives-southern-california.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/caring-transitions-alternatives-southern-california.jpg" alt="Caring Transitions Alternatives in Southern California" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -291,7 +327,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 2 -->
-        <a href="estate-sales-san-diego.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="estate-sales-san-diego.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="san-diego" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sales-san-diego.jpg" alt="Estate Sales in San Diego" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -308,7 +344,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 3 -->
-        <a href="estate-sales-orange-county.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="estate-sales-orange-county.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="orange-county" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sales-orange-county.jpg" alt="Estate Sales in Orange County" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -325,7 +361,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 4 -->
-        <a href="los-angeles-estate-sales-guide.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="los-angeles-estate-sales-guide.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/los-angeles-estate-sales-guide.jpg" alt="The Definitive Guide To Los Angeles Estate Sales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -342,7 +378,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 5 -->
-        <a href="estate-sale-for-a-parent.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="estate-sale-for-a-parent.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sale-for-a-parent.jpg" alt="6 Questions to Ask Before Starting an Estate Sale for a Parent" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -359,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 6 -->
-        <a href="estate-sales-in-southern-california-strategies.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="estate-sales-in-southern-california-strategies.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sales-in-southern-california-strategies.jpg" alt="7 Proven Strategies for Estate Sales in Southern California" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -376,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 7 -->
-        <a href="hire-an-estate-sale-company-in-southern-california.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="hire-an-estate-sale-company-in-southern-california.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/hire-an-estate-sale-company-in-southern-california.jpg" alt="7 Essential Steps To Hire An Estate Sale Company" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -393,7 +429,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 8 -->
-        <a href="estate-sale-guide-for-heirs-and-executors.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="estate-sale-guide-for-heirs-and-executors.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sale-guide-for-heirs-and-executors.jpg" alt="Estate Sale Guide for Heirs and Executors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -410,7 +446,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 9 -->
-        <a href="affordable-estate-sale-companies-in-orange-county.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="affordable-estate-sale-companies-in-orange-county.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="orange-county" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/affordable-estate-sale-companies-in-orange-county.jpg" alt="Affordable Estate Sale Companies in Orange County" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -427,7 +463,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 10 -->
-        <a href="10-best-estate-sale-companies-in-san-diego.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="10-best-estate-sale-companies-in-san-diego.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="san-diego" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/10-best-estate-sale-companies-in-san-diego.jpg" alt="10 Best Estate Sale Companies in San Diego" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -444,7 +480,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 8 -->
-        <a href="estate-sales-for-seniors.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="estate-sales-for-seniors.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="estate-sales" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/estate-sales-for-seniors.jpg" alt="Estate Sales For Seniors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -461,7 +497,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
 
         <!-- Post 9 -->
-        <a href="vintage-jewelry-spotlight.html" class="overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" style="background-color: #fdfcfc; display: block;">
+        <a href="vintage-jewelry-spotlight.html" class="blog-card overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-tlh-teal transition group rounded-[5px]" data-category="collectibles" style="background-color: #fdfcfc; display: block;">
           <div class="relative h-48 overflow-hidden">
             <img src="images/vintage-jewelry-spotlight.jpg" alt="Vintage Jewelry Spotlight" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -482,7 +518,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Popular Guides Section -->
-  <section class="py-12 bg-white">
+  <section class="py-12 bg-white filter-hide-on-topic">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl font-bold mb-8">Popular Guides</h2>
       <div class="grid md:grid-cols-2 gap-6">
@@ -552,7 +588,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Collectibles & Antiques Section -->
-  <section class="py-12" style="background-color: #f9f4eb;">
+  <section class="py-12 filter-hide-on-topic" style="background-color: #f9f4eb;">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl font-bold mb-8">Collectibles & Antiques Guides</h2>
       <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -622,7 +658,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- All Articles Archive -->
-  <section id="all-articles" class="py-12 bg-white">
+  <section id="all-articles" class="py-12 bg-white filter-hide-on-topic">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl font-bold mb-2 text-center">All Articles</h2>
       <p class="text-gray-600 text-center mb-8">Browse our complete library of 90+ guides and resources</p>
@@ -775,6 +811,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="footer-placeholder"></div>
 
 <!-- Artsai Conversion Pixel [misc] --><img src="https://arttrk.com/pixel/?ad_log=referer&action=misc&pixid=11ccb5e1-5765-413e-b101-f5e1940d6b72" width="1" height="1" border="0" alt="" style="display:none">
+
+  <script>
+    (function() {
+      var btns  = document.querySelectorAll('[data-filter]');
+      var cards = document.querySelectorAll('.blog-card');
+      var hideSections = document.querySelectorAll('.filter-hide-on-topic');
+      var noResults = document.getElementById('no-results-msg');
+
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var filter = btn.dataset.filter;
+          var isAll  = filter === 'all';
+          var visible = 0;
+
+          cards.forEach(function(card) {
+            if (isAll || card.dataset.category === filter) {
+              card.style.display = '';
+              visible++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          hideSections.forEach(function(s) {
+            s.style.display = isAll ? '' : 'none';
+          });
+
+          if (noResults) {
+            noResults.style.display = (!isAll && visible === 0) ? '' : 'none';
+          }
+        });
+      });
+    })();
+  </script>
+
   <!-- Component Loader -->
   <script src="/js/load-components.js?v=20260529"></script>
 </body>
