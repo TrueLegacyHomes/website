@@ -51,7 +51,8 @@ def main():
     print(f"Weekend dates: {date_short}")
     
     # Track created slugs for cleanup
-    created_slugs = []
+    # Preserved slugs are protected from deletion even if not regenerated this run
+    created_slugs = ['206-agate-avenue']  # PRESERVED: keep Agate page as-is
     
     # Process each sale
     for sale in sales:
