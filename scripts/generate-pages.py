@@ -65,12 +65,14 @@ def main():
         street, city, zipcode = addresses[sale_id]
         
         if street == "Address TBD":
-            print(f"⚠️  Sale {sale_id} has no address yet (not released)")
-            continue
-        
-        # Generate slug from street address
-        slug = street.lower()
-        slug = slug.replace(' ', '-').replace(',', '').replace('.', '').replace("'", '')
+            print(f"ℹ️  Sale {sale_id} - no street address yet, using city/zip")
+            street = "Address Released Day Before Sale"
+            # Use city-zip as slug when no street available
+            slug = f"{city.lower().replace(' ', '-')}-{zipcode}"
+        else:
+            # Generate slug from street address
+            slug = street.lower()
+            slug = slug.replace(' ', '-').replace(',', '').replace('.', '').replace("'", '')
         
         # Read validated images
         validated_file = f"{tmp_dir}/sale-{sale_id}-validated.txt"
@@ -89,8 +91,12 @@ def main():
         image_array = '[\n      ' + ',\n      '.join(image_urls) + '\n    ]'
         
         # Build page
-        full_address = f"{street}, {city}, CA {zipcode}"
-        google_maps_url = f"https://maps.google.com/?q={urllib.parse.quote(full_address)}"
+        if street == "Address Released Day Before Sale":
+            full_address = f"{city}, CA {zipcode}"
+            google_maps_url = f"https://maps.google.com/?q={urllib.parse.quote(full_address)}"
+        else:
+            full_address = f"{street}, {city}, CA {zipcode}"
+            google_maps_url = f"https://maps.google.com/?q={urllib.parse.quote(full_address)}"
         
         page = template.replace('{{ADDRESS}}', street)
         page = page.replace('{{CITY_STATE_ZIP}}', f"{city}, CA {zipcode}")
