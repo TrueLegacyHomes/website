@@ -116,6 +116,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
             <input type="hidden" name="utm_term" id="utm_term" value="">
             <input type="hidden" name="utm_content" id="utm_content" value="">
+            <input type="hidden" name="gclid" id="gclid" value="">
             <input type="hidden" name="lead_source" id="lead_source" value="">
             
             <!-- Honeypot field - hidden from humans, bots fill it out -->
@@ -250,7 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           <script>
             // Form submission endpoint (Cloudflare Worker - keeps keys secure)
-            const FORM_ENDPOINT = 'https://tlh-form-worker.brett-35e.workers.dev';
+            const FORM_ENDPOINT = 'https://tlh-form-worker.brett-a9c.workers.dev';
             
             // Spam protection: record page load time
             const PAGE_LOAD_TIME = Date.now();
@@ -271,6 +272,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             serviceSelect.addEventListener('change', togglePropertyFields);
             togglePropertyFields(); // Run on load
+
+            // Clear email custom validity when user edits the field
+            document.getElementById('email').addEventListener('input', function() {
+              this.setCustomValidity('');
+            });
             
             // Determine lead source from UTM params and referrer
             function getLeadSource() {
@@ -305,7 +311,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             // Populate tracking fields from URL params
             const urlParams = new URLSearchParams(window.location.search);
             document.getElementById('channel').value = urlParams.get('utm_source') || '';
-            document.getElementById('landing_page').value = window.location.pathname;
+            document.getElementById('gclid').value = urlParams.get('gclid') || '';
+            // Use full URL (capped at 255 chars for Salesforce field-length limit)
+            document.getElementById('landing_page').value = window.location.href.substring(0, 255);
             document.getElementById('utm_source').value = urlParams.get('utm_source') || '';
             document.getElementById('utm_medium').value = urlParams.get('utm_medium') || '';
             document.getElementById('utm_campaign').value = urlParams.get('utm_campaign') || '';
@@ -331,7 +339,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 window.location.href = '/thank-you/';
                 return;
               }
-              
+
+              // Email validation — enforce server-side even if browser skips native check
+              const emailInput = document.getElementById('email');
+              const emailVal = emailInput.value.trim();
+              if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+                emailInput.setCustomValidity('Please enter a valid email address (example: name@domain.com)');
+                emailInput.reportValidity();
+                return;
+              }
+              emailInput.setCustomValidity('');
+
               const submitBtn = this.querySelector('button[type="submit"]');
               const originalText = submitBtn.textContent;
               submitBtn.textContent = 'Sending...';
@@ -359,6 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 utm_term: document.getElementById('utm_term').value || null,
                 utm_content: document.getElementById('utm_content').value || null,
                 lead_source: document.getElementById('lead_source').value || null,
+                gclid: document.getElementById('gclid').value || null,
                 metadata: {
                   messaging_optin: document.getElementById('messaging_optin').checked,
                   referrer: document.referrer,
