@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estate Sale: 4112 Pepperdine Avenue</title>
+  <meta name="description" content="Estate sale at 4112 Pepperdine Avenue, Oceanside, CA 92056. Sep 12-13, 2026, 8:00 AM - 2:00 PM.">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/tailwind.min.css">
+</head>
+<body class="bg-gray-50">
+  <header class="bg-tlh-dark text-white py-4">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <a href="/"><img src="/images/clientLOGO.png" alt="True Legacy Homes" class="h-12 brightness-200"></a>
+      <a href="/upcoming-sales/" class="text-sm bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20">← All Sales</a>
+    </div>
+  </header>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="flex flex-col md:grid md:grid-cols-3 gap-6">
+      <!-- Photos Section (2/3 width on desktop) -->
+      <div class="md:col-span-2 space-y-6 order-2 md:order-1">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h1 class="text-3xl font-bold mb-2">4112 Pepperdine Avenue</h1>
+          <p class="text-xl text-gray-600 mb-4">Oceanside, CA 92056</p>
+          <span class="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Sep 12-13, 2026</span>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h2 class="text-2xl font-bold mb-4">Photos <span class="text-gray-400 text-lg font-normal">(191)</span></h2>
+          <div id="gallery" class="grid grid-cols-1 md:grid-cols-5 gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Sale Details Sidebar (1/3 width on desktop) -->
+      <div class="md:col-span-1 order-1 md:order-2">
+        <div class="bg-white rounded-xl p-6 shadow-sm sticky top-4">
+          <h3 class="text-xl font-bold mb-4">Sale Details</h3>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              </div>
+              <div><p class="font-semibold">Dates</p><p class="text-gray-600">Sat-Sun, Sep 12-13</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div><p class="font-semibold">Hours</p><p class="text-gray-600">8:00 AM - 2:00 PM</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 bg-tlh-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-tlh-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div><p class="font-semibold">Address</p><p class="text-gray-600">4112 Pepperdine Avenue<br>Oceanside, CA 92056</p></div>
+            </div>
+            <a href="https://maps.google.com/?q=4112%20Pepperdine%20Avenue%2C%20Oceanside%2C%20CA%2092056" target="_blank" class="block w-full bg-tlh-teal text-white text-center py-3 rounded-lg font-semibold hover:bg-tlh-teal/90 transition">
+              Get Directions
+            </a>
+            <div class="pt-4 border-t border-gray-200">
+              <p class="text-gray-600 font-semibold mb-2">Follow Our Sales</p>
+              <div class="flex gap-2">
+                <a href="https://www.facebook.com/TrueLegacyHomes" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition text-sm">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  Facebook
+                </a>
+                <a href="https://www.instagram.com/truelegacyestatesales/" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-br from-purple-600 to-pink-500 text-white py-2 rounded hover:from-purple-700 hover:to-pink-600 transition text-sm">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (loaded from component) -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    const images = [
+      "https://picturescdn.estatesales.net/5066544/1-2/ee2a921d-b4d6-4307-95b8-ca754448bc8b.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/78031a32-25c9-45a7-9d9c-c90b455510cf.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e85bb3e7-dcb8-49c0-9706-e83b85971d50.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/7313dbfb-4796-4177-861e-b2e7197df2ff.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/dd523522-687b-4397-920f-2534a470d24d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/31d067cb-ac24-4888-bbe2-2b9faecd8166.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/d4b7a944-017f-42a0-999b-5e308dbd011d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/212975d2-90b5-4033-9ccb-19a16881327f.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e65372d6-3565-4990-b7e1-6b023ff950a6.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/aa781af2-41c1-4300-84d0-6cf70256ef00.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/16cef5b3-068d-4170-a1ed-67312bfa1b08.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/70ac8c01-2667-4574-8069-3ff263f9e9d1.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/8e190193-9fa3-4c7a-a880-a57f3173ab4f.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/662d68a2-9b5c-4422-8bf4-118e0b30ba65.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9fcff940-c027-45b3-9712-6473c88a0df7.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/ab3d16f9-57ee-4dcd-acec-6910c976a571.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/ce1490e1-cdfb-4cdd-a81a-54fa50bb0d42.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/d9225f44-aeb9-4202-90f0-9b11aa464b01.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f24d33fc-d33e-4a0c-9be6-dae56885cf6b.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f1e062f3-a259-43e0-b580-c7fb201e2d95.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/28c7fae9-bbb1-4e37-8cea-a4851db1283d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/996ef67d-ba63-48e5-9f18-006cbd0ecc6b.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/bf245e31-3a08-46a6-b9c1-6bf833e25a4f.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/7b138b71-13a9-4c23-b277-96ace2ef934d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/907c51e3-0404-4389-8fc4-77a09a3516c3.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/52a33c55-01ff-4adc-a0f0-083e5eda0f1a.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9693d5d7-04c1-411b-a6d0-561977d653c8.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/498fa5ec-32b0-4795-b06f-443a2ea9035a.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/067b8668-51d4-4e84-8d59-bf7c840e95e8.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/43623431-6c44-4909-afc0-b4e0dcbcf31f.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/7e5de680-6b10-489e-bfbd-a9a8005a9e24.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/a3b9f441-e488-4292-b309-076488377778.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/5a6f27d1-d6b8-4745-aa61-0671234aaafa.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f2e6ff71-8db1-49c5-a2c6-05befbed9e56.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/36787a0c-72e0-41e4-bf5e-f465017c1f50.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e0983c4e-2c46-4a1a-b000-141cbd84f706.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/01221fba-6de9-4962-99cb-e58037f81090.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/c5c9f759-f79e-4842-9665-4f04d57d6c5f.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/c6fe953a-fbe9-40b9-bf43-ead963322bce.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/261039c9-de7b-4560-bb01-c2a2fa96f91d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/75b501ea-dfbd-466b-95cd-93cae84bda79.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/51e5ce3a-7c79-485c-a268-a51fe8a99cd7.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/04e32713-12d3-4ee3-8e05-c1731f5c3eda.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/c8b4e323-672d-4c83-ba6c-04047beac752.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/c7fd08e3-ba18-44c5-a63f-30f740260182.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/4e1aef4e-a6b3-4b73-b689-8987a5b07318.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/38129ff6-3fe1-4572-9779-7ed48e1226b3.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e341f951-ef7d-491e-8917-67cfd5da61ab.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/cebacd80-0955-4610-a949-4429d7dc2fb5.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/fbcc2dfe-f5db-4cc3-bc48-7d386e867742.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/cd5ecafb-eaf9-44f3-8870-190fb8135eaa.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/0daf8228-38eb-430a-a139-7160cc9d6a0e.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/cd5feb7e-e967-488a-b24a-45e947af101b.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/bc1127e1-849b-4b3e-b766-b3b7490ec243.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/0067737a-e8dd-476b-8d70-1707fba2c9fe.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f9730008-c241-4941-962c-92ebe46ec681.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/3b366a72-dad2-486e-9a66-467f6a6fe6b4.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/12f9926e-9cfb-432a-ae8b-c94fe1d8d534.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/bc140ef5-c038-4fd9-9579-cc7e68a79fd9.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/33e81f85-8d76-477f-be42-7be4d54ec61e.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/43465394-149c-48ab-b26d-1107b4ac17f6.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/5396ffbf-3ffb-4fa6-8ccf-e1d9ae86c644.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/ed6af7bf-0a01-4709-bedf-02d6e0335ed2.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/05c96ce8-d890-414c-aaca-8bffd6474ae3.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e0520498-75e1-430b-9d24-bf4520e0667b.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/db49827e-26dd-4590-ab2c-e448719569c1.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/cf00d329-5774-45f9-9cf6-0fba6e2c6a49.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/c8588847-fab0-4682-987d-eebd89fc654c.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/fcd8972c-cb82-4e75-829f-2eac2cbda287.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/280edb3b-1179-48ef-87e3-9b571aa6884a.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/009841f4-f06f-419e-9e3d-71d8cab8da31.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/678eaab8-8f80-4ac4-b1fb-15655eb34e18.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/051718d4-64d7-43c1-9646-ffbdde1c4cef.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/8be8dc9c-352d-449c-8938-7af1a945f418.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f1b35a38-5826-4cb3-ab8e-b3a9d9f75043.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/20f29bdb-f5d6-4667-837d-a637f10007ed.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/92933a23-2106-4633-a406-6d50dccc8c65.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/6c2ca8e7-21e8-4611-986f-cce92730b2d6.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/b08fc83a-1042-44d8-93eb-471ee79434cb.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/ed5c9a29-898f-4388-8e1e-a80d49098028.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/19c638bc-6d08-4ff5-b070-a4e34d13bf39.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/77318d7a-4ceb-4b23-a63e-ea203f6905ed.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f7203492-4529-4b77-b50d-d3ff93285408.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/bef763c2-e7ca-4657-8f1c-e6df0c37b88c.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/cc0e5dd8-db1e-4724-b914-e0660e8ea7bc.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/1e2cfc72-e9ed-49e7-af26-35438ba4361a.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/6e9da2fc-497f-48a1-af56-f8f5711570c1.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/65a08328-772d-4017-90fc-abf77c0157f5.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/303f982e-0d37-4a56-a7d9-01992607cbf9.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f957ef20-2eef-42b6-9586-fd20f6d43711.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/5d9547b4-abc8-46cf-aeea-1a8656e8749a.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e18afa1e-bb88-4b5f-90c9-fcb6bd0f1d03.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/671db03c-3c03-44f9-ab09-c30a0611c0da.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9f1a371b-3374-4fff-934e-4896e289af7f.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/73744373-8f44-4441-9938-e4df0ebe3705.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/1b3362b3-99c2-4970-aa65-c84917a200b4.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/758cc7af-3520-4eb8-bcf0-e0ab172e287e.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/d8f4e99a-fad8-45f7-af21-b21e1ff2009e.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/694e6a31-c025-4d3f-92a9-fecf5cd43bc0.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9775d467-64aa-4c5c-8558-34a346e11505.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/d5d3f9d1-1297-4882-962f-acc6129f3f8c.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/2b3706d9-73cb-4e99-9289-56311a17f116.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/82a9eb1b-2fb0-4d6b-9003-69800c29769d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/6702f0bf-71ae-4d4b-bdc5-2da681d74fd0.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/30e0af90-d80b-4b8c-b761-ddddd8a7ecc7.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/570d2e5f-ae07-44e6-9538-30cd30193982.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/68147062-9f86-4240-9ac5-d715b84021b7.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/a51c285a-3f54-4abb-9dd1-f5301e46d8b6.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/d13bbbb0-7cba-46c5-83f3-b745ff52ba0d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/db0eb3d8-f87d-49fa-a1fd-70a70c828b90.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/0c10de84-1c14-4cfc-84e5-d9726c7a2944.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/3441510f-3cc9-4dee-87de-2cc0694c0945.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/2ce156b1-aa35-4c0b-a66d-8882cf30428d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/4ac5dcc1-1f01-4373-8bfe-e0ea9d0e1b3a.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/7a0907b5-9645-4f2e-9129-ae1d762ae9ff.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/dd379c70-bc6e-4849-afc9-d4122d9a0a78.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/ee732d4a-15fa-459c-9216-76ba89530baa.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/18f34af5-060a-45c1-be41-e0667efe715f.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/5995dfda-bd98-4c89-a0b7-54c6660c198a.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/baea4b05-03cf-4e59-805e-f8d343a65000.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/0528f8fa-1329-486b-9b00-859ff10e7d56.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/7931aee9-2249-4eac-89ef-4444b93a06b8.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/814fdd77-cd11-4c9a-91ec-c81577f87513.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/df882d22-19e9-4afe-b012-005b87e3f2cd.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/ee46bebb-996c-4c0d-924d-f03d52b141ea.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9fb73bb0-33bd-439d-8cdc-1514516250f2.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/1727969a-c799-42de-b5b7-160319b593bd.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/81143e42-04ce-483c-961e-0097e4185884.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/d1805833-69ff-4002-8327-d5b79551ee91.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/c0220874-3aae-47f6-8749-e0518ad20d12.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/de13f9a3-09df-44c8-8acd-774d85ab38a0.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/a60a9485-214f-4a2c-a580-3d898a570699.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/75de6f42-0902-4619-b471-f16e62692bc4.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/02366f1e-9fb5-4daf-bb96-d37a4eb1a3f4.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e64cc011-9ba6-467a-9487-7bb9ca81088e.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/6d739b06-326c-4261-ad34-f7ef4646d8fb.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/896129f1-8a3e-4055-bc50-21eb7f462b17.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/834d15b9-e900-4b62-a252-1d9f84a2cad2.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/b5a773c4-00b2-4ae0-8260-4349b705aa09.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/6069c24a-464d-4c25-8f47-8bb96d9e3ff9.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/c25433af-b6b6-412b-9b1a-edd98c081598.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9e94c9f8-e531-4e40-91a6-deed4104c3b4.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f469aeaa-a6b9-422a-9588-bdb3f4ad547c.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/44cb1c37-1e36-4e1a-9c97-281f31e44595.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/aa34b299-d15a-4fbf-be2a-7d39835dd063.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/575bfcb1-786b-4789-9d20-0d4221146122.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/7d62fdfd-3963-4bb5-a8e0-ffa9b87254d1.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/ab0d8ca8-a21b-4212-bae2-0cc8fb3eb282.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/b061a29a-141f-4bce-bbd2-c1f1ba014036.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/4e45d2e3-0cd2-4326-ba94-c2bff28ced1a.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/b25f74e8-d9ed-4cad-8e29-bb3648272088.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/1ef67dc2-7a46-42cf-82e5-ca13f2748e60.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/6631f4d3-fa83-4f66-83cc-0c45347be2cb.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/28d8d62c-93b8-46a5-a847-d8a76e0a8a65.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9e101932-475e-427b-96a1-07cb9a23b6fe.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/63e8a2e6-46c7-4ba8-b4e6-15d713dc2c87.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/d98bdff6-d21e-465d-9268-163ef0c753ab.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/f2e6d9b9-9ad2-45d0-a350-3983abb07910.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e27eaf4b-fc28-4927-9748-a4c5a880c03c.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/bad524be-4417-4f3e-b8ea-ad1e122372a2.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/b094d2fe-c67f-43b2-a49d-8b520eb0df25.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/c4162ac8-6d9d-4eaf-b559-f22177248fc7.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/acdf7560-d0e9-49ac-9382-4c17b86ce98d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/92afe495-9de5-4703-934f-fcf726bb96be.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/49c5e0d3-a00e-4942-b1b6-923119a88bff.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/562b0bd6-f6b5-43b9-8d45-5a98c8c79440.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/0ba276e4-c101-4c77-ac2f-88ad0237e5f1.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/5dbf3bca-1225-4d71-8218-ea68f10203db.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/d7f93180-2d60-4194-8097-0e65dce3cba2.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/5e8abff5-6294-4aa6-a7c2-3f2af798ef42.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/42a5a201-00e0-49f2-bad4-862014445b88.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/94dad927-8ada-450f-91bf-3b4b541b2e8d.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/a563a9b4-3aae-4f8c-bae2-b5e5922538b9.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/87ab1245-b346-4f78-b638-27dc319ad9a7.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/cd8b5ba8-eab1-434a-8994-46ce0f83331b.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/4ec36ae0-9552-481e-839e-3eaf92bf0b4e.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/fd683a6a-97c8-47cf-8957-295924c29839.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/bdaddcf5-d6ce-41a9-907a-740cde023661.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/affeb740-5bc3-47a6-a314-d53bfe639e68.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/4281c496-4c37-4fbf-85c5-27d04de6b356.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9f859eff-5045-461e-9332-5b7cf80300a1.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/b192c802-86ce-4a61-a3d7-2f817f9eb136.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/b9447951-0af3-4ad1-905b-5eda5e734474.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/b0361856-9bab-433c-a8f4-39c8cd8ad753.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/9adaa762-a0f7-4660-95be-75ce330f2fed.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/90676700-b1ad-4c2a-a76e-e2cc78770d7b.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/872f6535-b390-424f-9829-7677625482ee.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/05772f9b-7ed3-4b0e-9bb6-242a281793c9.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/ecce9e38-8fc9-459e-90e5-1aa148cc24b2.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/1091da4c-9068-422b-93b3-3bf0ac4f0565.jpg",
+      "https://picturescdn.estatesales.net/5066544/1-2/e63d83d5-b3bf-48bd-9aef-0e76f97d5f9d.jpg"
+    ];
+    const gallery = document.getElementById('gallery');
+    images.forEach(url => {
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = 'Sale item';
+      img.className = 'w-full h-32 object-cover rounded cursor-pointer hover:opacity-75 transition';
+      img.loading = 'lazy';
+      img.onclick = () => window.open(url, '_blank');
+      gallery.appendChild(img);
+    });
+  </script>
+  <!-- Component Loader -->
+  <script src="/js/load-components.js?v=20260529"></script>
+</body>
+</html>
