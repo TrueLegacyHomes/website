@@ -5,6 +5,12 @@ https://truelegacyhomes.com/* https://www.truelegacyhomes.com/:splat 301
 /upcoming-sales/mission-viejo-92692 https://www.estatesales.net/CA/Mission-Viejo/92692/5082123 302
 /upcoming-sales/mission-viejo-92692/ https://www.estatesales.net/CA/Mission-Viejo/92692/5082123 302
 
+# County page consolidation (Batch 2)
+/san-diego /locations/san-diego/ 301
+/san-diego/ /locations/san-diego/ 301
+/orange-county /locations/orangecounty/ 301
+/orange-county/ /locations/orangecounty/ 301
+
 # Core page redirects
 /about-us/* /about/ 301
 /contact-us/* /contact/ 301
