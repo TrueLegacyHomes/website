@@ -149,7 +149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2 class="text-2xl font-bold mb-2">Refer Someone Today</h2>
           <p class="text-gray-700 mb-6">We'll reach out with care and mention you sent them.</p>
           
-          <form action="mailto:info@truelegacyhomes.com?subject=Referral%20Submission" method="post" enctype="text/plain" class="space-y-4">
+          <form id="ref-form" class="space-y-4" novalidate>
             <div class="bg-gray-50 rounded-lg p-4">
               <p class="text-sm font-semibold text-gray-700 mb-3">YOUR INFORMATION</p>
               <div class="space-y-3">
@@ -182,20 +182,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <p class="text-sm font-semibold text-gray-700 mb-3">FRIEND'S INFORMATION</p>
               <div class="space-y-3">
                 <input 
-                  type="text" 
-                  placeholder="Friend's Name *" 
+                  type="text" id="ref_friend_name"
+                  name="friend_name" placeholder="Friend's Name *" 
                   required
                   class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
                 >
                 <input 
-                  type="tel" 
-                  placeholder="Friend's Phone *" 
+                  type="tel" id="ref_friend_phone"
+                  name="friend_phone" placeholder="Friend's Phone *" 
                   required
                   class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
                 >
                 <input 
-                  type="email" 
-                  placeholder="Friend's Email (optional)"
+                  type="email" id="ref_friend_email"
+                  name="friend_email" placeholder="Friend's Email (optional)"
                   class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
                 >
               </div>
@@ -203,20 +203,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <div>
               <textarea 
+                id="ref_notes" name="notes"
                 placeholder="Any details about their situation? (optional)"
                 rows="3"
                 class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
               ></textarea>
             </div>
             
-            <button type="submit" style="min-height: 52px;" class="w-full bg-tlh-teal text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark">
+            <button id="ref-submit" type="submit" style="min-height: 52px;" class="w-full bg-tlh-teal text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark">
               Submit Referral →
             </button>
-            
             <p class="text-sm text-gray-700 text-center">
               By submitting, you confirm you have permission to share this contact's information.
             </p>
+            <div id="ref-success" style="display:none;" class="text-center py-4 text-tlh-teal font-semibold">
+              ✓ Referral received — we'll reach out to your friend within one business day.
+            </div>
+            <div id="ref-error" style="display:none;" class="text-center py-2 text-red-600 text-sm">
+              Something went wrong. Please call us at <a href="tel:+16194501702" class="underline">(619) 450-1702</a>.
+            </div>
           </form>
+
+  <script>
+  (function(){
+    var ENDPOINT = 'https://tlh-form-worker.brett-a9c.workers.dev';
+    var PAGE_LOAD = Date.now();
+    var form = document.getElementById('ref-form');
+    var btn  = document.getElementById('ref-submit');
+    var ok   = document.getElementById('ref-success');
+    var err  = document.getElementById('ref-error');
+
+    btn.addEventListener('click', function(e) {
+      if (!form.checkValidity()) {
+        e.stopImmediatePropagation();
+        form.reportValidity();
+        return false;
+      }
+    });
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      err.style.display = 'none';
+      if (Date.now() - PAGE_LOAD < 3000) return;
+
+      var payload = {
+        form_type:        'referral',
+        email:            document.querySelector('[name="your_email"]').value.trim(),
+        first_name:       document.querySelector('[name="your_name"]').value.trim().split(' ')[0] || '',
+        last_name:        document.querySelector('[name="your_name"]').value.trim().split(' ').slice(1).join(' ') || '',
+        phone:            document.querySelector('[name="your_phone"]').value.trim(),
+        service_interest: 'Estate Sale',
+        lead_source:      'Referral',
+        landing_page:     window.location.href.substring(0,255),
+        metadata: {
+          friend_name:  document.getElementById('ref_friend_name').value.trim(),
+          friend_phone: document.getElementById('ref_friend_phone').value.trim(),
+          friend_email: document.getElementById('ref_friend_email').value.trim(),
+          notes:        document.getElementById('ref_notes').value.trim(),
+          referrer:     document.referrer,
+          user_agent:   navigator.userAgent
+        }
+      };
+
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      try {
+        var res  = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        var data = await res.json();
+        if (res.ok && data.success) {
+          form.style.display = 'none';
+          ok.style.display = 'block';
+        } else { throw new Error(data.error || 'failed'); }
+      } catch(e) {
+        console.error('Referral form error:', e);
+        btn.disabled = false;
+        btn.textContent = 'Submit Referral →';
+        err.style.display = 'block';
+      }
+    });
+  })();
+  </script>
         </div>
       </div>
     </div>

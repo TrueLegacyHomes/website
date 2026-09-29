@@ -347,7 +347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       
       <div class="bg-white rounded-2xl p-8 shadow-lg">
-        <form action="mailto:info@truelegacyhomes.com?subject=Fiduciary%20Services%20Inquiry" method="post" enctype="text/plain" class="space-y-6">
+        <form id="fid-form" class="space-y-6" novalidate>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label class="block text-base font-semibold mb-2">Your Name *</label>
@@ -355,7 +355,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 type="text" 
                 required
                 class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
-                placeholder="Full name"
+                id="fid_name" name="your_name" placeholder="Full name" autocomplete="name"
               >
             </div>
             <div>
@@ -363,7 +363,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <input 
                 type="text"
                 class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
-                placeholder="Your firm"
+                id="fid_company" name="company" placeholder="Your firm" autocomplete="organization"
               >
             </div>
           </div>
@@ -375,7 +375,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 type="email" 
                 required
                 class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
-                placeholder="email@firm.com"
+                id="fid_email" name="email" placeholder="email@firm.com" autocomplete="email"
               >
             </div>
             <div>
@@ -384,7 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 type="tel" 
                 required
                 class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
-                placeholder="(555) 123-4567"
+                id="fid_phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel"
               >
             </div>
           </div>
@@ -392,7 +392,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div>
             <label class="block text-base font-semibold mb-2">Your Role *</label>
             <select 
-              required
+              required id="fid_role" name="role"
               class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent bg-white"
             >
               <option value="">Select your role</option>
@@ -431,17 +431,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <textarea 
               rows="4"
               class="w-full px-4 py-4 text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tlh-teal focus:border-transparent"
-              placeholder="Tell us about the property, timeline, or any specific requirements..."
+              id="fid_message" name="message" placeholder="Tell us about the property, timeline, or any specific requirements..."
             ></textarea>
           </div>
           
-          <button type="submit" style="min-height: 52px;" class="w-full bg-tlh-teal text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark">
+          <button id="fid-submit" type="submit" style="min-height: 52px;" class="w-full bg-tlh-teal text-white px-8 py-[15px] rounded-[5px] text-base font-medium hover:bg-tlh-teal-dark">
             Get Guidance
           </button>
+          <div id="fid-success" style="display:none;" class="text-center py-4 text-tlh-teal font-semibold text-lg">
+            ✓ Thank you — a member of our team will be in touch within one business day.
+          </div>
+          <div id="fid-error" style="display:none;" class="text-center py-2 text-red-600 text-sm">
+            Something went wrong. Please call us at <a href="tel:+16194501702" class="underline">(619) 450-1702</a> or try again.
+          </div>
         </form>
       </div>
     </div>
   </section>
+
+  <script>
+  (function(){
+    var ENDPOINT = 'https://tlh-form-worker.brett-a9c.workers.dev';
+    var PAGE_LOAD = Date.now();
+    var form = document.getElementById('fid-form');
+    var btn  = document.getElementById('fid-submit');
+    var ok   = document.getElementById('fid-success');
+    var err  = document.getElementById('fid-error');
+
+    // Validate-before-submit: fires on click, before CallRail sees submit
+    btn.addEventListener('click', function(e) {
+      if (!form.checkValidity()) {
+        e.stopImmediatePropagation();
+        form.reportValidity();
+        return false;
+      }
+    });
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      err.style.display = 'none';
+
+      // Time guard
+      if (Date.now() - PAGE_LOAD < 3000) return;
+
+      // Gather checkboxes
+      var services = [];
+      form.querySelectorAll('input[type=checkbox]:checked').forEach(function(cb){
+        services.push(cb.closest('label').querySelector('span').textContent.trim());
+      });
+
+      var payload = {
+        form_type:        'fiduciaries',
+        email:            document.getElementById('fid_email').value.trim(),
+        first_name:       document.getElementById('fid_name').value.trim().split(' ')[0] || '',
+        last_name:        document.getElementById('fid_name').value.trim().split(' ').slice(1).join(' ') || '',
+        phone:            document.getElementById('fid_phone').value.trim(),
+        service_interest: 'Fiduciary',
+        city:             null,
+        lead_source:      'Direct',
+        landing_page:     window.location.href.substring(0,255),
+        metadata: {
+          company:   document.getElementById('fid_company').value.trim(),
+          role:      document.getElementById('fid_role').value,
+          services:  services.join(', '),
+          message:   document.getElementById('fid_message').value.trim(),
+          referrer:  document.referrer,
+          user_agent: navigator.userAgent
+        }
+      };
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        var res  = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        var data = await res.json();
+        if (res.ok && data.success) {
+          form.style.display = 'none';
+          ok.style.display = 'block';
+        } else {
+          throw new Error(data.error || 'failed');
+        }
+      } catch(e) {
+        console.error('Fiduciary form error:', e);
+        btn.disabled = false;
+        btn.textContent = 'Get Guidance';
+        err.style.display = 'block';
+      }
+    });
+  })();
+  </script>
 
   <!-- Footer -->
   <!-- Footer (loaded from component) -->

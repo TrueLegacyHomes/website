@@ -322,6 +322,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.getElementById('lead_source').value = getLeadSource();
             
             // Handle form submission
+            // Validate-before-submit: intercept click so CallRail never sees an incomplete submit
+            (function() {
+              var _btn = document.querySelector('#consult-form button[type="submit"]');
+              var _form = document.getElementById('consult-form');
+              if (_btn && _form) {
+                _btn.addEventListener('click', function(ev) {
+                  if (!_form.checkValidity()) {
+                    ev.stopImmediatePropagation();
+                    _form.reportValidity();
+                    return false;
+                  }
+                }, true); // capture phase — fires before CallRail
+              }
+            })();
+
             document.getElementById('consult-form').addEventListener('submit', async function(e) {
               e.preventDefault();
               
