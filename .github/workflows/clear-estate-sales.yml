@@ -1,0 +1,31 @@
+name: Clear Estate Sales (Sunday 2pm PST)
+
+on:
+  schedule:
+    - cron: '0 22 * * 0'  # 22:00 UTC = 2:00pm PST / 3:00pm PDT every Sunday
+  workflow_dispatch:       # allow manual trigger from GitHub Actions tab
+
+jobs:
+  clear:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Run clear script
+        run: python3 scripts/clear-estate-sales.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet && echo "Nothing to commit." || \
+            git commit -m "Auto: clear estate sales (Sunday 2pm PST)"
+          git push origin main
+          git push origin main:staging
