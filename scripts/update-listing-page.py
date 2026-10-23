@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
 Update the main /upcoming-sales/index.html listing page with new sales.
+Replaces the entire <!-- Current Sales --> section regardless of whether it
+contains the "no sales" placeholder (set by clear-estate-sales.py on Sunday)
+or an existing grid from a prior week.
 """
 
 import json
@@ -28,30 +31,29 @@ def create_sale_card(sale_id, title, street, city, zipcode, slug, hero_image, da
               8:00 AM - 2:00 PM
             </div>
             <a href="/upcoming-sales/{slug}/" class="block w-full bg-tlh-dark text-white text-center py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
-              View Sale →
+              View Sale &rarr;
             </a>
           </div>
-        </div>
-'''
+        </div>'''
 
 def main():
     if len(sys.argv) < 2:
         print("Usage: update-listing-page.py <tmp_dir>")
         sys.exit(1)
-    
+
     tmp_dir = sys.argv[1]
     index_path = "/Users/admin/.openclaw/workspace/tlh-rebuild/upcoming-sales/index.html"
-    
+
     # Load weekend dates
     with open(f"{tmp_dir}/weekend-dates.txt", 'r') as f:
         lines = f.readlines()
-        dates_short = lines[0].strip()  # "May 23-24, 2026"
-        dates_long = lines[1].strip()   # "Sat-Sun, May 23-24"
-    
+        dates_short = lines[0].strip()  # "Oct 24-25, 2026"
+        dates_long = lines[1].strip()   # "Sat-Sun, Oct 24-25"
+
     # Load sales data
     with open(f"{tmp_dir}/sales.json", 'r') as f:
         sales = json.load(f)
-    
+
     # Load addresses
     addresses = {}
     with open(f"{tmp_dir}/addresses.txt", 'r') as f:
@@ -60,26 +62,26 @@ def main():
             if len(parts) == 4:
                 sale_id, street, city, zipcode = parts
                 addresses[sale_id] = (street, city, zipcode)
-    
+
     # Read current index.html
     with open(index_path, 'r') as f:
         content = f.read()
-    
+
     # Generate sale cards
     cards = []
     for sale in sales:
         sale_id = sale['id']
-        
+
         if sale_id not in addresses:
             continue
-        
+
         street, city, zipcode = addresses[sale_id]
         if street == "Address TBD":
             continue
-        
+
         # Generate slug
         slug = street.lower().replace(' ', '-').replace(',', '').replace('.', '').replace("'", '')
-        
+
         # Get first validated image
         validated_file = f"{tmp_dir}/sale-{sale_id}-validated.txt"
         if os.path.exists(validated_file):
@@ -88,40 +90,43 @@ def main():
                 hero_image = f"https://picturescdn.estatesales.net/{sale_id}/1-2/{first_guid}.jpg"
         else:
             hero_image = "https://via.placeholder.com/400x300?text=No+Image"
-        
+
         # Create title
         title = f"{city} Estate Sale"
-        
+
         card = create_sale_card(sale_id, title, street, city, zipcode, slug, hero_image, dates_long, dates_short)
         cards.append(card)
-    
-    # Replace the date in the header
-    content = re.sub(
-        r'<h2 class="text-2xl font-bold">[^<]+</h2>',
-        f'<h2 class="text-2xl font-bold">{dates_short}</h2>',
-        content,
-        count=1
-    )
-    
-    # Find and replace the grid section
-    # Use a more robust pattern that matches the grid div and everything up to the next </section>
-    grid_pattern = r'(<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">).*?(</div>\s*</div>\s*</section>)'
-    
-    new_grid_content = '\n'.join(cards)
-    
-    replacement = rf'\1\n{new_grid_content}\n      \2'
-    
-    content = re.sub(
-        grid_pattern,
-        replacement,
-        content,
-        flags=re.DOTALL
-    )
-    
+
+    if not cards:
+        print("⚠️  No sale cards generated — check addresses and sales data")
+        sys.exit(1)
+
+    # Build the new Current Sales section with the grid
+    cards_html = '\n'.join(cards)
+    new_section = f"""  <!-- Current Sales -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+{cards_html}
+      </div>
+    </div>
+  </section>"""
+
+    # Replace the entire <!-- Current Sales --> section.
+    # This handles BOTH states:
+    #   1. "No sales" placeholder (set by clear-estate-sales.py on Sunday)
+    #   2. Existing grid from a prior week
+    pattern = r'  <!-- Current Sales -->.*?</section>'
+    updated = re.sub(pattern, new_section, content, count=1, flags=re.DOTALL)
+
+    if updated == content:
+        print("❌ ERROR: Could not find '<!-- Current Sales -->' section in index.html")
+        sys.exit(1)
+
     # Write updated content
     with open(index_path, 'w') as f:
-        f.write(content)
-    
+        f.write(updated)
+
     print(f"✅ Updated listing page with {len(cards)} sales")
     print(f"   Date: {dates_short}")
     print(f"   Path: {index_path}")

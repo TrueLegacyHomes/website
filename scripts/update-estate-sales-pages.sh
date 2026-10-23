@@ -115,12 +115,32 @@ echo "📋 Step 5b: Updating main listing page..."
 chmod +x "$WORKSPACE/scripts/update-listing-page.py"
 python3 "$WORKSPACE/scripts/update-listing-page.py" "$TMP_DIR"
 
-# Step 6: Commit to staging
+# Step 6: Commit and push to staging
 echo ""
 echo "📤 Step 6: Pushing to staging..."
 git add -A
 git commit -m "Update estate sales for $(date +%Y-%m-%d)"
 git push origin staging
+
+# Step 7: Deploy staging to Cloudflare Pages
+# (CF Pages GitHub integration does NOT auto-deploy the staging branch)
+echo ""
+echo "☁️  Step 7: Deploying staging to Cloudflare Pages..."
+
+# Load local credentials (not committed to git)
+ENV_FILE="$WORKSPACE/scripts/.env.local"
+if [ ! -f "$ENV_FILE" ]; then
+  echo "❌ ERROR: $ENV_FILE not found — cannot deploy to Cloudflare Pages"
+  echo "   Create scripts/.env.local with CF_API_TOKEN and CF_ACCOUNT_ID"
+  exit 1
+fi
+source "$ENV_FILE"
+
+rm -f /tmp/.wrangler/cache/pages.json
+cd /tmp && CLOUDFLARE_API_TOKEN="$CF_API_TOKEN" \
+  CLOUDFLARE_ACCOUNT_ID="$CF_ACCOUNT_ID" \
+  wrangler pages deploy "$WORKSPACE" --project-name website --branch staging 2>&1
+cd "$WORKSPACE"
 
 echo ""
 echo "═══════════════════════════════════════════════════════════"
@@ -135,11 +155,9 @@ echo "🌐 Review staging site:"
 echo "   https://staging.website-252.pages.dev/upcoming-sales/"
 echo ""
 echo "🚀 Next Steps:"
-echo "   1. Review the staging site"
+echo "   1. Review the staging site above"
 echo "   2. When ready, tell Clark: 'run the estate sales email script'"
-echo "   3. After email is created, push to production:"
-echo "      → cd $WORKSPACE"
-echo "      → git checkout main && git merge staging && git push origin main"
+echo "   3. Tell Clark: 'push to production' when done"
 echo ""
 echo "💾 Data saved for email script:"
 echo "   $TMP_DIR"
