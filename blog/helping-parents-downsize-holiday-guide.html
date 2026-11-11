@@ -326,5 +326,26 @@
   </main>
   <div id="footer-placeholder"></div>
   <img src="https://arttrk.com/pixel/?ad_log=referer&action=misc&pixid=11ccb5e1-5765-413e-b101-f5e1940d6b72" width="1" height="1" border="0" alt="" style="display:none">
+
+  <!-- Location-based address swap -->
+  <script>
+    (function() {
+      const addresses = {
+        sd: '3635 Ruffin Rd, Suite 100<br>San Diego, CA 92123',
+        oc: '15375 Barranca Parkway, Suite A-107<br>Irvine, CA 92618',
+        la: '5230 Pacific Concourse Dr, Suite 110<br>Los Angeles, CA 90045'
+      };
+      function setAddress(region) {
+        const el = document.getElementById('office-address');
+        if (el && addresses[region]) { el.innerHTML = addresses[region]; }
+      }
+      const params = new URLSearchParams(window.location.search);
+      const regionParam = params.get('region');
+      if (regionParam && addresses[regionParam]) { setAddress(regionParam); }
+    })();
+  </script>
+  <!-- Component Loader -->
+  <script src="/js/load-components.js?v=20260529"></script>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>
