@@ -294,7 +294,5 @@ https://truelegacyhomes.com/* https://www.truelegacyhomes.com/:splat 301
 /terms.html /tos/ 301
 
 # === Auto-generated sale redirects (managed by generate-pages.py) ===
-/upcoming-sales/3567-carleton-street /upcoming-sales/ 301
-/upcoming-sales/3567-carleton-street/ /upcoming-sales/ 301
-/upcoming-sales/23331-el-perro-street /upcoming-sales/ 301
-/upcoming-sales/23331-el-perro-street/ /upcoming-sales/ 301
+/upcoming-sales/2443-bancroft-street /upcoming-sales/ 301
+/upcoming-sales/2443-bancroft-street/ /upcoming-sales/ 301
