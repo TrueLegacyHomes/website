@@ -294,7 +294,5 @@ https://truelegacyhomes.com/* https://www.truelegacyhomes.com/:splat 301
 /terms.html /tos/ 301
 
 # === Auto-generated sale redirects (managed by generate-pages.py) ===
-/upcoming-sales/2703-north-vista-heights-avenue /upcoming-sales/ 301
-/upcoming-sales/2703-north-vista-heights-avenue/ /upcoming-sales/ 301
-/upcoming-sales/3949-la-cresta-drive /upcoming-sales/ 301
-/upcoming-sales/3949-la-cresta-drive/ /upcoming-sales/ 301
+/upcoming-sales/bonita-91902 /upcoming-sales/ 301
+/upcoming-sales/bonita-91902/ /upcoming-sales/ 301
